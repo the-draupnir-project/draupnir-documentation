@@ -9,7 +9,7 @@ support was never reliable as its open to various exploits that are not fixable 
 
 The nature of the exploits you can pull of if you make the choice to use E2EE in protected rooms is everything related to withholding keys.
 The spec does currently not facilitate mechanisms to allow you to get message keys from other parties so unless your draupnir gets keys from the sender
-its sol if you wanted it to be able to moderate that message. And considering the frequency of E2EE issues you couldn't sanction users for a bit of UTD automatically either.
+its shit out of luck if you wanted it to be able to moderate that message. And considering the frequency of E2EE issues you couldn't sanction users for a bit of UTD automatically either.
 
 The E2EE functionality is not part of the Dogfooding program that Draupnir has in place as an extra layer of quality assurance
 above that offered by our CI testing. You can read more about this programme in [The Dogfood Guide](/shared/dogfood.md)
