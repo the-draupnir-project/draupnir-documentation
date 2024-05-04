@@ -1,6 +1,6 @@
 # The Dogfood Guide
 
-Welcome to the Dogfood Guide. This document details a semi updated list of who is Dogfooding what and this list serves to inform you of what components are under the most review due to this. 
+Welcome to the Dogfood Guide. This document details a semi updated list of who is Dogfooding what and this list serves to inform you of what components are under the most review due to this.
 
 
 ## The List

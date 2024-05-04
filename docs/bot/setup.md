@@ -4,10 +4,10 @@ While in the past there has been a recomendation to use [Pantalaimon](https://gi
 encrypted management rooms or use of the experimental Rust Crypto for the same effect this recomendation is no longer in effect.
 
 The E2EE functionality was also useful for allowing Draupnir to read encrypted messages to moderate their content in Encrypted rooms but this
-support was never reliable as its open to various exploits that are not fixable without spec changes. 
+support was never reliable as its open to various exploits that are not fixable without spec changes.
 
 The E2EE functionality is not part of the Dogfooding program that Draupnir has in place as an extra layer of quality assurance
-above that offered by our CI testing. You can read more about this programme in [The Dogfood Guide](/shared/dogfood.md) 
+above that offered by our CI testing. You can read more about this programme in [The Dogfood Guide](/shared/dogfood.md)
 
 If you aren't using encrypted rooms anywhere, get an access token by opening Element in a
 seperate browser profile or incognito tab, and log in as the bot. Then, go to "All Settings", "Help & About", and
