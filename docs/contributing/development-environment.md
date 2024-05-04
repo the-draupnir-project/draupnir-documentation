@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+sidebar_label: Tests, tools, and environment
 ---
 
 # Developing Draupnir - tests, tools, and environment
