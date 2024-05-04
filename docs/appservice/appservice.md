@@ -1,3 +1,5 @@
+# Appservice
+
 Draupnir can be run as an appservice, allowing users you trust or on your homeserver to run their own Draupnir without hosting anything themselves.
 This module is currently alpha quality and is subject to rapid changes,
 it is not recommended currently and support will be limited.
@@ -31,6 +33,7 @@ Please note that Draupnir in appservice mode does not support E2EE nor support u
 6. Create a `config/config.production.yaml` file that can be copied from the example in `config/default.yaml` just like in step 4. The file also needs to be accessible to the container so whatever path is used for `config/config.appservice.yaml` can be reused to also house this file.
 
 The provisioned Draupnirs only inherit a subset of the configuration options that are accessible to Bot mode Draupnir. Those are the following options. If there's `:` as a suffix to a config option that means there are sub options like how under commands in the default config you also find `additionalPrefixes:` with a value of `draupnir`.
+
 ```
 logLevel
 syncOnStartup
@@ -45,6 +48,7 @@ protections:
 7. Start the application service `docker run -v /your/path/to/draupnir-data/:/data/ gnuxie/draupnir appservice -c /data/config/config.appservice.yaml -f /data/config/draupnir-registration.yaml -p $MATRIX_PORT --draupnir-config /data/config/production.yaml`
 
 8. Copy the `draupnir-registration.yaml` to your matrix homeserver and refer to it in `homeserver.yaml` like so:
+
 ```
   app_service_config_files:
     - "/data/draupnir-registration.yaml"
@@ -62,9 +66,9 @@ If you successfully followed Steps 1-8 or got to the point your running the bot 
 
 4. Decide if you want to allow provisioning per homeserver or per user. If you choose to only provision per user skip to step 6.
 
-5. Allow provisioning per homeserver. To provision per homeserver you write in your control room /plain MXID_OF_APPSERVICE_HERE allow @*:homeserver_to_allow
+5. Allow provisioning per homeserver. To provision per homeserver you write in your control room /plain MXID_OF_APPSERVICE_HERE allow @\*:homeserver_to_allow
 
 6. Allow provisioning per user. To Provision per user you write in your control room /plain MXID_OF_APPSERVICE_HERE allow MXID_TO_ALLOW
-FIXME: If the client is being dumb and adding escapes to lone instances of * in the command strip them out so you don't have to mandate /plain use to guarantee the client doesn’t screw the user over.
+   FIXME: If the client is being dumb and adding escapes to lone instances of \* in the command strip them out so you don't have to mandate /plain use to guarantee the client doesn’t screw the user over.
 
 7. Provisioning a Draupnir is done via inviting your main draupnir into a room. If the user who did it is allowed to Draupnir rejects the invite and provisions a Draupnir shortly and invites the user to the newly created policy list and control room for this Draupnir.

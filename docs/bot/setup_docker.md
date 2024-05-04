@@ -1,6 +1,9 @@
+# Docker
+
 Draupnir is available on the Docker Hub as [`gnuxie/draupnir`](https://hub.docker.com/r/gnuxie/draupnir).
 
 Using docker, draupnir can be setup and ran in either of two ways;
+
 - Docker Run
 - Docker Compose
 
