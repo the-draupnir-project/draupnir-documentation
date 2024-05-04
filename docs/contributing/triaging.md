@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Triaging issues
 
 The issue triaging process was developed in this [blog post](https://marewolf.me/posts/draupnir/2401.html#triaging)
@@ -11,8 +15,8 @@ need attention first. It's very loose, and what should be worked on
 first will always remain subjective. However, this is a best effort
 of creating a list that can be easily looked at with less noise.
 
-
 ## Labels
+
 ### Likelihood
 
 Likelihood is just an estimation of the proportion of users that are
