@@ -2,7 +2,7 @@
 
 ## Encrypting the management room
 
-We do not recommend setting up an encrypted management room, and we cannot provide support for setting one up. This is because Pantalaimon has consistently confused beginners that are setting it up with Draupnir, and we do not use it ourselves. Experienced system admins are welcome to attempt to set up Pantalaimon, but must be aware that any issues that they experience getting Draupnir to start are extremely likely to be from the Pantalaimon configuration and not Draupnir itself. 
+We do not recommend setting up an encrypted management room, and we cannot provide support for setting one up. This is because Pantalaimon has consistently confused beginners that are setting it up with Draupnir, and we do not use it ourselves. Experienced system admins are welcome to attempt to set up Pantalaimon, but must be aware that any issues that they experience getting Draupnir to start are extremely likely to be from the Pantalaimon configuration and not Draupnir itself.
 
 The E2EE functionality was also useful for allowing Draupnir to read encrypted messages to moderate their content in Encrypted rooms but this
 support was never reliable as its open to various exploits that are not fixable without spec changes.
