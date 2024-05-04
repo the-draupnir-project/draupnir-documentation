@@ -1,7 +1,17 @@
 # Setting up Draupnir
 
-It is recommended to use [Pantalaimon](https://github.com/matrix-org/pantalaimon) so your management
-room can be encrypted. This also applies if you are looking to moderate an encrypted room.
+## Encrypting the management room
+
+We do not recommend setting up an encrypted management room, and we cannot provide support for setting one up. This is because Pantalaimon has consistently confused beginners that are setting it up with Draupnir, and we do not use it ourselves. Experienced system admins are welcome to attempt to set up Pantalaimon, but must be aware that any issues that they experience getting Draupnir to start are extremely likely to be from the Pantalaimon configuration and not Draupnir itself.
+
+The E2EE functionality was also useful for allowing Draupnir to read encrypted messages to moderate their content in Encrypted rooms but this
+support was never reliable as its open to various exploits that are not fixable without spec changes.
+
+By making the choice to use E2EE in protected rooms you are vulnerable to exploits related to withholding decryption keys from the device Draupnir has to decrypt events.
+The Matrix specification currently does not facilitate mechanisms to allow a device to get message keys from other parties, so unless Draupnir is provided keys directly from the event sender, then Draupnir will be unable to decrypt a given message. While considering the frequency of E2EE issues, Draupnir could also not make a choice to sanction users for not providing keys automatically as a workaround either. However, as of writing only a small number of Draupnir protections need access to event content, and most functionality will work regardless of Draupnir being E2EE capable. You can still protect E2EE rooms, however protections such as the `WordList` and `FirstMesssageIsImage` protections that will be unable to function.
+
+The E2EE functionality is not part of the Dogfooding program that Draupnir has in place as an extra layer of quality assurance
+above that offered by our CI testing. You can read more about this programme in [The Dogfood Guide](/shared/dogfood.md)
 
 If you aren't using encrypted rooms anywhere, get an access token by opening Element in a
 seperate browser profile or incognito tab, and log in as the bot. Then, go to "All Settings", "Help & About", and
