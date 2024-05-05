@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Developing Draupnir
 
 This document is a part of our [contributing documentation](./CONTRIBUTING.md),

@@ -1,3 +1,8 @@
+---
+sidebar_position: 4
+sidebar_label: Tests, tools, and environment
+---
+
 # Developing Draupnir - tests, tools, and environment
 
 This document is a part of our [contributing documentation](./CONTRIBUTING.md)
@@ -95,6 +100,7 @@ $ mx-tester up
 ```
 
 Once you have called `mx-tester up` you can run the integration tests.
+
 ```
 $ yarn test:integration
 ```
