@@ -86,9 +86,9 @@ Go ahead and edit anything.
 
 ## Making Pull Requests
 
-The preferred and easiest way to contribute changes to Matrix is to fork the
-relevant project on github, and then [create a pull request](https://help.github.com/articles/using-pull-requests/) to ask us to pull
-your changes into our repo.
+The preferred and easiest way to contribute changes to Draupnir is to fork the
+relevant repo on github, and then [create a pull request](https://help.github.com/articles/using-pull-requests/) to ask us to pull
+your changes into the repo.
 
 We use Github Actions for continuous integration.
 If your change breaks the build, this will be shown in GitHub, so
@@ -103,7 +103,7 @@ same lightweight approach that the Linux Kernel
 [Docker](https://github.com/docker/docker/blob/master/CONTRIBUTING.md), and many other
 projects use: the DCO (Developer Certificate of Origin:
 http://developercertificate.org/). This is a simple declaration that you wrote
-the contribution or otherwise have the right to contribute it to Matrix:
+the contribution or otherwise have the right to contribute it to Draupnir:
 
 ```
 Developer Certificate of Origin
