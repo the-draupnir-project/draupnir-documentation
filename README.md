@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 Catalan Lover <catalanlover@protonmail.com>
+
+SPDX-License-Identifier: AFL-3.0
+-->
+
 # Website
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
