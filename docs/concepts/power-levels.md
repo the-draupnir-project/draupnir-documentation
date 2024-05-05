@@ -9,7 +9,7 @@ SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
 
 SPDX-License-Identifier: CC-BY-SA-4.0
 
-SPDX-FileAttributionText:: <text>
+SPDX-FileAttributionText: <text>
 This modified file contains work from the matrix.org website
 https://github.com/matrix-org/matrix.org
 </text>
