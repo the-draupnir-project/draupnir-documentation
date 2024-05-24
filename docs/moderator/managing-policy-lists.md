@@ -54,7 +54,7 @@ Usually, lists that you can write to will be marked as protected.
 
 ## Using Draupnir's `list create` command to create a policy room
 
-If for some reason you don't have access to a writable list, you can
+If for some reason you don't have access to a writeable list, you can
 create one using `!draupnir list create`. So for example, if I wanted
 to create a a policy room for paw prints community, then I would use
 the command like so `!draupnir list create my-bans my-bans-bl`. This

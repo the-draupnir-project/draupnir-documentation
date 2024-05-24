@@ -14,7 +14,7 @@ The E2EE functionality is not part of the Dogfooding program that Draupnir has i
 above that offered by our CI testing. You can read more about this programme in [The Dogfood Guide](/shared/dogfood.md)
 
 If you aren't using encrypted rooms anywhere, get an access token by opening Element in a
-seperate browser profile or incognito tab, and log in as the bot. Then, go to "All Settings", "Help & About", and
+separate browser profile or incognito tab, and log in as the bot. Then, go to "All Settings", "Help & About", and
 click the little triangle next to "Access token". Copy and paste that into your config under `accessToken`.
 
 **Note**: Do not log out, just close the window, otherwise the access token will be invalidated.
