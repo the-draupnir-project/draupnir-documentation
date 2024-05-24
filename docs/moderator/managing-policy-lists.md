@@ -13,7 +13,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 If you are struggling to understand what a policy list or a policy
 room is, and why they are useful you should see our [policy
-lists](../concepts/policy-lists.md) documentation.
+lists](../concepts/policy-lists) documentation.
 
 ## Reviewing which lists Draupnir is watching
 
