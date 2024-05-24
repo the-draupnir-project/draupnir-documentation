@@ -38,7 +38,7 @@ a state event to make it convenient for clients to access.
 
 ## Authorization events
 
-Matrix also has a concept of *authorization events*. Thes are special
+Matrix also has a concept of *authorization events*. These are special
 *state events* that are used to control what other events can be
 sent to the room. For example, the `m.room.power_levels` event is
 an authorization event that can be used to control which users can
@@ -64,7 +64,7 @@ The membership event has a protected content field called `membership`,
 which describes the membership state for a Matrix user in a room.
 
 Whenever you ban or remove a user from a room, your homeserver has to
-create a membership event for that user that supsersedes their current
+create a membership event for that user that supersedes their current
 membership event.  Explicitly marking the target user's membership as
 `ban` or `leave`.
 

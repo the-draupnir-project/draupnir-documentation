@@ -18,7 +18,7 @@ existing Draupnir, you will want to review the following pages:
 ## System administrators
 
 If you are a system administrator and you are looking for how
-to seup Draupnir:
+to setup Draupnir:
 
 - [Setup Draupnir as a bot](./bot/setup) - Configuring Draupnir as a
   bot to protect a single community.
@@ -30,4 +30,4 @@ to seup Draupnir:
 
 If you are a contributor:
 
-- [Contrubuting](./contributing) - How to contribute to Draupnir.
+- [Contributing](./contributing) - How to contribute to Draupnir.

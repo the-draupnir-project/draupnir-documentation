@@ -32,7 +32,7 @@ Just by inviting Draupnir to a policy room, Draupnir will ask you
 within the management room whether you wish for Draupnir to watch for
 and to subscribe to policies.
 
-The answer to the question can be given by clickin on the reactions in
+The answer to the question can be given by clicking on the reactions in
 your Matrix client. By selecting 'Ok', Draupnir will watch the list,
 and if all goes well Draupnir will leave behind a green tick.
 
@@ -41,7 +41,7 @@ and if all goes well Draupnir will leave behind a green tick.
 The easiest way to watch a room is to use the `!draupnir watch`
 command.  This will tell Draupnir to watch the list and apply its
 policies to your rooms.  We recommend subscribe to to the list curated
-by the community moderation effort, which exclusively focusses on
+by the community moderation effort, which exclusively focuses on
 spam. You can do so with the following command `!draupnir watch
 #community-moderation-effort-bl:neko.dev`.
 
@@ -58,6 +58,6 @@ If for some reason you don't have access to a writable list, you can
 create one using `!draupnir list create`. So for example, if I wanted
 to create a a policy room for paw prints community, then I would use
 the command like so `!draupnir list create my-bans my-bans-bl`. This
-will create a policy room with the shortcode `paws` and an alias
+will create a policy room with the shortcode `my-bans` and an alias
 `#may-bans-bl:example.com`, which can be used to share the list with
 other communities.

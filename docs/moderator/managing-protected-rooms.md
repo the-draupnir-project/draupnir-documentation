@@ -71,7 +71,7 @@ The same can be done if you are trying to remove a room
 Once Draupnir is protecting a room, Draupnir may start to complain
 about missing permissions. You will want to first take note of which
 permissions Draupnir has described as missing. Then you will go to the
-protected rooms's settings in your client and give Draupnir the
+protected room's settings in your client and give Draupnir the
 "Admin" power level.
 
 To understand how permissions work in Matrix, you can review our
