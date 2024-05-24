@@ -41,8 +41,10 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/the-draupnir-project/draupnir-documentation/tree/main/website',
+          routeBasePath: '/',
         },
         blog: false,
+        pages: false,
         //{
         //  showReadingTime: true,
         //  // Please change this to your repo.

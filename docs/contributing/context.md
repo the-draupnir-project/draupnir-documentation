@@ -38,7 +38,7 @@ This has to be because there is no immediate way to know whether the
 new state event represents the current state of the room, or is a
 stale event that has been discovered by Draupnir's homeserver
 (ie a fork in the DAG maintained by another homeserver has converged
-back with the one maintiained by Draupnir's own homeserver).
+back with the one maintained by Draupnir's own homeserver).
 
 ### Policy Lists
 
@@ -132,7 +132,7 @@ active room first.
 
 Mjolnir was originally created by
 [Travis Ralston](https://github.com/turt2live) as a good enough
-solution temprarily made permanent.
+solution temporarily made permanent.
 The abstract architecture of Mjolnir remains today and we are
 thankful for good foundations, and significantly
 [policies](https://spec.matrix.org/latest/client-server-api/#moderation-policy-lists)

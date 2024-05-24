@@ -180,13 +180,13 @@ finding a way to conduct business in an ethical way,
 and this is problematic.
 
 Once you start working within capitalism with capitalism, and exchange
-your power and influence over a work to monitize the work itself,
+your power and influence over a work to monetize the work itself,
 the work will gain inertia and a power of its own that you cannot control.
 You will work for the work, for external interests, and these won't
 be the interests of your powerless users who you were among to begin with.
 
 It would be extreme, but I am tempted to suggest that by performing a
-buisness this way, you are part of an effort
+business this way, you are part of an effort
 which not only reinforces capitalism but works to make it more
 efficient. Effectively working to make capitalism more powerful.
 Congratulations.
@@ -198,12 +198,12 @@ the law.
 Therefore I propose a new licensing model, one which appeals
 to the power of public pressure rather than the law.
 
-Such a license would be liberal, allowing incorperation into
+Such a license would be liberal, allowing incorporating into
 proprietary works provided it retained a notice.
 However, any work which is used in any way to conduct business must
-report all software being used by the buisness with this license,
-all turnover made by the buisness, all profit made by the buisness
-and an estimation of both profit and turnover made by the buisness in
+report all software being used by the business with this license,
+all turnover made by the business, all profit made by the business
+and an estimation of both profit and turnover made by the business in
 relation to the collection of software reported.
 
 It is not clear to me how often these figures should be reported
@@ -212,9 +212,9 @@ be found centrally). It is also unclear how to create the legalise
 required.
 
 With the information these licenses would provide, public pressure
-could then be used to demand reperations for the profits made by
+could then be used to demand reparations for the profits made by
 pillaging and destructive businesses.
-It is not clear yet how any reperations would be distributed,
+It is not clear yet how any reparations would be distributed,
 probably through some system of
 [venture communes](https://wiki.p2pfoundation.net/Venture_Commune).
 The idea is to ensure that the developers and users of projects
