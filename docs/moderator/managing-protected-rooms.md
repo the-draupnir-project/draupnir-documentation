@@ -83,3 +83,43 @@ A third party tool can be used to quickly add entire groups of rooms to
 be protected Draupnir. You will have to sign in using the same account
 as Draupnir, so this is only supported by users of "bot mode" for now.
 You can find the tool [here](https://mru.rory.gay/Moderation/DraupnirProtectedRoomsEditor).
+
+## Protecting encrypted rooms
+
+:::warning
+
+When public Matrix rooms are encrypted, untrusted parties can deny
+Draupnir, yourself, and your moderators access to the decryption keys
+of malicious messages. Meaning that you will be unable to read them,
+while the rest of your community can.
+
+:::
+
+:::info
+
+Draupnir can still protect encrypted rooms without an E2EE capable
+device.
+
+:::
+
+Draupnir can still protect encrypted rooms even without enabling any
+E2EE device for Draupnir to use. Most functionality will
+work without any problem, however some protections will be unable to
+reliably function. Specifically any protection that needs to access
+the content of an event can encounter problems. This includes
+protetions such as `WordList` and `FirstMessageIsImage`.
+
+If your Draupnir deployment supports encryption, protections that
+require access to event content can be bypassed by malicious
+users. The Matrix specification currently does not provide mechanisms
+that allow a device to get message keys from third parties, so unless
+Draupnir is provided keys directly from the event sender, then
+Draupnir will be unable to decrypt a given message. While considering
+the frequency of E2EE issues, Draupnir can not make a choice to
+sanction users for not providing keys automatically, which could
+otherwise be used as a workaround.
+
+The E2EE functionality is not part of the Dogfooding program that
+Draupnir has in place as an extra layer of quality assurance above
+that offered by our CI testing. You can read more about this program
+in [The Dogfood Guide](/shared/dogfood.md).
