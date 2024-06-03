@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 sidebar_label: Creating the management room
 ---
 
@@ -52,10 +52,5 @@ the configuration with it. Alternatively, you can create a room alias.
 ## Encrypting the management room
 
 We do not recommend setting up an encrypted management room, and we
-cannot provide support for setting one up. This is because Pantalaimon
-has consistently confused beginners that are setting it up with
-Draupnir, and we do not use it ourselves. Experienced system admins
-are welcome to attempt to set up Pantalaimon, but must be aware that
-any issues that they experience getting Draupnir to start are
-extremely likely to be from the Pantalaimon configuration and not
-Draupnir itself.
+cannot provide support for setting one up. Please see our notes on
+encryption [here](./encryption).
