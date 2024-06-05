@@ -18,7 +18,7 @@ following installation routes:
 
 1. [Installation with Docker and systemd](./systemd) (recommended).
 2. [Advanced Docker setup](./setup_docker).
-3. [Advanced setup from source](./setup_source).
+3. [Advanced setup from source](./setup_selfbuild).
 
 :::
 
