@@ -8,15 +8,6 @@ sidebar_label: Installation with Docker and systemd
 If docker is installed on your system, installing Draupnir is as
 simple as creating the following systemd unit file.
 
-:::warning[TODO]
-
-Questions:
-
-1. Do we need a specific user to write to the data directory? Does
-docker even work well with that?
-
-:::
-
 ## Pre-requisites
 
 This guide assumes you have read over the different options available
@@ -33,7 +24,7 @@ You will then want to copy your configuration file for Draupnir to
 `/var/lib/draupnir/config/production.yaml`.
 
 Then you will want to copy the following systemd unit file to
-`where?` and call it `draupnir.service`.
+`/etc/systemd/system/draupnir.service`.
 
 ```
 [Unit]
