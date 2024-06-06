@@ -1,11 +1,28 @@
 # Synapse module
 
+:::warning
+
+The Synapse module is unmaintained, is exactly the same as the module
+provided by Mjolnir, and will likely be removed from Draupnir
+in the future. However, should the module be removed, mjolnir's
+module will still be compatible with Draupnir's policy lists.
+
+:::
+
+:::info
+
+When Synapse workers are used, changes to policy lists may not
+propagate to all workers until Synapse is restarted.
+
+:::
+
 **This requires Synapse 1.53.0 or higher**
 
-Using the bot to manage your rooms is great, however if you want to use your ban lists
-(or someone else's) on your server to affect all of your users then a Synapse module
-is needed. Primarily meant to block invites from undesired homeservers/users, Mjolnir's
-Synapse module is a way to interpret ban lists and apply them to your entire homeserver.
+The Synapse module is indended to be used to apply policies to the
+entire homeserver, to affect all of your users. This is primarily
+meant to block invites from undesired homeservers/users, Mjolnir's
+Synapse module is a way to interpret ban lists and apply them to your
+entire homeserver.
 
 First, install the module to your Synapse python environment:
 

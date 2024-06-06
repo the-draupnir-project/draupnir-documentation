@@ -1,4 +1,22 @@
-# Source
+---
+sidebar_position: 7
+sidebar_label: Advanced setup from source
+---
+
+# Advanced setup from source
+
+:::tip
+
+This guide is for experianced system administrators.
+The recomended installation method is [using Docker with systemd](./systemd).
+
+:::
+
+:::info
+
+This guide is meant to be read in conjunction with [Draupnir parameters and options](./starting_draupnir).
+
+:::
 
 These instructions are to build and run draupnir without using [Docker](./setup_docker.md).
 You need to have installed `yarn` 1.x and Node 18.
