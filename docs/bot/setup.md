@@ -30,7 +30,7 @@ yourself from source, or via
 
 :::tip
 
-We strongly recommend new or inexperianced system administrators to
+We strongly recommend new or inexperienced system administrators to
 follow our guide for [installation with Docker and
 systemd](./systemd).  If you are preparing to administer a new
 homeserver, then we strongly recommend using
