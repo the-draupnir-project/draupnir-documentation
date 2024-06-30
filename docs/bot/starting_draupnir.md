@@ -31,7 +31,7 @@ Most of Draupnir's configuration is done through a YAML file. The path
 of this config is provided with the `--draupnir-config` option.
 
 Please go through [the sample configuration file's
-documentation](https://github.com/the-draupnir-project/Draupnir/config/default.yaml),
+documentation](https://github.com/the-draupnir-project/Draupnir/blob/main/config/default.yaml),
 download it, and rename it `production.yaml`. You should read over the
 different options and edit them to your liking. This is the file that
 will be refered to as "the config" throughout Draupnir's
