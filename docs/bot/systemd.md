@@ -32,21 +32,32 @@ Description=Draupnir Docker Container
 After=docker.service
 Requires=docker.service
 
+After=network-online.target
+Wants=network-online.target
+
 [Service]
-Type=simple
-ExecStartPre=-/usr/bin/env sh -c '/usr/bin/env docker stop --time=3 draupnir 2>/dev/null || true'
-ExecStartPre=-/usr/bin/env sh -c '/usr/bin/env docker rm draupnir 2>/dev/null || true'
+Type=exec
+# Update Draupnir
+ExecStartPre=docker image pull gnuxie/draupnir:latest
+# Clean up any accidentally existing containers
+ExecStartPre=docker container rm --force draupnir
 
-ExecStart=/usr/bin/docker run --rm --pull=always --name=draupnir -v /var/lib/draupnir:/data gnuxie/draupnir:latest bot --draupnir-config /data/config/production.yaml
+ExecStart=docker container run --rm --pull=never --name=draupnir -v /var/lib/draupnir:/data gnuxie/draupnir:latest bot --draupnir-config /data/config/production.yaml
 
-ExecStop=-/usr/bin/env sh -c '/usr/bin/env docker stop --time=3 draupnir 2>/dev/null || true'
-ExecStop=-/usr/bin/env sh -c '/usr/bin/env docker rm draupnir 2>/dev/null || true'
+ExecStop=-docker container stop --time=10 draupnir
+
+# Let Docker handle timeout instead
+TimeoutStopSec=infinity
 
 Restart=always
 RestartSec=30
 
 [Install]
+WantedBy=multi-user.target
 ```
+
+You will then need to run `systemctl daemon-reload` to register the
+service file.
 
 Finally run `systemctl enable draupnir.service` to tell systemd to
 start Draupnir the next time your system boots.

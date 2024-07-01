@@ -7,7 +7,7 @@ sidebar_label: Advanced Docker setup
 
 :::tip
 
-This guide is for experianced system administrators. If you are
+This guide is for experienced system administrators. If you are
 unfamiliar with Docker or system administration in general,
 then you should refer to our recommended installation method
 of [using Docker with systemd](./systemd).
@@ -72,7 +72,7 @@ Arguments to Draupnir itself from `docker run` begin with `bot`.
 
 :::
 
-The container entrypoint is shared with the option to deploy Draupnir
+The container entry-point is shared with the option to deploy Draupnir
 as an appservice, and therefore *bot mode* must be explicitly asked
 for when providing options with `docker run`. This is done by ensuring
 the first argument that gets passed to the container is `bot`.
