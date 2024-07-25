@@ -103,7 +103,7 @@ We follow a simple 'inbound=outbound' model for contributions: the act
 of submitting an 'inbound' contribution means that the contributor
 agrees to license their contribution under the same terms as the
 project's overall 'outbound' license - in our case, this is the
-Academic Free License v. 3.0 (see [LICENSE](../../LICENSE.md)).
+Academic Free License v. 3.0 (see [LICENSE](https://github.com/the-draupnir-project/Draupnir/blob/main/LICENSES/AFL-3.0.txt)).
 
 In order to have a concrete record that your contribution is
 intentional and you agree to license it under the same terms as the
