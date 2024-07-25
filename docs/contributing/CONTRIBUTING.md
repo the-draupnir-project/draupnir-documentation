@@ -96,14 +96,25 @@ please keep an eye on the pull request for feedback.
 
 ## Sign off
 
-In order to have a concrete record that your contribution is intentional
-and you agree to license it under the same terms as the project's license, we've adopted the
-same lightweight approach that the Linux Kernel
-[submitting patches process](https://www.kernel.org/doc/html/latest/process/submitting-patches.html#sign-your-work-the-developer-s-certificate-of-origin>),
-[Docker](https://github.com/docker/docker/blob/master/CONTRIBUTING.md), and many other
-projects use: the DCO (Developer Certificate of Origin:
-http://developercertificate.org/). This is a simple declaration that you wrote
-the contribution or otherwise have the right to contribute it to Draupnir:
+We ask that everybody who contributes to Draupnir
+repositories signs off their contributions, as explained below.
+
+We follow a simple 'inbound=outbound' model for contributions: the act
+of submitting an 'inbound' contribution means that the contributor
+agrees to license their contribution under the same terms as the
+project's overall 'outbound' license - in our case, this is the
+Academic Free License v. 3.0 (see [LICENSE](https://github.com/the-draupnir-project/Draupnir/blob/main/LICENSES/AFL-3.0.txt)).
+
+In order to have a concrete record that your contribution is
+intentional and you agree to license it under the same terms as the
+project's license, we've adopted the same lightweight approach used by
+the [Linux
+Kernel](https://www.kernel.org/doc/html/latest/process/submitting-patches.html),
+[Docker](https://github.com/docker/docker/blob/master/CONTRIBUTING.md),
+and many other projects: the [Developer Certificate of
+Origin](https://developercertificate.org/) (DCO). This is a simple
+declaration that you wrote the contribution or otherwise have the
+right to contribute it to Matrix:
 
 ```
 Developer Certificate of Origin
@@ -143,17 +154,12 @@ By making a contribution to this project, I certify that:
     this project or the open source license(s) involved.
 ```
 
-If you agree to this for your contribution, then all that's needed is to
-include the line in your commit or pull request comment:
+If you agree to this for your contribution, then all that's needed is
+to include the line in your commit or pull request comment:
 
 ```
 Signed-off-by: Your Name <your@email.example.org>
 ```
-
-We accept contributions under a legally identifiable name, such as
-your name on government documentation or common-law names (names
-claimed by legitimate usage or repute). Unfortunately, we cannot
-accept anonymous contributions at this time.
 
 Git allows you to add this signoff automatically when using the `-s`
 flag to `git commit`, which uses the name and email set in your
