@@ -7,7 +7,7 @@ sidebar_label: Advanced setup from source
 
 :::tip
 
-This guide is for experianced system administrators.
+This guide is for experienced system administrators.
 The recomended installation method is [using Docker with systemd](./systemd).
 
 :::
