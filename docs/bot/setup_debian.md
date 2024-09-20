@@ -11,7 +11,7 @@ install node 18 from the node source repo, the full instructions can be found at
 ```shell
 curl -fsSL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
 bash nodesource_setup.sh
-apt update && apt install nodejs -y 
+apt update && apt install nodejs -y
 ````
 install yarn via npm
 ```shell
@@ -23,7 +23,7 @@ mkdir /opt/mod-bot
 ````
 clone the repo
 ````shell
-git clone https://github.com/the-draupnir-project/Draupnir.git /opt/mod-bot/Draupnir 
+git clone https://github.com/the-draupnir-project/Draupnir.git /opt/mod-bot/Draupnir
 ````
 create the directory for draupnirs datastorage
 ````shell
@@ -37,7 +37,7 @@ yarn global add corepack
 add a user to run the bot  
 this user will be used by systemd to run the bot since there is no need to run it with root permissions
 ````shell
-useradd -m draupnir                                                                                                                         
+useradd -m draupnir  
 ````
 give ownership of the draupnir directory to the bot user
 ````shell
@@ -55,7 +55,7 @@ cp /opt/mod-bot/Draupnir/config/default.yaml /opt/mod-bot/Draupnir/config/produc
 ````
 change the path of the datadirectory from the default to the directory we created earlier since the default dir is for the docker setup
 ````shell
-sed -i 's|dataPath: "/data/storage"|dataPath: "/opt/mod-bot/Draupnir/datastorage"|' /opt/mod-bot/Draupnir/config/production.yaml            
+sed -i 's|dataPath: "/data/storage"|dataPath: "/opt/mod-bot/Draupnir/datastorage"|' /opt/mod-bot/Draupnir/config/production.yaml  
 ````
 edit the production config:  
 the most important things to configure are the `homeserverUrl:`, the `rawHomeserverUrl:`, the `accessToken:` and the `managementRoom:`
@@ -65,9 +65,9 @@ nano /opt/mod-bot/Draupnir/config/production.yaml
 
 ## Example systemd service
 copy this to `/etc/systemd/system/draupnir.service` and enable with `systemctl enable draupnir`, then simply start with `systemctl start draupnir`  
-  
+
 !!IMPORTANT!!  
-  
+
 before you attempt to start the service, make sure that the management room for draupnir exists on your homeserver and is joinable by draupnir (either public room or invite the bot account in advance)
 
 ````ini
@@ -129,8 +129,8 @@ build the bot
 ````shell
 sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && yarn build"
 ````
-  
-then simply start the bot again with 
+
+then simply start the bot again with
 ````shell
 systemctl restart draupnir
 ````
