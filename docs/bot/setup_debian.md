@@ -66,9 +66,11 @@ nano /opt/mod-bot/Draupnir/config/production.yaml
 ## Example systemd service
 copy this to `/etc/systemd/system/draupnir.service` and enable with `systemctl enable draupnir`, then simply start with `systemctl start draupnir`  
 
-!!IMPORTANT!!  
+:::tip
 
 before you attempt to start the service, make sure that the management room for draupnir exists on your homeserver and is joinable by draupnir (either public room or invite the bot account in advance)
+
+:::
 
 ```ini
 
