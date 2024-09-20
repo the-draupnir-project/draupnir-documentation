@@ -31,7 +31,6 @@ mkdir /opt/mod-bot/Draupnir/datastorage
 ```
 add typescript and corepack
 ```shell
-yarn global add typescript
 yarn global add corepack
 ```
 add a user to run the bot  
