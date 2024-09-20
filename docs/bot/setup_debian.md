@@ -1,5 +1,5 @@
 # Setting up Draupnir on Debian
-These are instructions for the installation of draupnir from source on Debian
+These are instructions for the installation of draupnir from source on Debian  
 This installation method is intended for experienced sysadmins.
 
 ## installation
