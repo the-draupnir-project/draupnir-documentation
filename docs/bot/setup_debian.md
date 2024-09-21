@@ -2,7 +2,7 @@
 These are instructions for the installation of draupnir from source on Debian  
 This installation method is intended for experienced sysadmins.
 
-## installation
+## Installation
 install git curl and sudo
 ```shell
 apt update && apt install -y git curl sudo
