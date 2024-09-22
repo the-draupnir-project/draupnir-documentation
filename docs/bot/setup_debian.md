@@ -120,7 +120,7 @@ systemctl stop draupnir
 ```
 pull updates from github with
 ```shell
-sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && git pull"
+sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && git pull && git fetch --tags"
 ```
 install/update yarn
 ```shell
