@@ -21,9 +21,12 @@ create the directory to clone the repo
 ```shell
 mkdir /opt/mod-bot  
 ```
-clone the repo
+clone the repo and fetch the tags
 ```shell
 git clone https://github.com/the-draupnir-project/Draupnir.git /opt/mod-bot/Draupnir
+```
+```shell
+git -C /opt/mod-bot/Draupnir fetch --tags
 ```
 create the directory for draupnirs datastorage
 ```shell
