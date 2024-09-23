@@ -47,6 +47,7 @@ See the following links for corresponding installation documentation:
   the most convenient way to run Matrix services. Recommended if you
   are preparing a new homeserver or are already using
   matrix-docker-ansible-deploy.
+- [Installation on Debian](./setup_debian.md) - Installation on debian by using [NodeSource](https://github.com/nodesource/distributions?tab=readme-ov-file).
 - [Advanced Docker setup](./setup_docker.md) - for experienced system
   administrators.
 - [Advanced setup from source](./setup_selfbuild.md) - for experienced
