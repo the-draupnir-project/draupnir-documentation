@@ -1,6 +1,15 @@
+---
+sidebar_position: 6
+---
+
 # Installation on Debian
-These are instructions for the installation of draupnir from source on Debian  
+
+:::tip
+
+These are instructions for the installation of draupnir from source on Debian.
 This installation method is intended for experienced sysadmins.
+
+:::
 
 ## Installation
 install git curl and sudo
@@ -19,7 +28,7 @@ npm install --global yarn                                                       
 ```
 create the directory to clone the repo
 ```shell
-mkdir /opt/mod-bot  
+mkdir /opt/mod-bot
 ```
 clone the repo and fetch the tags
 ```shell
@@ -36,10 +45,10 @@ add typescript and corepack
 ```shell
 yarn global add corepack
 ```
-add a user to run the bot  
+add a user to run the bot
 this user will be used by systemd to run the bot since there is no need to run it with root permissions
 ```shell
-useradd -m draupnir  
+useradd -m draupnir
 ```
 give ownership of the draupnir directory to the bot user
 ```shell
@@ -57,16 +66,16 @@ cp /opt/mod-bot/Draupnir/config/default.yaml /opt/mod-bot/Draupnir/config/produc
 ```
 change the path of the datadirectory from the default to the directory we created earlier since the default dir is for the docker setup
 ```shell
-sed -i 's|dataPath: "/data/storage"|dataPath: "/opt/mod-bot/Draupnir/datastorage"|' /opt/mod-bot/Draupnir/config/production.yaml  
+sed -i 's|dataPath: "/data/storage"|dataPath: "/opt/mod-bot/Draupnir/datastorage"|' /opt/mod-bot/Draupnir/config/production.yaml
 ```
-edit the production config:  
+edit the production config:
 the most important things to configure are the `homeserverUrl:`, the `rawHomeserverUrl:`, the `accessToken:` and the `managementRoom:`
 ```shell
 nano /opt/mod-bot/Draupnir/config/production.yaml
 ```
 
 ## Example systemd service
-copy this to `/etc/systemd/system/draupnir.service` and enable with `systemctl enable draupnir`, then simply start with `systemctl start draupnir`  
+copy this to `/etc/systemd/system/draupnir.service` and enable with `systemctl enable draupnir`, then simply start with `systemctl start draupnir`
 
 :::tip
 
