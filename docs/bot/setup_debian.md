@@ -16,7 +16,7 @@ install git curl and sudo
 ```shell
 apt update && apt install -y git curl sudo
 ```
-install node 18 from the node source repo, the full instructions can be found at https://github.com/nodesource/distributions
+install node 20 from the node source repo, the full instructions can be found at https://github.com/nodesource/distributions
 ```shell
 curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
 bash nodesource_setup.sh
