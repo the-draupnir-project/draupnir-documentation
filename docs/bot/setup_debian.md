@@ -24,7 +24,7 @@ apt update && apt install nodejs -y
 ```
 install yarn via npm
 ```shell
-npm install --global yarn                                                                                                                    # install yarn via npn
+npm install --global yarn
 ```
 create the directory to clone the repo
 ```shell
@@ -41,7 +41,7 @@ create the directory for draupnirs datastorage
 ```shell
 mkdir /opt/mod-bot/Draupnir/datastorage
 ```
-add typescript and corepack
+add corepack
 ```shell
 yarn global add corepack
 ```
