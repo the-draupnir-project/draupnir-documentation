@@ -85,12 +85,12 @@ If you change the configuration, you will need to restart Synapse. You'll also n
 to restart Synapse to install the plugin.
 
 ### Docker
-Installations that use the Docker image of `synapse` that wish to use the synapse module require the `./Draupnir/synapse_antispam/mjolnir` project directory to be bind mounted into the `synapse` container's `/usr/local/lib/python3.11/site-packages/mjolnir` directory.  Clone the project (`git clone https://github.com/the-draupnir-project/Draupnir`), then use the following `docker-compose` block as an example.
+Installations that use the Docker image of `synapse` that wish to use the synapse module require the `./Draupnir/synapse_antispam/mjolnir` project directory to be bind mounted into the `synapse` container's `/usr/local/lib/python3.12/site-packages/mjolnir` directory.  Clone the project (`git clone https://github.com/the-draupnir-project/Draupnir`), then use the following `docker-compose` block as an example.
 
 ```yaml
 version: '3.7'
 services:
   synapse:
     volumes:
-      - /<path>/draupnir/synapse_antispam/mjolnir:/usr/local/lib/python3.11/site-packages/mjolnir
+      - /<path>/draupnir/synapse_antispam/mjolnir:/usr/local/lib/python3.12/site-packages/mjolnir
 ```
