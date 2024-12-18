@@ -80,5 +80,5 @@ the first argument that gets passed to the container is `bot`.
 So for example: o start Draupnir, you could use the following command:
 
 ```bash
-docker run --rm -it -v --name=draupnir ./var/lib/draupnir:/data gnuxie/draupnir:latest bot --draupnir-config /data/config/production.yaml
+docker run --rm -it --name=draupnir -v ./var/lib/draupnir:/data gnuxie/draupnir:latest bot --draupnir-config /data/config/production.yaml
 ```
