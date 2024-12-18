@@ -18,7 +18,6 @@ device. Please see protecting encrypted rooms [here](../moderator/managing-prote
 
 :::
 
-
 :::danger
 
 We can not at this time recommend setting up Draupnir with an E2EE

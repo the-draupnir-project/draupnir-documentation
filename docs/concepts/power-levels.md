@@ -98,5 +98,3 @@ the power level of the `state_default` field at the top level of the
 [^help]:
     In that case, we recommend you to join the draupnir support room for
     help [#draupnir:matrix.org](https://matrix.to/#/#draupnir:matrix.org).
-
-[^power-levels-spec]: The Matrix Specification for `m.room.power_levels` https://spec.matrix.org/latest/client-server-api/#mroompower_levels.

@@ -2,7 +2,6 @@
 
 Welcome to the Dogfood Guide. This document details a semi updated list of who is Dogfooding what and this list serves to inform you of what components are under the most review due to this.
 
-
 ## The List
 
 Out of our installation methods from setup.md the dogfood statuses are
