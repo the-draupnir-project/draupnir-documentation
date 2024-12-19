@@ -116,7 +116,7 @@ Origin](https://developercertificate.org/) (DCO). This is a simple
 declaration that you wrote the contribution or otherwise have the
 right to contribute it to Matrix:
 
-```
+```txt
 Developer Certificate of Origin
 Version 1.1
 
@@ -157,7 +157,7 @@ By making a contribution to this project, I certify that:
 If you agree to this for your contribution, then all that's needed is
 to include the line in your commit or pull request comment:
 
-```
+```txt
 Signed-off-by: Your Name <your@email.example.org>
 ```
 
@@ -227,4 +227,4 @@ The idea is to ensure that the developers and users of projects
 would not be distracted from providing each other mutual
 support and to give them a hope of escaping.
 
-[^post-open-source] https://applied-langua.ge/posts/the-poverty-of-post-open-source.html.
+[^post-open-source] [https://applied-langua.ge/posts/the-poverty-of-post-open-source.html](https://applied-langua.ge/posts/the-poverty-of-post-open-source.html).

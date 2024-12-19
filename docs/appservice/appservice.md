@@ -34,7 +34,7 @@ Please note that Draupnir in appservice mode does not support E2EE nor support u
 
 The provisioned Draupnirs only inherit a subset of the configuration options that are accessible to Bot mode Draupnir. Those are the following options. If there's `:` as a suffix to a config option that means there are sub options like how under commands in the default config you also find `additionalPrefixes:` with a value of `draupnir`.
 
-```
+```txt
 logLevel
 syncOnStartup
 fasterMembershipChecks
@@ -49,7 +49,7 @@ protections:
 
 8. Copy the `draupnir-registration.yaml` to your matrix homeserver and refer to it in `homeserver.yaml` like so:
 
-```
+```yaml
   app_service_config_files:
     - "/data/draupnir-registration.yaml"
 ```
