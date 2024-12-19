@@ -26,7 +26,8 @@ entire homeserver.
 
 First, install the module to your Synapse python environment:
 
-```shellpip install -e "git+https://github.com/matrix-org/mjolnir.git#egg=mjolnir&subdirectory=synapse_antispam"
+```shell
+pip install -e "git+https://github.com/matrix-org/mjolnir.git#egg=mjolnir&subdirectory=synapse_antispam"
 ```
 
 _Note_: Where your python environment is depends on your installation method. Visit
