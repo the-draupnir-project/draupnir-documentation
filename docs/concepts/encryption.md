@@ -2,7 +2,11 @@
 sidebar_position: 1
 sidebar_label: Encryption
 ---
+<!--
+SPDX-FileCopyrightText: 2025 FSG-Cat <catalanlover@protonmail.com>
 
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
 # Encryption in a Draupnir Context
 
 **You do not need Encryption Support in Draupnir** E2EE does not provide any additional security in Draupnir's context.
