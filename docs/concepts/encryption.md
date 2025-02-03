@@ -50,7 +50,9 @@ Another thing to note is that E2EE does not protect commands from
 metadata based deanonymisation. Because the sender is encoded in the
 plain text portion of Matrix events, along with the time the message
 was sent, it is straightforward for anyone with access to the room
-history to deanonymise the sender of bot commands.
+history to deanonymise the sender of bot commands. And as commands
+often have observable effects outside of the management room, like a
+ban or a policy creation, the exact command used can also be reversed.
 
 ### Room Level Encryption
 
@@ -76,7 +78,7 @@ encryption in your management room. To do this you have two options:
 * Execute a manual room upgrade on the room. If doing a manual room
   upgrade usage of scripts like [this
   one](https://gitea.blesmrt.net/mikaela/scripts/src/branch/master/bash/matrix-upgrade-room.bash)
-  by Aminda.
+  by Aminda, which is strongly recommended.
 
 Please note that protection settings are stored in the mangement
 room's room state and will be reset to default by the migration away
