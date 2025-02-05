@@ -9,6 +9,14 @@ SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
+:::tip
+
+This is an overview of Draupnir protections, for a more indepth (but
+still friendly) explanation, please view [this
+page](./matrix-protection-suite/concepts/protection).
+
+:::
+
 # Protections
 
 Protections are plugins or individual modules that work with
