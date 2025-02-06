@@ -1,12 +1,12 @@
+---
+sidebar_position: 1
+---
+
 <!--
 SPDX-FileCopyrightText: 2025 Gnuxie <Gnuxie@protonmail.com>
 
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
-
----
-sidebar_position: 1
----
 
 # Configuring protections
 
