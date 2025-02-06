@@ -10,13 +10,23 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Protections & Capabilities
 
+:::tip
+
+For a tutorial on how to use protections, please see [the protections
+tutorial](../../protections/configuring-protections). This page is for an
+advanced explanation of how protections work and what capabilities
+are. Intended for room moderators with advanced use cases and
+protection developers.
+
+:::
+
 ## Overview
 
 A protection is a self contained module that can hook into a variety of
 different events and react to them:
 
 * Protections provide functionality that is directly useful to the end
-user, often in reaction reaction to other events.
+user, often in reaction to other events.
   - So for example, in Draupnir, a protection exists to ban room members
     in reaction to policies that exist on Draupnir's watched policy lists.
 
@@ -38,7 +48,7 @@ supporting code provides protections with the means to fetch information,
 and cause effects.
 
 So as another example, library code needs to provide the underlying
-functionality to watch policy lists. Library code also noeeds to
+functionality to watch policy lists. Library code also needs to
 provide the infrastructure to inform protections when policies are
 added and removed. Another example is that library code also needs to
 provide code for effects, a protection cannot issue room level bans if
@@ -60,9 +70,9 @@ authority_. This is to say effects are caused directly, by using
 authority that is available to the entire application. Draupnir has
 access to the entire Matrix account it has been configured to use, and
 so conventionally all parts of Draupnir could cause any effect.
-Whether that be shutdown Matrix rooms, ban users, hijack rooms, go
-rogue. Draupnir has the ambient authority to do all these things, we
-have to challange this authority and create ways of containing and
+Whether that be to shutdown Matrix rooms, ban users, hijack rooms, or
+go rogue. Draupnir has the ambient authority to do all these things,
+we have to challange this authority and create ways of containing and
 auditing it.  Because without, any protection that is enabled could
 act with the entire authority of Draupnir, to shutdown rooms and ban
 users, and this would be very confusing to the end user, especially
