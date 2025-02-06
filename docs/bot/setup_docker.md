@@ -48,6 +48,7 @@ If there are pre-releases, you should scroll down until you find the
 latest release.
 
 ### `develop`
+
 The `develop` tag will always refer to an image built from the `main`
 branch of Draupnir's git repository. You will not experience any
 severe breakages by using this tag, but you will want to be present
