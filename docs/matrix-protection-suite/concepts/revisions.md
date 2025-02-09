@@ -108,21 +108,26 @@ each revision issuer relevant to a room is a singleton.
 
 :::
 
+:::tip
+
+If you are writing a protection, you may want to view the
+documentation for the various revision issuers used by the _[protected
+rooms
+set](./protected-rooms-set#the-revision-issuers-used-by-a-protectedroomsset)_
+as all the revision issuers that you may need to access are provided there.
+
+:::
+
 There are lots of revision issuers that make the
 matrix-protection-suite work. However, most of the time they are only
 used indirectly, by the handles that protections can provide when they
 implement the `Protection` interface.
 
-FIXME: I think part of this should be moved to documentation on the
-`ProtectedRoomsSet`.
-
 * `RoomStateRevisionIssuer` produces models of the room state,
   and is currently acquired by using the `RoomStateManager`.
-  + Used to call `Protection['handleStateChange']`.
 
 * `RoomMembershipRevisionIssuer` produces models for room membership,
   and is currently acquired by using the `RoomMembershipManager`.
-  + Used to call `Protection['handleMembershipChange']`.
 
 * `PolicyRoomRevisionIssuer` produces models for the policies in a
   matrix room's state, and is acquired by using the `PolicyRoomManager`.
@@ -130,14 +135,10 @@ FIXME: I think part of this should be moved to documentation on the
 * `PolicyListRevisionIssuer` produces models for aggregated and virtual
   policy lists that make up policies from several policy rooms. These
   are used to implement list subscription.
-  + Used to call `Protection['handlePolicyChange']`
-  + Used to provide a _protected room set's_ _issuer manager_ property.
 
 * `SetMembershipRevisionIssuer` produces a consolidated model for membership
   over a set of rooms.
-  + Used to call `Protection['handleSetMembershipChange']`.
 
 * `SetMembershihpPolicyRevisionIssuer` produces a revision containing
   all of the members from a `SetMembershipRevisionIssuer` that also
   have matching policies from a `PolicyListRevisionIssuer`.
-  + Used to call `Protection['handleSetMembershipPolicyMatchesChange']`.
