@@ -37,14 +37,14 @@ policy rooms.
 The protected rooms set sources its information by managing subscriptions
 to multiple [revision issuers](./revisions).
 
-### Sourcing moderation policies vis the _policy list config_
+### Sourcing moderation policies vis the _watched policy rooms_
 
-The first of these can be found under the `issuerManager` property and
-the `PolicyListConfig` contained within it. There is a
-`PolicyListRevisionIssuer` here that aggregates and filters all
-policies from the various policy list subscription profiles into one
-`PolicyListRevision` that can directly be consumed by protections
-within the `ProtectedRoomsSet`.
+The first of these can be found under the `watchedPolicyRooms`
+property and the `WatchedPolicyRooms` object contained within
+it. There is a `PolicyListRevisionIssuer` here that aggregates and
+filters all policies from the various policy list subscription
+profiles into one `PolicyListRevision` that can directly be consumed
+by protections within the `ProtectedRoomsSet`.
 
 When this _policy list revision issuer_ updates, _protections_ within
 the _protected rooms set_ will each be called with the handle
