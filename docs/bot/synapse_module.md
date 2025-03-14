@@ -16,6 +16,12 @@ propagate to all workers until Synapse is restarted.
 
 :::
 
+:::tip
+
+See also configuration of [synapse-http-antispam](./synapse-http-antispam).
+
+:::
+
 **This requires Synapse 1.53.0 or higher**
 
 The Synapse module is indended to be used to apply policies to the
