@@ -31,7 +31,7 @@ dependencies.
 You will also want to edit your `settings.json` to match something like
 this, so that you can debug into MPS while debugging Draupnir.
 
-```
+```json
     "debug.javascript.terminalOptions": {
         "runtimeArgs": ["--preserve-symlinks"],
         "sourceMaps": true,
@@ -83,38 +83,38 @@ To use mx-tester you will need to have rust installed. You can do that at [rustu
 
 Once rust is installed you can install mx-tester like so.
 
-```
-$ cargo install mx-tester
+```shell
+cargo install mx-tester
 ```
 
 Once you have mx-tester installed you we will want to build a synapse image with synapse_antispam from the Draupnir project root.
 
-```
-$ mx-tester build
+```shell
+mx-tester build
 ```
 
 Then we can start a container that uses that image and the config in `mx-tester.yml`.
 
-```
-$ mx-tester up
+```shell
+mx-tester up
 ```
 
 Once you have called `mx-tester up` you can run the integration tests.
 
-```
-$ yarn test:integration
+```shell
+yarn test:integration
 ```
 
-After calling `mx-tester up`, if we want to play with mojlnir locally we can run the following and then point a matrix client to http://localhost:9999.
+After calling `mx-tester up`, if we want to play with mojlnir locally we can run the following and then point a matrix client to `http://localhost:9999`.
 You should then be able to join the management room at `#moderators:localhost:9999`.
 
-```
+```shell
 yarn test:manual
 ```
 
 Once we are finished developing we can stop the synapse container.
 
-```
+```shell
 mx-tester down
 ```
 
@@ -138,7 +138,7 @@ If you need to debug an issue that is occurring through use in matrix,
 say the unban command has stopped working, you can launch
 mjolnir from the JavaScript Debug Terminal using `yarn test:manual`.
 This will launch mjolnir using the config found in `config/harness.yaml`.
-You can now open https://app.element.io, change the server to `localhost:8081`,
+You can now open [https://app.element.io](https://app.element.io), change the server to `localhost:8081`,
 and then create an account.
 From here you can join the room `#moderators:localhost:9999` (you will also be
 able to find it in the rooms directory) and interact with mjolnir.

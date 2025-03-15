@@ -48,7 +48,6 @@ Draupnir will only respond to commands originating from that room. If
 you want to upgrade your room in the future, you will have to update
 the configuration with it. Alternatively, you can create a room alias.
 
-
 ## Encrypting the management room
 
 We do not recommend setting up an encrypted management room, and we
