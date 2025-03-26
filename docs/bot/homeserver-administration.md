@@ -20,6 +20,11 @@ public:
 * User management: Accounts can be deactivated using the `!draupnir
   deactivate` command.
 
+These features may require either a [synapse admin
+acount](./setup_draupnir_account#making-draupnir-a-synapse-admin) or
+[synapse-http-antispam](./synapse-http-antispam) to be available to
+Draupnir.
+
 ## Enabling readable abuse reports
 
 Draupnir offers the ability to replace the Matrix endpoint used to
