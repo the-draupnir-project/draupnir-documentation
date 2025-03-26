@@ -12,9 +12,9 @@ module allows Draupnir to make decisions about events that are
 received by your homserver. This module replaces the functionality of the
 legacy Mjolnir antispam module.
 
-Currently, Draupnir uses the module to takedown rooms that have been
-added to watched policy lists. We are also working to develop
-countermeasures against invitations from banned users.
+Please see the page on [homeserver
+administration](./homeserver-administration) to see the range of
+features that this module enables.
 
 ## Installation
 
