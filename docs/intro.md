@@ -14,6 +14,8 @@ existing Draupnir, you will want to review the following pages:
   Managing your Draupnir and your protected rooms.
 - [Protections](./protections) - Configuring the protections
   offered by Draupnir.
+- Review whether you require additional [server administrative
+  features](./bot/homeserver-administration).
 
 ## System administrators
 
@@ -25,6 +27,8 @@ to setup Draupnir:
 - [Setup Draupnir as an appservice](./appservice) - Configuring
   Draupnir as an appservice that can manage and provision multiple
   individual Draupnir bots to your homeserver's users or others.
+- Review whether you require additional [server administrative
+  features](./bot/homeserver-administration).
 
 ## Contributors
 
