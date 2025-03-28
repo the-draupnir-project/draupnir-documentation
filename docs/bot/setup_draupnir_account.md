@@ -50,7 +50,6 @@ bot, see [the synapse admin API
 documentation](https://matrix-org.github.io/synapse/latest/admin_api/user_admin_api.html#set-ratelimit)
 for more information.
 
-
 ## Making Draupnir a Synapse Admin
 
 :::note
