@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus gen-api-docs all && docusaurus start",
-    "build": "docusaurus gen-api-docs all && docusaurus build",
+    "regenerate-api": "docusaurus clean-api-docs all && docusaurus gen-api-docs all",
+    "start": "yarn regenerate-api all && docusaurus start",
+    "build": "yarn regenerate-api all && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",

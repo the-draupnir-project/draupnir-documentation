@@ -44,11 +44,10 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 The API specification is generated from the openapi spec in `/api/draupnir-openapi.yaml`.
 
-To update the API specification, run the following commands:
+To update the API specification, run the following command:
 
 ```bash
-yarn docusaurus clean-api-docs all
-yarn docusaurus gen-api-docs all
+yarn regenerate-api
 ```
 
 This will regenerate the mdx files in the `docs/api` directory.
