@@ -436,10 +436,6 @@ paths:
         - SpamChecker
       security:
         - bearerAuth: []
-      # This is purely for reference
-      servers:
-        - url: http://localhost:8080/1/spam_check
-          description: Draupnir SpamChecker API server.
       requestBody:
         content:
           application/json:
@@ -509,10 +505,6 @@ paths:
         - SpamChecker
       security:
         - bearerAuth: []
-      # This is purely for reference
-      servers:
-        - url: http://localhost:8080/1/spam_check
-          description: Draupnir SpamChecker API server.
       requestBody:
         content:
           application/json:
@@ -582,10 +574,6 @@ paths:
         - SpamChecker
       security:
         - bearerAuth: []
-      # This is purely for reference
-      servers:
-        - url: http://localhost:8080/1/spam_check
-          description: Draupnir SpamChecker API server.
       requestBody:
         content:
           application/json:
