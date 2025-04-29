@@ -142,7 +142,8 @@ const config: Config = {
               groupPathsBy: "tag"
             },
             hideSendButton: true,
-            showSchemas: true
+            // They are mostly confusing
+            showSchemas: false
           } satisfies OpenApiPlugin.Options,
         }
       },
