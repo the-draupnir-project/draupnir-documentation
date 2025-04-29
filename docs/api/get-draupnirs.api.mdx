@@ -1,0 +1,72 @@
+---
+id: get-draupnirs
+title: "Get the mxids of draupnirs that this user has provisioned."
+description: "Get the mxids of draupnirs that this user has provisioned."
+sidebar_label: "Get the mxids of draupnirs that this user has provisioned."
+hide_title: true
+hide_table_of_contents: true
+api: eJylVU1z4zYM/SscnBnLSXupTvXuejOebtvMJjl5fKBF2GIikVoSTOzx6L93QFH+yGY77awPlgSCAN8D8HgA16FXZJxdaChhi/TJq9hZ4wNIILUNUC5h1nUB/YupEFYSAlbRG9pDuUxf/gU9ux0g+gZKqIm6sigaV6mmdoHK36bTa5CgMVTedJwMShjziFNwMbtbiCEe9CsJHr9FDPTB6T2Uh/RpPGooyUeUUDlLaImXVNc1pko4iqfA8Q8QqhpbxW+07xBKcOsnrAgkdJ5Rk8HAq67DBP7oF8gbu4W+l2cpl6PfSgLuVNs1eL4Z4lP9eDN72t3dTK+72z8W0EsgQ+x1Rt8sUo2W8lETsL4fEoXO2TCc6GY65cclXw81ikyIeFVBhFhVGMImNlIoqwXVmLkTtQrCI0VvcbDnfaiFx+Cir1AYm1eGvGLt9H4C/59U5b3agwRD2IZ3SDxjawm/5/cyPyeVa0EezTcX9tXAzK8/IiODrVxstLCORLQafaCRjJEsHVGQE8a+qMZoEfaW1G4iOETVGLQkQp1itE6bzf5ib4rl90JtlbFv6CHcUdE1yrxPTCZAAtrYMvjxADk2c5YtMaAX7c5okBDts3WvVuhxPJJ99V4zfVD66xBr7r3zMPJ1/T1fl30nTBBjZzM1KnXSDzrlgqk2BhLGVk3UmPxVx8PkjSIUlUfNSVQTfpKqaFWk2nkT8HLgLlfeI+UxOWSsqE/M9G8F6BYpQWCCg3CbI+XMhOI1E4bS8Dx13r2YYJxFzeBapNplxWRFUVRDCUVjUmFHhbxnpMNMr1F59FyHM+CslOye3KDMTiDzy2fnW0VQwp+KvNmJv1lsPglyz2iTPPFUfj2J5Pw/6pKxG5dOkdk7SfHd4jud5uqzLm+cT3QdndeOobL2D47TyfVkChIaU6EN6RRWJVizz1+ufklrpwsilEWxNVTHNQ97QTVejfxfdd6xUhdjqmLduHXRKmOLL4uP87/u5/dFjjmhHSUqOheoVfYs60/V94KDY73O+rjPYA659ktItV9J4CuPvw+HtQr46Ju+Z/O3iD5fmS/KG7VOkrjqJdSoNPp0gT7jHkr4OEzO1QNnZfcmJql9q8e9HHfMqgo7+lff1VnT3s4fuMnyvdo6zVu8egWZ/ksACS6BT72bbAdolN1GtWXfIST//gG4xOJs
+sidebar_class_name: "get api-method"
+info_path: api/draupnir-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get the mxids of draupnirs that this user has provisioned."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/list"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get the mxids of draupnirs that this user has provisioned.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"openId":{"type":"string"}},"required":["openId"],"example":{"openId":"ujhU2AjxP201pGKI"},"title":"AppserviceAuthenticationBody"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The request was successful, and the server has returned the requested resource in the response body.","content":{"application/json":{"schema":{"type":"array","items":{"type":"string"},"example":["@example:example.com","@example2:example.com"]}}}},"400":{"description":"The server could not understand the request due to invalid syntax. The client should modify the request and try again.","content":{"text/plain":{"schema":{"type":"string","enum":["invalid request","invalid user mxid","unknown draupnir mxid"],"title":"AppserviceBadRequestError"}}}},"401":{"description":"Authentication is required to access the requested resource. The client must include the appropriate credentials.","content":{"text/plain":{"schema":{"type":"string","enum":["unauthorised"],"example":"unauthorised","title":"AppserviceUnauthenticatedError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

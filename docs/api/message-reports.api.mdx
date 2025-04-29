@@ -1,0 +1,72 @@
+---
+id: message-reports
+title: "Send a report to draupnir"
+description: "Send a report to draupnir"
+sidebar_label: "Send a report to draupnir"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVm1v2zYQ/ivEfdoG2nLWDSj0zWlS1EDTZLGLDQiC4ixeLLYSqZJUGlfQfx+OenFiuxkW9JMt8XT38Lm3pwFbkcOgrVkoSKEk73FD11RZFzxICLjxkN7AqQ1wK8FTVjsdtpDeNLAmdOTmdcghvblt47G7J+fjae0KSCEPoUqTpLAZFrn1IX09ez1LsNLJCUhQ5DOnKw4PKZw5rCujnTi1QcyvFqJzNwV2XaHDksLg3WBJkIKztvykFUjQ7KHCkIMEn+VUIqQNhG3FZj44bTbQSnD0tdaOFKTB1bSPYJWTYJdicSa0Ed9yneUi8MtICClB92SCsFlWO/bSyhFKPPnJWLpoizNh7yKM7jnYHk8kxpGvrPHkOcbvsxn/HLkVfa3JB/ENvfB1lpH3d3UhBRoVPXdUixy9cBRqZ0j1F4/fkRKOvK1dRkxMd9LFFWurtlOQkBOqmJ4G5jHA5I01wdliMi8K+21y6fSGmTkGz8YzEXIMQnuB/AEjsAKjqyFiRPAMqxLoAcuq4Fe/QdvK41AuKORW+eNY3q1WV6LsLDpE6GiEdGfdS8BcXS5XUlxerRaXH5Y/BvZux+EhsJ7gn4bpn8n1kN3J3zrkUjAYMmGy2lYkBXe2dfp7HA9SnGEgaBl61pmxd6yqQmfRIvnsbUzvQWy7/kxZeBy7advo6Y8f1Wtfj5mtCyWMDaI2fPcw1OtQz6omrhJt7rHQSvitCfgwFewiKzR3i8+jj9Iqfbd98m305bYCN6gNV/CL71U5HqNBd01IzmVW0fPkX3w6nZ99uj7/6+P5csXTgJyz7ug3pi55BC/6O/YDCuT4ZhgTPKF3Efbtme9dAnYo96CMSI446HN2cpgzrhUyoaeMe3iYbgdNvD9QnmSrrH0Q2mRFrSjaY8XkOo2BROZIcRAs/F66Aj2EpCpQH0/UAZcX2nttNiMw+4XMU/aOWkgIOsTjUxs+GtxdmtR5ZK2j6M/Zq2fLWnsRF4gJxVbUBtdFrOIcjSroWH2jCFRW1qHbCntPrrCohHWiRM0coMlo2BHj0mz3N8qSjBLY7w72qvqFCxK6ecdry/pY0by9Ukg646TpF22bNMOea2EnB5ZMeFf8j0XByD+rgGEo8XNnBLL/89a6EgOTjsHpB3FZkVmc9ZzzPbS5s9Fdz/6oFOZXiwMZwTyzehim4mi8tnwzFiid4Wx6Mp2BhEJnZHxsin6Xz9++n7yKZzsV49Mk2eiQ1+tpZssk5DQZ+JtUzvIkSIZQybqw64STk7xfvDn/sDxfJr3PaXgI8U5MdInmUdTn8vPkiiOvj8q+7bE2fepuoNcIEtKdSkpHlXIrgfUYGzbNGj19dEXb8uuvNTkWeLcS7tFpLs4ouZT2/F9BeoeF39crza4d4Zfrvvd/Ff9bUcnjd+tfotlyCrGo+QkkfKHtIxnIcuzFMP9LbL0I2ch3e9sOEimy2R2zCKjCow8P9g5LvLE5WUWABHzaXXvdFN0fRdU0ncWKG6ttR5B9o922bfsv5wAsDw==
+sidebar_class_name: "post api-method"
+info_path: api/draupnir-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Send a report to draupnir"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/report/{room_id}/{event_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Send a report to draupnir
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"room_id","in":"path","schema":{"type":"string"},"required":true,"description":"The room ID in which the reported event occurred"},{"name":"event_id","in":"path","schema":{"type":"string"},"required":true,"description":"The event ID of the event to report"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The request was successful, and the server has returned the requested resource in the response body.","headers":{"Access-Control-Allow-Origin":{"description":"The origin that is allowed to access the resource","schema":{"type":"string","example":"*"}},"Access-Control-Allow-Methods":{"description":"The HTTP methods that are allowed for the resource","schema":{"type":"string","example":"POST, OPTIONS"}},"Access-Control-Allow-Headers":{"description":"The headers that are allowed for the resource","schema":{"type":"string","example":"X-Requested-With, Content-Type, Authorization, Date"}}},"content":{"application/json":{"schema":{"type":"object","example":{}}}}},"400":{"description":"The server could not understand the request due to invalid syntax. The client should modify the request and try again.","content":{"application/json":{"schema":{"type":"object","properties":{"errcode":{"type":"string","example":"M_BAD_REQUEST"},"error":{"type":"string","enum":["Invalid room ID","Invalid event ID"],"example":"Invalid room ID"}},"example":{"errcode":"M_BAD_REQUEST","error":"Invalid room ID"}}}}},"401":{"description":"Authentication is required to access the requested resource. The client must include the appropriate credentials.","content":{"text/plain":{"schema":{"type":"string","enum":["Missing access token"],"example":"Missing access token","title":"BotUnauthenticatedError"}}}},"503":{"description":"The server is currently unable to handle the request due to a temporary overload or maintenance of the server."}}}
+>
+  
+</StatusCodes>
+
+
+      

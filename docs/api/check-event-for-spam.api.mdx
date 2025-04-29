@@ -1,0 +1,72 @@
+---
+id: check-event-for-spam
+title: "Check if an event is spam"
+description: "Check if an event is spam"
+sidebar_label: "Check if an event is spam"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVlFv2zgM/isCcY9unG67u56fLmtTIEC7FUt3L0EQMDITa7UlT5KzBob/+0BZSZMmK3C4x+tD41gUye/jRzItmJosemX0JIcMrguST+MNaX9r7LTGChLwuHaQzYC/hnOyME/AkWys8lvIZi0sCS3ZUeMLyGbzLhzbDVkXThtbQgaF93WWpqWRWBbG+exqeDVMsVbpZepqrBaSnUMCOTlpVc1JQQY3FptaKysO4ovRw0T0EQbA0Sx9b8j5jybfQtaCNNqT9vyIdV0qGRCm3xx7bMHJgirkJ7+tCTIwy28kPSRQW+bDK3J8Spvo5LXZcYaPBYlgKrwRAYRYGSsYE3Rdn5yylDOJvct5AvSMVV3SUZjwsFBciN/i+WL/LgFj1VrpRY974R1kl+/ef/j9jz+v/homuxyrgTWmGlTkHK4JuBA6JwsZ/B1dZvFzIA2X94CrZaAPHgvlhHIChSfnxYuryq33UTw9MxMrYyv0nvLF25e7/o/JcLXRrif43XDIH6d0xnqKH+iEa6Qk51ZNmQjUufAFxdqLAp2w5BurqX8f71EuLDnTWElC6XjSxxWc5+AY97/TyEvlIqQPv0IRs5SmKXOhjRcNl8L5HYodyrwhlo7SGyxVLtxWe3weCHYhS8XCckXwUZlcrbZHd4MvuxW4RqX/E65X2rdWmpwODJ23Sq8PCYD7xeTTP6O7yc3iYfRldA9dwveMPXtLNxV3wJgNRIE6L5Vei9OGgEnkgYUsJjehhw7bZZfZSfh99PNB9uW6PC0Xjy7SPrLFAt51LVcGgwJ/obCjQlWN80JpWTY5BXusmVer0JOQlnIOgqV7VSnuprQuUZ2v0QmJ98o5BrZLzDyRPibxrEUCXvlw/NH4rxpfQFMeKNtxdExOmLpCrQTqOOiU68dbAhX5wvDEqo0LKkLeAZCGORin18rYRTTfbY0pQ+yVdrg79oh5WbB5MIMsGkESH27D2GGY6K16Fp9r0pObiJIBsNy/vCyF8f9u2iag9MoERmPJ94t09DA5u8N4qfLiYtnujZeGA/Mq7w2Hg8vBEBIolSTtAqMaQ4lGt3cX78PZy753WZqulS+aJeNPfUEXefR8UVvDkyfdhUqXpVmmFSqd3k2ux5+m42kafQ78sw9lZZFVqA+ivqXNI4h7aR30WhdzbaNsZ3BWtvME+AcLn7ftEh19tWXX8evvDVn+BTRPYINW4ZKZns27BArCIIRZC0/EpbruK3/xyFmwedlwNiczukt2N0ZSUu3ftJ0fNODD5+kjN0j8DVT1M9LiD0jC/wxY1YGN0HfhXQsl6nXDosmg98k843E3vuq+gCoeod4eZNi2vcUjN2LXQRKhxMacd133E4zbnjA=
+sidebar_class_name: "post api-method"
+info_path: api/draupnir-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Check if an event is spam"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/check_event_for_spam"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Check if an event is spam
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"event":{"type":"object","description":"The event to check for spam"}},"required":["event"],"example":{"event":{"event_id":"$example_event_id","origin_server_ts":1234567890,"type":"m.room.message","sender":"@example:example.com","content":{"body":"This is a test message","msgtype":"m.text","formatted_body":"This is a test message"}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The request was successful, and the server has returned the requested resource in the response body.","content":{"application/json":{"schema":{"type":"object","example":{}}}}},"400":{"description":"The server could not understand the request due to invalid syntax. The client should modify the request and try again.","content":{"application/json":{"schema":{"type":"object","properties":{"errcode":{"type":"string","example":"M_INVALID_PARAM"},"error":{"type":"string","enum":["Error handling event"],"example":"Invalid room ID"}},"example":{"errcode":"M_INVALID_PARAM","error":"Error handling event"}}}}},"401":{"description":"Authentication is required to access the requested resource. The client must include the appropriate credentials.","content":{"text/plain":{"schema":{"type":"string","enum":["Missing access token"],"example":"Missing access token","title":"BotUnauthenticatedError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

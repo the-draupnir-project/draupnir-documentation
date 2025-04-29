@@ -1,0 +1,627 @@
+openapi: 3.1.0
+info:
+  title: Draupnir API
+  description: The API for the Draupnir bot
+  version: 0.1.0
+  license:
+    name: AFL-3.0
+    url: https://github.com/the-draupnir-project/Draupnir/blob/main/LICENSES/AFL-3.0.txt
+paths:
+  /get:
+    get:
+      operationId: getManagementRoom
+      summary: Find the management room for a draupnir
+      tags:
+        - Appservice
+      # Technically incorrect as the openId body parameter is the security mechnism but this cannot be modeled
+      security: []
+      # This is purely for reference
+      servers:
+        - url: http://localhost:9001
+          description: Draupnir Appservice API server
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                openId:
+                  type: string
+                mxid:
+                  type: string
+              required:
+                - openId
+                - mxid
+              example:
+                openId: "ujhU2AjxP201pGKI"
+                mxid: "@example:example.com"
+      responses:
+        "200":
+          description:
+            The request was successful, and the server has returned the
+            requested resource in the response body.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  managementRoom:
+                    type: string
+                required:
+                  - managementRoom
+                example:
+                  managementRoom: "!example:example.com"
+        "400":
+          description:
+            The server could not understand the request due to invalid syntax.
+            The client should modify the request and try again.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/AppserviceBadRequestError"
+        "401":
+          description:
+            Authentication is required to access the requested resource. The
+            client must include the appropriate credentials.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/AppserviceUnauthenticatedError"
+
+  /list:
+    get:
+      operationId: getDraupnirs
+      summary: Get the mxids of draupnirs that this user has provisioned.
+      tags:
+        - Appservice
+      # Technically incorrect as the openId body parameter is the security mechnism but this cannot be modeled
+      security: []
+      # This is purely for reference
+      servers:
+        - url: http://localhost:9001
+          description: Draupnir Appservice API server
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AppserviceAuthenticationBody"
+      responses:
+        "200":
+          description:
+            The request was successful, and the server has returned the
+            requested resource in the response body.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example:
+                  - "@example:example.com"
+                  - "@example2:example.com"
+        "400":
+          description:
+            The server could not understand the request due to invalid syntax.
+            The client should modify the request and try again.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/AppserviceBadRequestError"
+        "401":
+          description:
+            Authentication is required to access the requested resource. The
+            client must include the appropriate credentials.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/AppserviceUnauthenticatedError"
+
+  /create:
+    post:
+      operationId: createDraupnir
+      summary: Create a new draupnir for the requesting user and protects their first room
+      tags:
+        - Appservice
+      # Technically incorrect as the openId body parameter is the security mechnism but this cannot be modeled
+      security: []
+      # This is purely for reference
+      servers:
+        - url: http://localhost:9001
+          description: Draupnir Appservice API server
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                openId:
+                  type: string
+                roomId:
+                  type: string
+              required:
+                - openId
+                - roomId
+              example:
+                openId: "ujhU2AjxP201pGKI"
+                roomId: "!example:example.com"
+      responses:
+        "200":
+          description:
+            The request was successful, and the server has returned the
+            requested resource in the response body.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mxid:
+                    type: string
+                  roomId:
+                    type: string
+                required:
+                  - mxid
+                  - roomId
+                example:
+                  mxid: "@example:example.com"
+                  roomId: "!example:example.com"
+        "400":
+          description:
+            The server could not understand the request due to invalid syntax.
+            The client should modify the request and try again.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/AppserviceBadRequestError"
+        "401":
+          description:
+            Authentication is required to access the requested resource. The
+            client must include the appropriate credentials.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/AppserviceUnauthenticatedError"
+
+  /join:
+    post:
+      operationId: joinManagementRoom
+      summary: Request a draupnir to join and protect a room.
+      tags:
+        - Appservice
+      # Technically incorrect as the openId body parameter is the security mechnism but this cannot be modeled
+      security: []
+      # This is purely for reference
+      servers:
+        - url: http://localhost:9001
+          description: Draupnir Appservice API server
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                openId:
+                  type: string
+                mxid:
+                  type: string
+                roomId:
+                  type: string
+              required:
+                - openId
+                - mxid
+                - roomId
+              example:
+                openId: "ujhU2AjxP201pGKI"
+                mxid: "@example:example.com"
+                roomId: "!example:example.com"
+      responses:
+        "200":
+          description:
+            The request was successful, and the server has returned the
+            requested resource in the response body.
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+        "400":
+          description:
+            The server could not understand the request due to invalid syntax.
+            The client should modify the request and try again.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/AppserviceBadRequestError"
+        "401":
+          description:
+            Authentication is required to access the requested resource. The
+            client must include the appropriate credentials.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/AppserviceUnauthenticatedError"
+
+  /report/{room_id}/{event_id}:
+    description: "Report an event to draupnir"
+    options:
+      operationId: reportOptions
+      summary: Report an event to draupnir (CORS preflight request)
+      parameters:
+        - name: room_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: The room ID in which the reported event occurred
+        - name: event_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: The event ID of the event to report
+      tags:
+        - Bot
+      security:
+        - bearerAuth: []
+      # This is purely for reference
+      servers:
+        - url: http://localhost:8080/api/1
+          description: Draupnir Bot API server.
+      responses:
+        "200":
+          description: CORS preflight request
+          headers:
+            "Access-Control-Allow-Origin":
+              $ref: "#/components/headers/Access-Control-Allow-Origin"
+            "Access-Control-Allow-Methods":
+              $ref: "#/components/headers/Access-Control-Allow-Methods"
+            "Access-Control-Allow-Headers":
+              $ref: "#/components/headers/Access-Control-Allow-Headers"
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+    post:
+      operationId: messageReports
+      summary: Send a report to draupnir
+      tags:
+        - Bot
+      security:
+        - bearerAuth: []
+      # This is purely for reference
+      servers:
+        - url: http://localhost:8080/api/1
+          description: Draupnir Bot API server.
+      parameters:
+        - name: room_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: The room ID in which the reported event occurred
+        - name: event_id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: The event ID of the event to report
+      responses:
+        "200":
+          description:
+            The request was successful, and the server has returned the
+            requested resource in the response body.
+          headers:
+            "Access-Control-Allow-Origin":
+              $ref: "#/components/headers/Access-Control-Allow-Origin"
+            "Access-Control-Allow-Methods":
+              $ref: "#/components/headers/Access-Control-Allow-Methods"
+            "Access-Control-Allow-Headers":
+              $ref: "#/components/headers/Access-Control-Allow-Headers"
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+        "400":
+          description:
+            The server could not understand the request due to invalid syntax.
+            The client should modify the request and try again.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errcode:
+                    type: string
+                    example: "M_BAD_REQUEST"
+                  error:
+                    type: string
+                    enum:
+                      - "Invalid room ID"
+                      - "Invalid event ID"
+                    example: "Invalid room ID"
+                example:
+                  errcode: "M_BAD_REQUEST"
+                  error: "Invalid room ID"
+        "401":
+          description:
+            Authentication is required to access the requested resource. The
+            client must include the appropriate credentials.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/BotUnauthenticatedError"
+        "503":
+          description:
+            The server is currently unable to handle the request due to a
+            temporary overload or maintenance of the server.
+
+  /user_may_invite:
+    post:
+      operationId: usersMayInvite
+      summary: Check if a user is allowed to invite
+      tags:
+        - SpamChecker
+      security:
+        - bearerAuth: []
+      # This is purely for reference
+      servers:
+        - url: http://localhost:8080/api/1/spam_check
+          description: Draupnir SpamChecker API server.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                inviter:
+                  type: string
+                  description: The user ID of the inviter
+                invitee:
+                  type: string
+                  description: The user ID of the invitee
+                room_id:
+                  type: string
+                  description: The room ID of the room
+              required:
+                - inviter
+                - invitee
+                - room_id
+              example:
+                inviter: "@example:example.com"
+                invitee: "@example2:example.com"
+                room_id: "!example:example.com"
+      responses:
+        "200":
+          description:
+            The request was successful, and the server has returned the
+            requested resource in the response body.
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+        "400":
+          description:
+            The server could not understand the request due to invalid syntax.
+            The client should modify the request and try again.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errcode:
+                    type: string
+                    example: "M_INVALID_PARAM"
+                  error:
+                    type: string
+                    enum:
+                      - "Error handling inviter, invitee, and room_id"
+                    example: "Invalid room ID"
+                example:
+                  errcode: "M_INVALID_PARAM"
+                  error: "Error handling inviter, invitee, and room_id"
+        "401":
+          description:
+            Authentication is required to access the requested resource. The
+            client must include the appropriate credentials.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/BotUnauthenticatedError"
+  /user_may_join_room:
+    post:
+      operationId: userMayJoinRoom
+      summary: Check if a user is allowed to join a room
+      tags:
+        - SpamChecker
+      security:
+        - bearerAuth: []
+      # This is purely for reference
+      servers:
+        - url: http://localhost:8080/api/1/spam_check
+          description: Draupnir SpamChecker API server.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                  description: The user ID of the user joining the room
+                room:
+                  type: string
+                  description: The room ID of the room to join
+                is_invited:
+                  type: boolean
+                  description: Whether the user is invited to the room
+              required:
+                - user
+                - room
+                - is_invited
+              example:
+                user: "@example:example.com"
+                room: "!example:example.com"
+                is_invited: true
+      responses:
+        "200":
+          description:
+            The request was successful, and the server has returned the
+            requested resource in the response body.
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+        "400":
+          description:
+            The server could not understand the request due to invalid syntax.
+            The client should modify the request and try again.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errcode:
+                    type: string
+                    example: "M_INVALID_PARAM"
+                  error:
+                    type: string
+                    enum:
+                      - "Error handling user, room, and is_invited"
+                    example: "Invalid room ID"
+                example:
+                  errcode: "M_INVALID_PARAM"
+                  error: "Error handling user, room, and is_invited"
+        "401":
+          description:
+            Authentication is required to access the requested resource. The
+            client must include the appropriate credentials.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/BotUnauthenticatedError"
+  /check_event_for_spam:
+    post:
+      operationId: CheckEventForSpam
+      summary: Check if an event is spam
+      tags:
+        - SpamChecker
+      security:
+        - bearerAuth: []
+      # This is purely for reference
+      servers:
+        - url: http://localhost:8080/api/1/spam_check
+          description: Draupnir SpamChecker API server.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                event:
+                  type: object
+                  description: The event to check for spam
+              required:
+                - event
+              example:
+                event:
+                  event_id: "$example_event_id"
+                  origin_server_ts: 1234567890
+                  type: "m.room.message"
+                  sender: "@example:example.com"
+                  content:
+                    body: "This is a test message"
+                    msgtype: "m.text"
+                    formatted_body: "This is a test message"
+      responses:
+        "200":
+          description:
+            The request was successful, and the server has returned the
+            requested resource in the response body.
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+        "400":
+          description:
+            The server could not understand the request due to invalid syntax.
+            The client should modify the request and try again.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errcode:
+                    type: string
+                    example: "M_INVALID_PARAM"
+                  error:
+                    type: string
+                    enum:
+                      - "Error handling event"
+                    example: "Invalid room ID"
+                example:
+                  errcode: "M_INVALID_PARAM"
+                  error: "Error handling event"
+        "401":
+          description:
+            Authentication is required to access the requested resource. The
+            client must include the appropriate credentials.
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/BotUnauthenticatedError"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Matrix OpenID token
+  schemas:
+    AppserviceAuthenticationBody:
+      type: object
+      properties:
+        openId:
+          type: string
+      required:
+        - openId
+      example:
+        openId: "ujhU2AjxP201pGKI"
+    AppserviceBadRequestError:
+      type: string
+      enum:
+        - invalid request
+        - invalid user mxid
+        - unknown draupnir mxid
+    AppserviceUnauthenticatedError:
+      type: string
+      enum:
+        - unauthorised
+      example: unauthorised
+    BotUnauthenticatedError:
+      type: string
+      enum:
+        - Missing access token
+      example: Missing access token
+  headers:
+    Access-Control-Allow-Origin:
+      description: The origin that is allowed to access the resource
+      schema:
+        type: string
+        example: "*"
+    Access-Control-Allow-Methods:
+      description: The HTTP methods that are allowed for the resource
+      schema:
+        type: string
+        example: "POST, OPTIONS"
+    Access-Control-Allow-Headers:
+      description: The headers that are allowed for the resource
+      schema:
+        type: string
+        example: "X-Requested-With, Content-Type, Authorization, Date"

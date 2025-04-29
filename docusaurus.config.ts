@@ -1,6 +1,7 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
   title: 'Draupnir Documentation',
@@ -37,11 +38,31 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          docItemComponent: "@theme/ApiItem",  // Derived from docusaurus-theme-openapi
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/the-draupnir-project/draupnir-documentation/tree/main/',
           routeBasePath: '/',
+          async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+            // Remove the api sidebar items from the main sidebar (id contains "api/" as the first part)
+            const filteredSidebarItems = sidebarItems.filter((item) => {
+              if (item.type === 'category') {
+                return !item.items.some((subItem) => {
+                  if (subItem.type === 'doc') {
+                    return subItem.id.startsWith('api/');
+                  }
+                  return false; // Keep other types of items
+                });
+              }
+              if (item.type === 'doc') {
+                return !item.id.startsWith('api/');
+              }
+              return true; // Keep other types of items
+            });
+            return filteredSidebarItems;
+          },
         },
         blog: false,
         pages: false,
@@ -55,8 +76,9 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+
       } satisfies Preset.Options,
-    ],
+    ]
   ],
 
   themeConfig: {
@@ -105,6 +127,28 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "api", // plugin id
+        docsPluginId: "classic", // configured for preset-classic
+        config: {
+          draupnir: {
+            specPath: "api/draupnir-openapi.yaml",
+            outputDir: "docs/api",
+            sidebarOptions: {
+              groupPathsBy: "tag"
+            },
+            hideSendButton: true,
+            showSchemas: true
+          } satisfies OpenApiPlugin.Options,
+        }
+      },
+    ],
+  ],
+  themes: ["docusaurus-theme-openapi-docs"]
 };
 
 export default config;

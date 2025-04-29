@@ -1,0 +1,72 @@
+---
+id: get-management-room
+title: "Find the management room for a draupnir"
+description: "Find the management room for a draupnir"
+sidebar_label: "Find the management room for a draupnir"
+hide_title: true
+hide_table_of_contents: true
+api: eJytlU1z2zYQhv8KumdYlN1eylOVxM5omrQef5w0OkDgWoRNAgywsKXR8L93FgT1YTtpZxoeJIJY7GIfvLvYgevQKzLOzisoYY30VVm1xhYt3TjXggRS6wDlAmZdF9A/G42wlBBQR29oC+UijfwzejbbQfQNlFATdWVRNE6rpnaByt+n03OQUGHQ3nQcEUr45FXsrPHi4FzMrudi8Af9UoLHbxEDfXDVFspdGhqPFZTkI0rQzhJa4inVdY3RKZniMbD/HQRdY6v4jbYdQglu9YiaQELnOXUyGHjWdZgI7O0CeWPX0EtoN+a9iV4e7WUxOsjmSwm4UW3X4LFziI/1/cXscXN9MT3vPv85H81L+CObl/l/ol0LPT8cJnTOhmGjF9Mp/51ivKtRZE7iRQURotYYwkNspFC2ElRjRipqFYRHit7i8D2vw0p4DC56jcLYPDPEFStXbSfw01i3pwr7V7Sv7E/ZvnYGv/yA5G/fg5fhaBebSlhHItoKfaAR3gi3iijICWOfVWMqEbaW1GYi2IVuDFoSoU4+WleZh+3J2uTLb4VaK2Nf4STcUNE1yrwPMoORgDa2jGTcQPYNcv8lBvQiiUpCtE/WvVhRjVU2apMMMb2jkv6gqpvB16X3zsPI6/wtr1mkGi3l0xcmiPGwGI1KyvuOsk5ItTGQMFY3scJkrzrWiTeKUGiPFQdRTfifqKJVkWrnTcDTujydeQ/KfTLIuWJ1INO/7mNXJgvlIEfhnWvFg/NC7Q+A6x2pdrnVcmUoqqGEYhiNTfWWsxqKZYXKo2fmR0lyc2XzZAZlNgKZX66cbxVBCV8VebMRf3P/+STIPaFN1cUVe3Poq5c/oVWxAh9c2mPmeOjt1/M3jZ91wI2e+TC3vfHKMQi+TAbD6eR8MgUJjdFoQ9qjVSnp2dWXs1/T3OHGCWVRrA3VccW7KqjGs5H9Wecdt6NiDFWsGrcqWmVs8WX+8fKv28vbIvuc0IYSqM4FapU9ivrfT/ok4f3RHcm3zzvfZRUskiaWEvi+5OFut1IB733T9/z5W0Sf79tn5Y1aMebFspdQo6rQp9v3CbdQwsehXs7uOCibN5GDv+navRxXzLTGjn5ouzxS7+fLO5ZbvpRbV/ESr15Apt8SQIJLuScVp287aJRdR7Vm28ElP/8Ab7n4RQ==
+sidebar_class_name: "get api-method"
+info_path: api/draupnir-api
+custom_edit_url: null
+hide_send_button: true
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Find the management room for a draupnir"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/get"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Find the management room for a draupnir
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"openId":{"type":"string"},"mxid":{"type":"string"}},"required":["openId","mxid"],"example":{"openId":"ujhU2AjxP201pGKI","mxid":"@example:example.com"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"The request was successful, and the server has returned the requested resource in the response body.","content":{"application/json":{"schema":{"type":"object","properties":{"managementRoom":{"type":"string"}},"required":["managementRoom"],"example":{"managementRoom":"!example:example.com"}}}}},"400":{"description":"The server could not understand the request due to invalid syntax. The client should modify the request and try again.","content":{"text/plain":{"schema":{"type":"string","enum":["invalid request","invalid user mxid","unknown draupnir mxid"],"title":"AppserviceBadRequestError"}}}},"401":{"description":"Authentication is required to access the requested resource. The client must include the appropriate credentials.","content":{"text/plain":{"schema":{"type":"string","enum":["unauthorised"],"example":"unauthorised","title":"AppserviceUnauthenticatedError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
