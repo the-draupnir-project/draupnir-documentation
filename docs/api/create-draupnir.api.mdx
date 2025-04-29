@@ -32,7 +32,7 @@ import Heading from "@theme/Heading";
   path={"/create"}
   context={"endpoint"}
 >
-  
+
 </MethodEndpoint>
 
 
@@ -50,14 +50,14 @@ Create a new draupnir for the requesting user and protects their first room
 <ParamsDetails
   parameters={undefined}
 >
-  
+
 </ParamsDetails>
 
 <RequestSchema
   title={"Body"}
   body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"openId":{"type":"string"},"roomId":{"type":"string"}},"required":["openId","roomId"],"example":{"openId":"ujhU2AjxP201pGKI","roomId":"!example:example.com"}}}}}}
 >
-  
+
 </RequestSchema>
 
 <StatusCodes
@@ -65,8 +65,5 @@ Create a new draupnir for the requesting user and protects their first room
   label={undefined}
   responses={{"200":{"description":"The request was successful, and the server has returned the requested resource in the response body.","content":{"application/json":{"schema":{"type":"object","properties":{"mxid":{"type":"string"},"roomId":{"type":"string"}},"required":["mxid","roomId"],"example":{"mxid":"@example:example.com","roomId":"!example:example.com"}}}}},"400":{"description":"The server could not understand the request due to invalid syntax. The client should modify the request and try again.","content":{"text/plain":{"schema":{"type":"string","enum":["invalid request","invalid user mxid","unknown draupnir mxid"],"title":"AppserviceBadRequestError"}}}},"401":{"description":"Authentication is required to access the requested resource. The client must include the appropriate credentials.","content":{"text/plain":{"schema":{"type":"string","enum":["unauthorised"],"example":"unauthorised","title":"AppserviceUnauthenticatedError"}}}}}}
 >
-  
+
 </StatusCodes>
-
-
-      

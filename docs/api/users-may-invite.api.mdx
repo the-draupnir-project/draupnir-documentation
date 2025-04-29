@@ -32,7 +32,7 @@ import Heading from "@theme/Heading";
   path={"/user_may_invite"}
   context={"endpoint"}
 >
-  
+
 </MethodEndpoint>
 
 
@@ -50,14 +50,14 @@ Check if a user is allowed to invite
 <ParamsDetails
   parameters={undefined}
 >
-  
+
 </ParamsDetails>
 
 <RequestSchema
   title={"Body"}
   body={{"content":{"application/json":{"schema":{"type":"object","properties":{"inviter":{"type":"string","description":"The user ID of the inviter"},"invitee":{"type":"string","description":"The user ID of the invitee"},"room_id":{"type":"string","description":"The room ID of the room"}},"required":["inviter","invitee","room_id"],"example":{"inviter":"@example:example.com","invitee":"@example2:example.com","room_id":"!example:example.com"}}}}}}
 >
-  
+
 </RequestSchema>
 
 <StatusCodes
@@ -65,8 +65,5 @@ Check if a user is allowed to invite
   label={undefined}
   responses={{"200":{"description":"The request was successful, and the server has returned the requested resource in the response body.","content":{"application/json":{"schema":{"type":"object","example":{}}}}},"400":{"description":"The server could not understand the request due to invalid syntax. The client should modify the request and try again.","content":{"application/json":{"schema":{"type":"object","properties":{"errcode":{"type":"string","example":"M_INVALID_PARAM"},"error":{"type":"string","enum":["Error handling inviter, invitee, and room_id"],"example":"Invalid room ID"}},"example":{"errcode":"M_INVALID_PARAM","error":"Error handling inviter, invitee, and room_id"}}}}},"401":{"description":"Authentication is required to access the requested resource. The client must include the appropriate credentials.","content":{"text/plain":{"schema":{"type":"string","enum":["Missing access token"],"example":"Missing access token","title":"BotUnauthenticatedError"}}}}}}
 >
-  
+
 </StatusCodes>
-
-
-      

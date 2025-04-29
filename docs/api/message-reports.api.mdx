@@ -32,7 +32,7 @@ import Heading from "@theme/Heading";
   path={"/report/{room_id}/{event_id}"}
   context={"endpoint"}
 >
-  
+
 </MethodEndpoint>
 
 
@@ -50,14 +50,14 @@ Send a report to draupnir
 <ParamsDetails
   parameters={[{"name":"room_id","in":"path","schema":{"type":"string"},"required":true,"description":"The room ID in which the reported event occurred"},{"name":"event_id","in":"path","schema":{"type":"string"},"required":true,"description":"The event ID of the event to report"}]}
 >
-  
+
 </ParamsDetails>
 
 <RequestSchema
   title={"Body"}
   body={undefined}
 >
-  
+
 </RequestSchema>
 
 <StatusCodes
@@ -65,8 +65,5 @@ Send a report to draupnir
   label={undefined}
   responses={{"200":{"description":"The request was successful, and the server has returned the requested resource in the response body.","headers":{"Access-Control-Allow-Origin":{"description":"The origin that is allowed to access the resource","schema":{"type":"string","example":"*"}},"Access-Control-Allow-Methods":{"description":"The HTTP methods that are allowed for the resource","schema":{"type":"string","example":"POST, OPTIONS"}},"Access-Control-Allow-Headers":{"description":"The headers that are allowed for the resource","schema":{"type":"string","example":"X-Requested-With, Content-Type, Authorization, Date"}}},"content":{"application/json":{"schema":{"type":"object","example":{}}}}},"400":{"description":"The server could not understand the request due to invalid syntax. The client should modify the request and try again.","content":{"application/json":{"schema":{"type":"object","properties":{"errcode":{"type":"string","example":"M_BAD_REQUEST"},"error":{"type":"string","enum":["Invalid room ID","Invalid event ID"],"example":"Invalid room ID"}},"example":{"errcode":"M_BAD_REQUEST","error":"Invalid room ID"}}}}},"401":{"description":"Authentication is required to access the requested resource. The client must include the appropriate credentials.","content":{"text/plain":{"schema":{"type":"string","enum":["Missing access token"],"example":"Missing access token","title":"BotUnauthenticatedError"}}}},"503":{"description":"The server is currently unable to handle the request due to a temporary overload or maintenance of the server."}}}
 >
-  
+
 </StatusCodes>
-
-
-      

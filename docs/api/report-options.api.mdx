@@ -32,7 +32,7 @@ import Heading from "@theme/Heading";
   path={"/report/{room_id}/{event_id}"}
   context={"endpoint"}
 >
-  
+
 </MethodEndpoint>
 
 
@@ -50,14 +50,14 @@ Report an event to draupnir (CORS preflight request)
 <ParamsDetails
   parameters={[{"name":"room_id","in":"path","schema":{"type":"string"},"required":true,"description":"The room ID in which the reported event occurred"},{"name":"event_id","in":"path","schema":{"type":"string"},"required":true,"description":"The event ID of the event to report"}]}
 >
-  
+
 </ParamsDetails>
 
 <RequestSchema
   title={"Body"}
   body={undefined}
 >
-  
+
 </RequestSchema>
 
 <StatusCodes
@@ -65,8 +65,5 @@ Report an event to draupnir (CORS preflight request)
   label={undefined}
   responses={{"200":{"description":"CORS preflight request","headers":{"Access-Control-Allow-Origin":{"description":"The origin that is allowed to access the resource","schema":{"type":"string","example":"*"}},"Access-Control-Allow-Methods":{"description":"The HTTP methods that are allowed for the resource","schema":{"type":"string","example":"POST, OPTIONS"}},"Access-Control-Allow-Headers":{"description":"The headers that are allowed for the resource","schema":{"type":"string","example":"X-Requested-With, Content-Type, Authorization, Date"}}},"content":{"application/json":{"schema":{"type":"object","example":{}}}}}}}
 >
-  
+
 </StatusCodes>
-
-
-      

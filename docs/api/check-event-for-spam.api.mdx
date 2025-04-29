@@ -32,7 +32,7 @@ import Heading from "@theme/Heading";
   path={"/check_event_for_spam"}
   context={"endpoint"}
 >
-  
+
 </MethodEndpoint>
 
 
@@ -50,14 +50,14 @@ Check if an event is spam
 <ParamsDetails
   parameters={undefined}
 >
-  
+
 </ParamsDetails>
 
 <RequestSchema
   title={"Body"}
   body={{"content":{"application/json":{"schema":{"type":"object","properties":{"event":{"type":"object","description":"The event to check for spam"}},"required":["event"],"example":{"event":{"event_id":"$example_event_id","origin_server_ts":1234567890,"type":"m.room.message","sender":"@example:example.com","content":{"body":"This is a test message","msgtype":"m.text","formatted_body":"This is a test message"}}}}}}}}
 >
-  
+
 </RequestSchema>
 
 <StatusCodes
@@ -65,8 +65,5 @@ Check if an event is spam
   label={undefined}
   responses={{"200":{"description":"The request was successful, and the server has returned the requested resource in the response body.","content":{"application/json":{"schema":{"type":"object","example":{}}}}},"400":{"description":"The server could not understand the request due to invalid syntax. The client should modify the request and try again.","content":{"application/json":{"schema":{"type":"object","properties":{"errcode":{"type":"string","example":"M_INVALID_PARAM"},"error":{"type":"string","enum":["Error handling event"],"example":"Invalid room ID"}},"example":{"errcode":"M_INVALID_PARAM","error":"Error handling event"}}}}},"401":{"description":"Authentication is required to access the requested resource. The client must include the appropriate credentials.","content":{"text/plain":{"schema":{"type":"string","enum":["Missing access token"],"example":"Missing access token","title":"BotUnauthenticatedError"}}}}}}
 >
-  
+
 </StatusCodes>
-
-
-      

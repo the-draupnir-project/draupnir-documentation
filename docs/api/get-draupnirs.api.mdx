@@ -32,7 +32,7 @@ import Heading from "@theme/Heading";
   path={"/list"}
   context={"endpoint"}
 >
-  
+
 </MethodEndpoint>
 
 
@@ -50,14 +50,14 @@ Get the mxids of draupnirs that this user has provisioned.
 <ParamsDetails
   parameters={undefined}
 >
-  
+
 </ParamsDetails>
 
 <RequestSchema
   title={"Body"}
   body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"openId":{"type":"string"}},"required":["openId"],"example":{"openId":"ujhU2AjxP201pGKI"},"title":"AppserviceAuthenticationBody"}}}}}
 >
-  
+
 </RequestSchema>
 
 <StatusCodes
@@ -65,8 +65,5 @@ Get the mxids of draupnirs that this user has provisioned.
   label={undefined}
   responses={{"200":{"description":"The request was successful, and the server has returned the requested resource in the response body.","content":{"application/json":{"schema":{"type":"array","items":{"type":"string"},"example":["@example:example.com","@example2:example.com"]}}}},"400":{"description":"The server could not understand the request due to invalid syntax. The client should modify the request and try again.","content":{"text/plain":{"schema":{"type":"string","enum":["invalid request","invalid user mxid","unknown draupnir mxid"],"title":"AppserviceBadRequestError"}}}},"401":{"description":"Authentication is required to access the requested resource. The client must include the appropriate credentials.","content":{"text/plain":{"schema":{"type":"string","enum":["unauthorised"],"example":"unauthorised","title":"AppserviceUnauthenticatedError"}}}}}}
 >
-  
+
 </StatusCodes>
-
-
-      
