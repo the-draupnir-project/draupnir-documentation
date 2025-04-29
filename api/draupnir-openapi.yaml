@@ -1,4 +1,7 @@
 openapi: 3.1.0
+servers:
+  - url: http://localhost:8080/api
+    description: Draupnir API server
 info:
   title: Draupnir API
   description: The API for the Draupnir bot
@@ -7,35 +10,22 @@ info:
     name: AFL-3.0
     url: https://github.com/the-draupnir-project/Draupnir/blob/main/LICENSES/AFL-3.0.txt
 paths:
-  /get:
+  /1/appservice/get/{bot_id}:
     get:
-      operationId: getManagementRoom
-      summary: Find the management room for a draupnir
+      operationId: getBotInfo
+      summary: Get information about the bot
       tags:
         - Appservice
-      # Technically incorrect as the openId body parameter is the security mechnism but this cannot be modeled
-      security: []
-      # This is purely for reference
-      servers:
-        - url: http://localhost:9001
-          description: Draupnir Appservice API server
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                openId:
-                  type: string
-                mxid:
-                  type: string
-              required:
-                - openId
-                - mxid
-              example:
-                openId: "ujhU2AjxP201pGKI"
-                mxid: "@example:example.com"
+      security:
+        - openidAuth: []
+      parameters:
+        - name: bot_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The ID of the bot to get information about
+          example: "@example:example.com"
       responses:
         "200":
           description:
@@ -48,105 +38,116 @@ paths:
                 properties:
                   managementRoom:
                     type: string
+                    example: "!example:example.com"
+                  ownerId:
+                    type: string
+                    example: "@example:example.com"
                 required:
                   - managementRoom
-                example:
-                  managementRoom: "!example:example.com"
+                  - ownerId
         "400":
           description:
             The server could not understand the request due to invalid syntax.
             The client should modify the request and try again.
-          content:
-            text/plain:
-              schema:
-                $ref: "#/components/schemas/AppserviceBadRequestError"
-        "401":
-          description:
-            Authentication is required to access the requested resource. The
-            client must include the appropriate credentials.
-          content:
-            text/plain:
-              schema:
-                $ref: "#/components/schemas/AppserviceUnauthenticatedError"
-
-  /list:
-    get:
-      operationId: getDraupnirs
-      summary: Get the mxids of draupnirs that this user has provisioned.
-      tags:
-        - Appservice
-      # Technically incorrect as the openId body parameter is the security mechnism but this cannot be modeled
-      security: []
-      # This is purely for reference
-      servers:
-        - url: http://localhost:9001
-          description: Draupnir Appservice API server
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/AppserviceAuthenticationBody"
-      responses:
-        "200":
-          description:
-            The request was successful, and the server has returned the
-            requested resource in the response body.
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: string
-                example:
-                  - "@example:example.com"
-                  - "@example2:example.com"
-        "400":
-          description:
-            The server could not understand the request due to invalid syntax.
-            The client should modify the request and try again.
-          content:
-            text/plain:
-              schema:
-                $ref: "#/components/schemas/AppserviceBadRequestError"
+                type: object
+                required:
+                  - errcode
+                  - error
+                properties:
+                  errcode:
+                    type: string
+                    enum:
+                      - "M_MISSING_PARAM"
+                      - "M_INVALID_PARAM"
+                  error:
+                    type: string
+                    enum:
+                      - "Invalid user ID"
+                      - "Missing bot ID"
+                      - "Invalid bot ID"
+                    example: "Invalid user ID"
         "401":
           description:
             Authentication is required to access the requested resource. The
             client must include the appropriate credentials.
           content:
-            text/plain:
+            application/json:
               schema:
-                $ref: "#/components/schemas/AppserviceUnauthenticatedError"
+                type: object
+                required:
+                  - errcode
+                  - error
+                properties:
+                  errcode:
+                    type: string
+                    enum:
+                      - "M_MISSING_TOKEN"
+                  error:
+                    type: string
+                    enum:
+                      - "Missing access token"
+                    example: "Missing access token"
+        "404":
+          description: The requested bot was not found on the server.
+            The client should check the bot ID and try again.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - errcode
+                  - error
+                properties:
+                  errcode:
+                    type: string
+                    enum:
+                      - "M_NOT_FOUND"
+                  error:
+                    type: string
+                    enum:
+                      - "Bot not found"
+                    example: "Bot not found"
+        "503":
+          description:
+            The server is unable to handle the request. Possibly due to a misconfiguration.
+            Are you sure this is an appservice draupnir?
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - errcode
+                  - error
+                properties:
+                  errcode:
+                    type: string
+                    enum:
+                      - "M_NOT_CONFIGURED"
+                  error:
+                    type: string
+                    enum:
+                      - "Appservice manager not configured"
+                    example: "Appservice manager not configured"
 
-  /create:
-    post:
-      operationId: createDraupnir
-      summary: Create a new draupnir for the requesting user and protects their first room
+  /1/appservice/list:
+    get:
+      operationId: listBots
+      summary: Get Bots for the requesting user
       tags:
         - Appservice
-      # Technically incorrect as the openId body parameter is the security mechnism but this cannot be modeled
-      security: []
-      # This is purely for reference
-      servers:
-        - url: http://localhost:9001
-          description: Draupnir Appservice API server
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                openId:
-                  type: string
-                roomId:
-                  type: string
-              required:
-                - openId
-                - roomId
-              example:
-                openId: "ujhU2AjxP201pGKI"
-                roomId: "!example:example.com"
+      security:
+        - openidAuth: []
+      parameters:
+        - name: onlyOwner
+          in: query
+          required: false
+          schema:
+            type: boolean
+          description: Whether to only return bots owned by the user
+
       responses:
         "200":
           description:
@@ -157,66 +158,96 @@ paths:
               schema:
                 type: object
                 properties:
-                  mxid:
-                    type: string
-                  roomId:
-                    type: string
+                  bots:
+                    type: array
+                    items:
+                      type: string
+                      example: "@example:example.com"
                 required:
-                  - mxid
-                  - roomId
-                example:
-                  mxid: "@example:example.com"
-                  roomId: "!example:example.com"
+                  - bots
         "400":
           description:
             The server could not understand the request due to invalid syntax.
             The client should modify the request and try again.
           content:
-            text/plain:
+            application/json:
               schema:
-                $ref: "#/components/schemas/AppserviceBadRequestError"
+                type: object
+                required:
+                  - errcode
+                  - error
+                properties:
+                  errcode:
+                    type: string
+                    enum:
+                      - "M_INVALID_PARAM"
+                  error:
+                    type: string
+                    enum:
+                      - "Invalid user ID"
+                    example: "Invalid user ID"
         "401":
           description:
             Authentication is required to access the requested resource. The
             client must include the appropriate credentials.
           content:
-            text/plain:
+            application/json:
               schema:
-                $ref: "#/components/schemas/AppserviceUnauthenticatedError"
+                type: object
+                required:
+                  - errcode
+                  - error
+                properties:
+                  errcode:
+                    type: string
+                    enum:
+                      - "M_MISSING_TOKEN"
+                  error:
+                    type: string
+                    enum:
+                      - "Missing access token"
+                    example: "Missing access token"
+        "503":
+          description:
+            The server is unable to handle the request. Possibly due to a misconfiguration.
+            Are you sure this is an appservice draupnir?
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - errcode
+                  - error
+                properties:
+                  errcode:
+                    type: string
+                    enum:
+                      - "M_NOT_CONFIGURED"
+                  error:
+                    type: string
+                    enum:
+                      - "Appservice manager not configured"
+                    example: "Appservice manager not configured"
 
-  /join:
+  /1/appservice/provision:
     post:
-      operationId: joinManagementRoom
-      summary: Request a draupnir to join and protect a room.
+      operationId: provisionBot
+      summary: Provision a bot
       tags:
         - Appservice
-      # Technically incorrect as the openId body parameter is the security mechnism but this cannot be modeled
-      security: []
-      # This is purely for reference
-      servers:
-        - url: http://localhost:9001
-          description: Draupnir Appservice API server
+      security:
+        - openidAuth: []
       requestBody:
-        required: true
         content:
           application/json:
             schema:
               type: object
               properties:
-                openId:
-                  type: string
-                mxid:
-                  type: string
-                roomId:
-                  type: string
-              required:
-                - openId
-                - mxid
-                - roomId
-              example:
-                openId: "ujhU2AjxP201pGKI"
-                mxid: "@example:example.com"
-                roomId: "!example:example.com"
+                protectedRooms:
+                  type: array
+                  items:
+                    type: string
+                    example: "!example:example.com"
       responses:
         "200":
           description:
@@ -226,65 +257,102 @@ paths:
             application/json:
               schema:
                 type: object
-                example: {}
+                properties:
+                  managementRoom:
+                    type: string
+                    example: "!example:example.com"
+                  botID:
+                    type: string
+                    example: "@example:example.com"
+                  ownerID:
+                    type: string
+                    example: "@example:example.com"
+                required:
+                  - bots
+                  - managementRoom
+                  - ownerID
         "400":
           description:
             The server could not understand the request due to invalid syntax.
             The client should modify the request and try again.
           content:
-            text/plain:
+            application/json:
               schema:
-                $ref: "#/components/schemas/AppserviceBadRequestError"
+                type: object
+                required:
+                  - errcode
+                  - error
+                properties:
+                  errcode:
+                    type: string
+                    enum:
+                      - "M_INVALID_PARAM"
+                  error:
+                    type: string
+                    enum:
+                      - "Invalid user ID"
+                    example: "Invalid user ID"
+                  invalidIDs:
+                    type: array
+                    description: Invalid room IDs
+                    items:
+                      type: string
+                      example: "!example:example.com"
+                  failedIDs:
+                    type: array
+                    description: Rooms which draupnir failed to join or protect
+                    items:
+                      type: string
+                      example: "!example:example.com"
         "401":
           description:
             Authentication is required to access the requested resource. The
             client must include the appropriate credentials.
           content:
-            text/plain:
+            application/json:
               schema:
-                $ref: "#/components/schemas/AppserviceUnauthenticatedError"
-
-  /report/{room_id}/{event_id}:
-    description: "Report an event to draupnir"
-    options:
-      operationId: reportOptions
-      summary: Report an event to draupnir (CORS preflight request)
-      parameters:
-        - name: room_id
-          in: path
-          schema:
-            type: string
-          required: true
-          description: The room ID in which the reported event occurred
-        - name: event_id
-          in: path
-          schema:
-            type: string
-          required: true
-          description: The event ID of the event to report
-      tags:
-        - Bot
-      security:
-        - bearerAuth: []
-      # This is purely for reference
-      servers:
-        - url: http://localhost:8080/api/1
-          description: Draupnir Bot API server.
-      responses:
-        "200":
-          description: CORS preflight request
-          headers:
-            "Access-Control-Allow-Origin":
-              $ref: "#/components/headers/Access-Control-Allow-Origin"
-            "Access-Control-Allow-Methods":
-              $ref: "#/components/headers/Access-Control-Allow-Methods"
-            "Access-Control-Allow-Headers":
-              $ref: "#/components/headers/Access-Control-Allow-Headers"
+                type: object
+                required:
+                  - errcode
+                  - error
+                properties:
+                  errcode:
+                    type: string
+                    enum:
+                      - "M_MISSING_TOKEN"
+                  error:
+                    type: string
+                    enum:
+                      - "Missing access token"
+                    example: "Missing access token"
+        "503":
+          description:
+            The server is unable to handle the request. Possibly due to a misconfiguration.
+            Are you sure this is an appservice draupnir?
           content:
             application/json:
               schema:
                 type: object
-                example: {}
+                required:
+                  - errcode
+                  - error
+                properties:
+                  errcode:
+                    type: string
+                    enum:
+                      - "M_NOT_CONFIGURED"
+                      - "M_INTERNAL_SERVER_ERROR"
+                      - "M_UNKNOWN"
+                  error:
+                    type: string
+                    enum:
+                      - "Appservice manager not configured"
+                      - "Failed to provision bot"
+                      - "Failed to protect rooms because draupnir is not running. Unable to continue."
+                    example: "Appservice manager not configured"
+
+  /1/report/{room_id}/{event_id}:
+    description: "Report an event to draupnir"
     post:
       operationId: messageReports
       summary: Send a report to draupnir
@@ -294,7 +362,7 @@ paths:
         - bearerAuth: []
       # This is purely for reference
       servers:
-        - url: http://localhost:8080/api/1
+        - url: http://localhost:8080/1
           description: Draupnir Bot API server.
       parameters:
         - name: room_id
@@ -360,7 +428,7 @@ paths:
             The server is currently unable to handle the request due to a
             temporary overload or maintenance of the server.
 
-  /user_may_invite:
+  /1/spam_check/user_may_invite:
     post:
       operationId: usersMayInvite
       summary: Check if a user is allowed to invite
@@ -370,7 +438,7 @@ paths:
         - bearerAuth: []
       # This is purely for reference
       servers:
-        - url: http://localhost:8080/api/1/spam_check
+        - url: http://localhost:8080/1/spam_check
           description: Draupnir SpamChecker API server.
       requestBody:
         content:
@@ -433,7 +501,7 @@ paths:
             text/plain:
               schema:
                 $ref: "#/components/schemas/BotUnauthenticatedError"
-  /user_may_join_room:
+  /1/spam_check/user_may_join_room:
     post:
       operationId: userMayJoinRoom
       summary: Check if a user is allowed to join a room
@@ -443,7 +511,7 @@ paths:
         - bearerAuth: []
       # This is purely for reference
       servers:
-        - url: http://localhost:8080/api/1/spam_check
+        - url: http://localhost:8080/1/spam_check
           description: Draupnir SpamChecker API server.
       requestBody:
         content:
@@ -506,7 +574,7 @@ paths:
             text/plain:
               schema:
                 $ref: "#/components/schemas/BotUnauthenticatedError"
-  /check_event_for_spam:
+  /1/spam_check/check_event_for_spam:
     post:
       operationId: CheckEventForSpam
       summary: Check if an event is spam
@@ -516,7 +584,7 @@ paths:
         - bearerAuth: []
       # This is purely for reference
       servers:
-        - url: http://localhost:8080/api/1/spam_check
+        - url: http://localhost:8080/1/spam_check
           description: Draupnir SpamChecker API server.
       requestBody:
         content:
@@ -582,28 +650,12 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+      bearerFormat: Matrix Access token
+    openidAuth:
+      type: http
+      scheme: bearer
       bearerFormat: Matrix OpenID token
   schemas:
-    AppserviceAuthenticationBody:
-      type: object
-      properties:
-        openId:
-          type: string
-      required:
-        - openId
-      example:
-        openId: "ujhU2AjxP201pGKI"
-    AppserviceBadRequestError:
-      type: string
-      enum:
-        - invalid request
-        - invalid user mxid
-        - unknown draupnir mxid
-    AppserviceUnauthenticatedError:
-      type: string
-      enum:
-        - unauthorised
-      example: unauthorised
     BotUnauthenticatedError:
       type: string
       enum:
