@@ -19,6 +19,7 @@ paths:
       security:
         - openidAuth: []
       parameters:
+        - $ref: "#/components/parameters/DraupnirUserID"
         - name: bot_id
           in: path
           required: true
@@ -42,9 +43,13 @@ paths:
                   ownerId:
                     type: string
                     example: "@example:example.com"
+                  displayName:
+                    type: string
+                    example: "Example Bot"
                 required:
                   - managementRoom
                   - ownerId
+                  - displayName
         "400":
           description:
             The server could not understand the request due to invalid syntax.
@@ -66,6 +71,7 @@ paths:
                     type: string
                     enum:
                       - "Invalid user ID"
+                      - "Missing X-Draupnir-UserID header"
                       - "Missing bot ID"
                       - "Invalid bot ID"
                     example: "Invalid user ID"
@@ -89,6 +95,8 @@ paths:
                     type: string
                     enum:
                       - "Missing access token"
+                      - "Missing or invalid openid token"
+                      - "User ID does not match the one in the header"
                     example: "Missing access token"
         "404":
           description: The requested bot was not found on the server.
@@ -141,6 +149,7 @@ paths:
       security:
         - openidAuth: []
       parameters:
+        - $ref: "#/components/parameters/DraupnirUserID"
         - name: onlyOwner
           in: query
           required: false
@@ -161,8 +170,25 @@ paths:
                   bots:
                     type: array
                     items:
-                      type: string
-                      example: "@example:example.com"
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: "@example:example.com"
+                        managementRoom:
+                          type: string
+                          example: "!example:example.com"
+                        ownerID:
+                          type: string
+                          example: "@example:example.com"
+                        displayName:
+                          type: string
+                          example: "Example Bot"
+                      required:
+                        - id
+                        - managementRoom
+                        - ownerID
+                        - displayName
                 required:
                   - bots
         "400":
@@ -185,6 +211,7 @@ paths:
                     type: string
                     enum:
                       - "Invalid user ID"
+                      - "Missing X-Draupnir-UserID header"
                     example: "Invalid user ID"
         "401":
           description:
@@ -206,6 +233,8 @@ paths:
                     type: string
                     enum:
                       - "Missing access token"
+                      - "Missing or invalid openid token"
+                      - "User ID does not match the one in the header"
                     example: "Missing access token"
         "503":
           description:
@@ -237,6 +266,8 @@ paths:
         - Appservice
       security:
         - openidAuth: []
+      parameters:
+        - $ref: "#/components/parameters/DraupnirUserID"
       requestBody:
         content:
           application/json:
@@ -291,6 +322,7 @@ paths:
                     type: string
                     enum:
                       - "Invalid user ID"
+                      - "Missing X-Draupnir-UserID header"
                     example: "Invalid user ID"
                   invalidIDs:
                     type: array
@@ -324,6 +356,8 @@ paths:
                     type: string
                     enum:
                       - "Missing access token"
+                      - "Missing or invalid openid token"
+                      - "User ID does not match the one in the header"
                     example: "Missing access token"
         "503":
           description:
@@ -382,13 +416,6 @@ paths:
           description:
             The request was successful, and the server has returned the
             requested resource in the response body.
-          headers:
-            "Access-Control-Allow-Origin":
-              $ref: "#/components/headers/Access-Control-Allow-Origin"
-            "Access-Control-Allow-Methods":
-              $ref: "#/components/headers/Access-Control-Allow-Methods"
-            "Access-Control-Allow-Headers":
-              $ref: "#/components/headers/Access-Control-Allow-Headers"
           content:
             application/json:
               schema:
@@ -649,19 +676,12 @@ components:
       enum:
         - Missing access token
       example: Missing access token
-  headers:
-    Access-Control-Allow-Origin:
-      description: The origin that is allowed to access the resource
+  parameters:
+    DraupnirUserID:
+      name: X-Draupnir-UserID
+      in: header
+      required: true
       schema:
         type: string
-        example: "*"
-    Access-Control-Allow-Methods:
-      description: The HTTP methods that are allowed for the resource
-      schema:
-        type: string
-        example: "POST, OPTIONS"
-    Access-Control-Allow-Headers:
-      description: The headers that are allowed for the resource
-      schema:
-        type: string
-        example: "X-Requested-With, Content-Type, Authorization, Date"
+      description: The user ID of the openID user. This must match the matrix id of the user that created the openid token.
+      example: "@example:example.com"
