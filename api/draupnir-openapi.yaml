@@ -10,6 +10,34 @@ info:
     name: AFL-3.0
     url: https://github.com/the-draupnir-project/Draupnir/blob/main/LICENSES/AFL-3.0.txt
 paths:
+  /1/health:
+    get:
+      security: []
+      operationId: health
+      summary: Health check
+      tags:
+        - Health
+      responses:
+        "200":
+          description: The server is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "OK"
+        "503":
+          description: The server is not healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
   /1/appservice/get/{bot_id}:
     get:
       operationId: getBotInfo
@@ -184,11 +212,31 @@ paths:
                         displayName:
                           type: string
                           example: "Example Bot"
+                        protectedRooms:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              room:
+                                type: string
+                                example: "!example:example.com"
+                              displayName:
+                                type: string
+                                example: "Example Room"
+                            required:
+                              - room
+                        subscribedLists:
+                          type: array
+                          items:
+                            type: string
+                            example: "!example:example.com"
                       required:
                         - id
                         - managementRoom
                         - ownerID
                         - displayName
+                        - protectedRooms
+                        - subscribedLists
                 required:
                   - bots
         "400":
