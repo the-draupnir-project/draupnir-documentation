@@ -32,6 +32,19 @@ Element web that will flood presence updates.
 
 :::
 
+:::warning
+
+If you are using mas you cannot use the Synapse API currently.
+
+Instead you should use the mas-cli as such:
+
+1. `mas-cli manage issue-compatibility-token --yes-i-want-to-grant-synapse-admin-privileges <username>`
+1. `mas-cli manage provision-all-users`
+
+Note that this requires an existing account. Create this one as you usually would with MAS.
+
+:::
+
 ## Disabling rate limiting
 
 :::info
@@ -49,7 +62,6 @@ It's therefore recommended to turn off ratelimiting for a draupnir
 bot, see [the synapse admin API
 documentation](https://matrix-org.github.io/synapse/latest/admin_api/user_admin_api.html#set-ratelimit)
 for more information.
-
 
 ## Making Draupnir a Synapse Admin
 
