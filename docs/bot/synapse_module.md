@@ -1,3 +1,4 @@
+<!-- cspell:ignore Hsggkm -->
 # Synapse module
 
 :::warning
@@ -24,7 +25,7 @@ See also configuration of [synapse-http-antispam](./synapse-http-antispam).
 
 **This requires Synapse 1.53.0 or higher**
 
-The Synapse module is indended to be used to apply policies to the
+The Synapse module is intended to be used to apply policies to the
 entire homeserver, to affect all of your users. This is primarily
 meant to block invites from undesired homeservers/users, Mjolnir's
 Synapse module is a way to interpret ban lists and apply them to your

@@ -20,7 +20,7 @@ the associated backend for the matrix-bot-sdk:
 
 You should clone these locally and then link them by using `yarn link` in each
 directory followed by
-`yarn link matirx-protection-suite matrix-protection-suite-for-matrix-bot-sdk`
+`yarn link matrix-protection-suite matrix-protection-suite-for-matrix-bot-sdk`
 within Draupnir.
 
 You will probably also want to download

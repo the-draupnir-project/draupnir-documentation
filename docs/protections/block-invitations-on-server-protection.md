@@ -13,7 +13,7 @@ legacy synapse module from mjolnir.
 
 :::
 
-This protection blocks invitations on your homserver based on the
+This protection blocks invitations on your homeserver based on the
 lists that Draupnir is subscribed to.
 
 ## Which policies will result in a rejected invitation

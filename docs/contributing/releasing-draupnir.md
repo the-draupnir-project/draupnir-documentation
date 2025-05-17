@@ -1,3 +1,4 @@
+<!-- cspell:ignore TWIM -->
 # Releasing Draupnir
 
 To produce a release, checkout main.

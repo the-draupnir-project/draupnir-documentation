@@ -74,7 +74,7 @@ to restore the default settings for a given protection.
 
 Let's consider adjusting the protection settings for the
 `JoinWaveShortCircuitProtection`. If we have a particularly inactive
-room, we might want to reduce the timesacale and the maximum number of
+room, we might want to reduce the timescale and the maximum number of
 joins within it.
 
 To do this, we can use the `!draupnir protections config set

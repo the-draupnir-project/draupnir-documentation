@@ -19,7 +19,7 @@ matrix-protection-suite.
 
 :::
 
-The _protected rooms set_ is one of the most importanat components of
+The _protected rooms set_ is one of the most important components of
 the matrix-protection-suite. A _protected rooms set_ is a set of rooms
 that a group of protections will interact with. So with each protected
 rooms set, there is a collection of [protections](./protection) that
@@ -75,7 +75,7 @@ Details of individual room membership can be found by accessing the
 immediate access to to the membership information for each room.
 This is provided in the form of a `RoomMembershipRevision`.
 
-When a user's membershihp within a _protected room_ changes, the
+When a user's membership within a _protected room_ changes, the
 `handleMembershipChange` handle will be called for each _protection_
 as described in the `Protection` interface. _Protections_ will
 be given a new `RoomMembershipRevision` for the protected room,

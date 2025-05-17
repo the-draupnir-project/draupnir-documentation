@@ -9,7 +9,7 @@ You need to be using Draupnir v2.3.0 or above to use this Synapse module.
 The
 [synapse-http-antispam](https://github.com/maunium/synapse-http-antispam)
 module allows Draupnir to make decisions about events that are
-received by your homserver. This module replaces the functionality of the
+received by your homeserver. This module replaces the functionality of the
 legacy Mjolnir antispam module.
 
 Please see the page on [homeserver

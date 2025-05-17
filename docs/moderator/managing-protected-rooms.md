@@ -107,7 +107,7 @@ E2EE device for Draupnir to use. Most functionality will
 work without any problem, however some protections will be unable to
 reliably function. Specifically any protection that needs to access
 the content of an event can encounter problems. This includes
-protetions such as `WordList` and `FirstMessageIsImage`.
+protections such as `WordList` and `FirstMessageIsImage`.
 
 If your Draupnir deployment supports encryption, protections that
 require access to event content can be bypassed by malicious
