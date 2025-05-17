@@ -23,8 +23,9 @@ only apply if the ban reason matches one of the configured
 `automaticallyRedactForReasons` in your Draupnir's [configuration
 file](../bot/starting_draupnir#the-configuration-file). If
 the user is targeted by a policy with the `takedown` recommendation,
+invitations from them will always be blocked.
 
-For policies that ban or takedown servers and rooms, invitations will
+For policies that ban or takedown servers and rooms, matching invitations will
 always be blocked.
 
 ## Enabling the protection

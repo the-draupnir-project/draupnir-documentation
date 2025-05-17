@@ -30,7 +30,7 @@ Use `!draupnir protections show MentionLimitProtection` to show the available
 protection settings for this protection.
 
 The protection will redact any messages containing mentions over `maxMentions`.
-The user who sent the messae will then be warned not to send such a message
+The user who sent the message will then be warned not to send such a message
 again.
 
 If they send another message containing messages over the limit within a short
