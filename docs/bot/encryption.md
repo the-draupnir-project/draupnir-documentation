@@ -31,7 +31,7 @@ device to Draupnir: Pantalaimon and the matrix-bot-sdk's
 experimental rust crypto. Neither of these options are of a high
 enough quality.
 
-While we have previously permitted the use of Pantaliamon, it has
+While we have previously permitted the use of Pantalaimon, it has
 consistently confused beginners that are setting it up with Draupnir,
 and we do not use it ourselves. Experienced system admins are welcome
 to attempt to set up Pantalaimon, but must be aware that any issues
@@ -41,5 +41,5 @@ Additionally, there are a couple of known bugs that inhibit the use of
 reactions in the management room when using Pantalaimon. Which are
 a core part of Draupnir's UX rework.
 
-You can find indiviual keys in Draupnir's configuration relating to
+You can find individual keys in Draupnir's configuration relating to
 both the matrix-bot-sdk and Pantalaimon.

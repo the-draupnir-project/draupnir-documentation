@@ -35,7 +35,7 @@ user, often in reaction to other events.
   - As an example, a community under a targeted attack may wish to
     enabled the `JoinWaveShortCircuitProtection` for the duration
 	of the period, but might want to turn it off if they are
-	advertising their community or have been featured somehwere.
+	advertising their community or have been featured somewhere.
 
 * Protections have their own independent configuration settings, that
   can be changed dynamically at runtime.
@@ -72,7 +72,7 @@ access to the entire Matrix account it has been configured to use, and
 so conventionally all parts of Draupnir could cause any effect.
 Whether that be to shutdown Matrix rooms, ban users, hijack rooms, or
 go rogue. Draupnir has the ambient authority to do all these things,
-we have to challange this authority and create ways of containing and
+we have to challenge this authority and create ways of containing and
 auditing it.  Because without, any protection that is enabled could
 act with the entire authority of Draupnir, to shutdown rooms and ban
 users, and this would be very confusing to the end user, especially
@@ -85,7 +85,7 @@ would be very fragile to maintain. This was the reality of _Mjolnir_'s
 dry-run feature.  It became very easy for contributors to forget the
 feature existed, or not realise that a behaviour they were creating
 should have a special case. Because effects were being implemented
-implicitly with the general protection buisness logic.
+implicitly with the general protection business logic.
 
 By using capability interfaces we can make these effects explicit, and
 accounting for different modes of operation becomes a first class

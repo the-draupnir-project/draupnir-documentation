@@ -17,7 +17,7 @@ The management room is where you will interact with Draupnir. This is
 the room where Draupnir will respond to commands, allowing you to
 coordinate with Draupnir and other moderators without disrupting your
 public Matrix rooms. You can find further information about the
-mangement room [here](../concepts/management-room).
+management room [here](../concepts/management-room).
 
 You should create this room after you have created a user for your
 Draupnir bot.

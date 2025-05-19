@@ -5,23 +5,23 @@ particularly relevant when registration on a homeserver is open or
 public:
 
 * Room management: Draupnir can provide insight into the Matrix rooms
-  your server is participaiting in and allow them to be blocked and
-  takendown.
+  your server is participating in and allow them to be blocked and
+  taken down.
   + See the [Room takedown protection](../protections/room-takedown-protection).
 
 * Invitation management: Draupnir can block invitations from users,
   servers, or rooms. And reject invitations sent on behalf of your users
-  that were sent from takendown rooms.
+  that were sent from taken down rooms.
   + See the  [Block invitations on server protection](../protections/block-invitations-on-server-protection).
 
 * Report forwarding and review: Draupnir can be used to view
-  reports submitted by users on your homserver.
+  reports submitted by users on your homeserver.
 
 * User management: Accounts can be deactivated using the `!draupnir
   deactivate` command.
 
 These features may require either a [synapse admin
-acount](./setup_draupnir_account#making-draupnir-a-synapse-admin) or
+account](./setup_draupnir_account#making-draupnir-a-synapse-admin) or
 [synapse-http-antispam](./synapse-http-antispam) to be available to
 Draupnir.
 

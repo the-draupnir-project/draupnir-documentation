@@ -29,7 +29,7 @@ then tell yourself that it does not matter.
 
 You might notice that we try to keep the scope (which by "scope"
 here we really mean "how much stuff" is in a function/method)
-as small as possible. This is something you should stick to aswell.
+as small as possible. This is something you should stick to as well.
 
 It really helps to introduce local functions if your method body starts
 getting too large. I can't really tell you how large too large is,

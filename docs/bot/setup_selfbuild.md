@@ -8,7 +8,7 @@ sidebar_label: Advanced setup from source
 :::tip
 
 This guide is for experienced system administrators.
-The recomended installation method is [using Docker with systemd](./systemd).
+The recommended installation method is [using Docker with systemd](./systemd).
 
 :::
 
@@ -30,7 +30,7 @@ yarn install
 yarn build
 
 # Copy and edit the config. It *is* recommended to change the data path,
-# as this is set to `/data` by default for dockerized draupnir.
+# as this is set to `/data` by default for dockerised draupnir.
 cp config/default.yaml config/production.yaml
 nano config/production.yaml
 

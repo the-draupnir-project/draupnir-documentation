@@ -1,6 +1,9 @@
+<!-- cspell:ignore SUIDSGID, EPERM, tunables -->
 ---
 sidebar_position: 6
 ---
+
+
 
 # Installation on Debian
 

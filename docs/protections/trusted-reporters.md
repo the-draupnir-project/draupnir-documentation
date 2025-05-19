@@ -42,6 +42,6 @@ log each report, which is `displayReports` in Draupnir's config file.
 
 Make sure that anything you have sat in front of Synapse (e.g. nginx)
 is correctly configured to forward `/_synapse/admin/v1/event_reports`
-and `/_synapse/admin/v1/rooms/${room_id}/context/${revent_id}` to
+and `/_synapse/admin/v1/rooms/${room_id}/context/${event_id}` to
 Synapse, or Draupnir will not be able to poll for new
 reports. Draupnir polls for new reports every 30 seconds.

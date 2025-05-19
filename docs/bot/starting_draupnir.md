@@ -35,7 +35,7 @@ Please go through [the sample configuration file's
 documentation](https://github.com/the-draupnir-project/Draupnir/blob/main/config/default.yaml),
 download it, and rename it `production.yaml`. You should read over the
 different options and edit them to your liking. This is the file that
-will be refered to as "the config" throughout Draupnir's
+will be referred to as "the config" throughout Draupnir's
 documentation. Your copy of the config file should be named
 `production.yaml` and placed within `./config/production.yaml`
 relative to [the data directory](#the-data-directory) (explained
@@ -57,7 +57,7 @@ setup](./setup_docker).
 
 Draupnir stores persistent data to a directory called the *data
 directory*. This is a directory that Draupnir must have read and write
-access to. This is configured using the toplevel `dataPath` option
+access to. This is configured using the top-level `dataPath` option
 within Draupnir's configuration.
 
 ## Secret Management

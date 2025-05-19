@@ -139,6 +139,6 @@ implement the `Protection` interface.
 * `SetMembershipRevisionIssuer` produces a consolidated model for membership
   over a set of rooms.
 
-* `SetMembershihpPolicyRevisionIssuer` produces a revision containing
+* `SetMembershipPolicyRevisionIssuer` produces a revision containing
   all of the members from a `SetMembershipRevisionIssuer` that also
   have matching policies from a `PolicyListRevisionIssuer`.

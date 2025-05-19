@@ -6,7 +6,7 @@ sidebar_position: 1
 
 The issue triaging process was developed in this [blog post](https://marewolf.me/posts/draupnir/2401.html#triaging)
 and we use [another post](https://lostgarden.home.blog/2008/05/20/improving-bug-triage-with-user-pain/)
-as our primary resouce.
+as our primary resource.
 
 ## The purpose of triaging
 

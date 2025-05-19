@@ -63,7 +63,7 @@ as you will still be dealing with legacy room versions.
 When a state event is sent to a room, the current mapping of the tuple
 `(type, state_key)` for a room is updated to refer to the new event.
 It is important to be aware that because of the nature of Matrix,
-everytime a state event is sent there is a possibility
+every time a state event is sent there is a possibility
 for the DAG to diverge between different server's perspectives of
 the room. Meaning that the state of a room can move under your feet
 as these perspectives converge,
