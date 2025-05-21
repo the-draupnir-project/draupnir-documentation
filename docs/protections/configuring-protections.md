@@ -101,3 +101,73 @@ So to add a user to the list of trusted reporters, we would use
 `!draupnir protections config add TrustedReporters mxids
 @alice:example.com`, and to remove a user `!draupnir protections
 config remove TrustedReporters mxids @alice:example.com`.
+
+## Configuring protection capabilities
+
+:::info
+
+For more details about capabilities, see the [conceptual
+documentation](../matrix-protection-suite/concepts/protection).
+Capabilities are a relatively new feature in Draupnir, and we're still
+working to update protections to make use of them.
+
+Managing capabilities is a relatively advanced feature, and we aim to
+make use of the functionality though protection specific configuration
+commands that are easier to use.
+
+:::
+
+Protections use capabilities to cause actions such as redacting an
+event, banning a user, or sending an alert to the management room.
+
+A protection can have more than one capability, and each capability
+has a name. Think of capabilities as a place for a specific piece of
+functionality. Such as the ability to ban users is often provided by
+the `StandardUserConsequences` _capability provider_ which satisfies
+the `UserConsequences` _capability interface_. The configured provider
+that gives a protection the functionality for a specific capability is
+called the _active capability provider_. And collectively the
+configured capability providers for all the protection's capabilities
+is called _the capability provider set_.
+
+### Viewing configured capability providers
+
+To view which capability providers are currently active we can use the
+`!draupnir protections show <protection name>` command.
+
+Under the `Capability provder set` heading, each capability that the
+protection supports is shown. There are three key pieces of
+information here:
+
+- The capability name
+- The _capability interface_, which determines which _capability providers_ are
+  compatible or interchangeable with this capability.
+- The _active capability provider_, showing which of the compatible _capability providers_ is configured
+  for and being used for this capability.
+
+If you expand the details, you will be able to see a list of
+compatible capability providers for the _capability interface_
+desingated for this capability. Protections will always have at least
+two different options, a standard capability and a simulated
+capability. You will be able to read a description of what each capability
+provider does.
+
+### Changing the active capability provider for a protection capability
+
+:::tip
+
+To avoid typos, try copy and pasting the details from the `!draupnir
+protections show <protection name>` command.
+
+:::
+
+To change the active capability provider for a protection, we can use
+the `!draupnir protections capability <protection name> <capability
+name> <capability provider name>` command.
+
+### Restoring the default capability provider set for a protection
+
+If you need to restore the default capability providers for a
+protection, then you can use the `!draupnir protections capability
+reset` command. This will restore all the default capability providers
+for each capability that the protection offers.
