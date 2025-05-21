@@ -42,7 +42,7 @@ link and unlink our maintained dependencies that you can add to your path
 You will also want to edit your `settings.json` to match something like this, so
 that you can debug into MPS while debugging Draupnir.
 
-```
+```json
     "debug.javascript.terminalOptions": {
         "runtimeArgs": ["--preserve-symlinks"],
         "sourceMaps": true,
@@ -98,41 +98,41 @@ specific instructions for installing rust.
 
 Once rust is installed you can install mx-tester like so.
 
-```
-$ cargo install mx-tester
+```bash
+cargo install mx-tester
 ```
 
 Once you have mx-tester installed you we will want to build a synapse image with
 synapse_antispam from the Draupnir project root.
 
-```
-$ mx-tester build
+```bash
+mx-tester build
 ```
 
 Then we can start a container that uses that image and the config in
 `mx-tester.yml`.
 
-```
-$ mx-tester up
+```bash
+mx-tester up
 ```
 
 Once you have called `mx-tester up` you can run the integration tests.
 
-```
-$ yarn test:integration
+```bash
+yarn test:integration
 ```
 
 After calling `mx-tester up`, if we want to play with Draupnir locally we can
 run the following and then point a matrix client to http://localhost:9999. You
 should then be able to join the management room at `#moderators:localhost:9999`.
 
-```
+```bash
 yarn test:manual
 ```
 
 Once we are finished developing we can stop the synapse container.
 
-```
+```bash
 mx-tester down
 ```
 

@@ -33,7 +33,7 @@ always be blocked.
 Run `!draupnir protections enable BlockInvitationsOnServerProtection`
 in the management room.
 
-## Taking down targeted invitations.
+## Taking down targeted invitations
 
 The most effective way to remove invitations targeting users on your
 server to a room with intolerable content is by using the `!draupnir

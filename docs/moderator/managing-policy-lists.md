@@ -42,8 +42,7 @@ The easiest way to watch a room is to use the `!draupnir watch`
 command.  This will tell Draupnir to watch the list and apply its
 policies to your rooms.  We recommend subscribe to to the list curated
 by the community moderation effort, which exclusively focuses on
-spam. You can do so with the following command `!draupnir watch
-#community-moderation-effort-bl:neko.dev`.
+spam. You can do so with the following command `!draupnir watch #community-moderation-effort-bl:neko.dev`.
 
 ## Using the `status` command to view watched lists
 

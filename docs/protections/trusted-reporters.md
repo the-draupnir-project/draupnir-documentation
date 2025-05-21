@@ -27,6 +27,7 @@ The users to trust, the actions to take, and the thresholds needed for
 those actions are all configurable.
 
 Prerequisites:
+
 * `pollReport: true` in Draupnir config file
 * restart Draupnir
 * `!draupnir enable TrustedReporters`

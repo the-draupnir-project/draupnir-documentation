@@ -6,13 +6,13 @@ it is not recommended currently and support will be limited.
 
 Usage of the [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bot-draupnir.md) role for Draupnir for all is recommended instead of trying to deploy Draupnir for all from scratch as much more support is offered when taking this route. Especially if not deviating from defaults.
 
-# Prerequisites
+## Prerequisites
 
 This guide assumes you will be using Docker and that you are able to provide a postgres database for Draupnir to connect to in application service mode.
 
 Please note that Draupnir in appservice mode does not support E2EE nor support use of an E2EE proxy like [pantalaimon](https://github.com/matrix-org/pantalaimon) as there is currently no proxy for appservices like there is for /sync
 
-# Setup
+## Setup
 
 1. Create a new temporarily public Matrix room that will act as a combined Policy List and Management room for the appservice.
    FIXME: Currently required to be aliased.
@@ -34,7 +34,7 @@ Please note that Draupnir in appservice mode does not support E2EE nor support u
 
 The provisioned Draupnirs only inherit a subset of the configuration options that are accessible to Bot mode Draupnir. Those are the following options. If there's `:` as a suffix to a config option that means there are sub options like how under commands in the default config you also find `additionalPrefixes:` with a value of `draupnir`.
 
-```
+```yaml
 logLevel
 syncOnStartup
 fasterMembershipChecks
@@ -49,12 +49,12 @@ protections:
 
 8. Copy the `draupnir-registration.yaml` to your matrix homeserver and refer to it in `homeserver.yaml` like so:
 
-```
+```yaml
   app_service_config_files:
     - "/data/draupnir-registration.yaml"
 ```
 
-# Post Install Setup and Configuration.
+## Post Install Setup and Configuration
 
 If you successfully followed Steps 1-8 or got to the point your running the bot through other means congratulations. Then there are some post install steps and configuration that you should apply to your appservice
 

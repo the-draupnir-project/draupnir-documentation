@@ -26,7 +26,7 @@ You will then want to copy your configuration file for Draupnir to
 Then you will want to copy the following systemd unit file to
 `/etc/systemd/system/draupnir.service`.
 
-```
+```ini
 [Unit]
 Description=Draupnir Docker Container
 After=docker.service
