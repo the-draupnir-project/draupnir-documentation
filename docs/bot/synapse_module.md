@@ -14,7 +14,7 @@ module will still be compatible with Draupnir's policy lists.
 
 :::
 
-:::info
+:::warning
 
 When Synapse workers are used, changes to policy lists may not
 propagate to all workers until Synapse is restarted.
