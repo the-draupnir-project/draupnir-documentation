@@ -135,7 +135,7 @@ is called _the capability provider set_.
 To view which capability providers are currently active we can use the
 `!draupnir protections show <protection name>` command.
 
-Under the `Capability provder set` heading, each capability that the
+Under the `Capability provider set` heading, each capability that the
 protection supports is shown. There are three key pieces of
 information here:
 
@@ -147,7 +147,7 @@ information here:
 
 If you expand the details, you will be able to see a list of
 compatible capability providers for the _capability interface_
-desingated for this capability. Protections will always have at least
+designated for this capability. Protections will always have at least
 two different options, a standard capability and a simulated
 capability. You will be able to read a description of what each capability
 provider does.
