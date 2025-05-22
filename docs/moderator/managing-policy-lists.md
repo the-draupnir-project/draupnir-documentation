@@ -58,5 +58,5 @@ create one using `!draupnir list create`. So for example, if I wanted
 to create a a policy room for paw prints community, then I would use
 the command like so `!draupnir list create my-bans my-bans-bl`. This
 will create a policy room with the shortcode `my-bans` and an alias
-`#may-bans-bl:example.com`, which can be used to share the list with
+`#my-bans-bl:example.com`, which can be used to share the list with
 other communities.
