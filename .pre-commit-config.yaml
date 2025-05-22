@@ -18,3 +18,15 @@ repos:
     hooks:
       - id: editorconfig-checker
         alias: ec
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v9.0.1
+    hooks:
+      - id: cspell # Spell check changed files
+        types: ["markdown"]
+        args:
+          - "--no-progress"
+          - "--show-suggestions"
+          - "--show-context"
+          - "--no-summary"
+          - "--config"
+          - ".cspell.json"
