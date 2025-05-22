@@ -7,9 +7,9 @@ sidebar_label: Synapse module
 
 :::warning
 
-The Synapse module that was inherited from Mjolnir has been removed from the project.
-The module was unmaintained and untouched for its whole lifetime in Draupnir.
-However the mjolnir module is still compatible with Draupnir's policy lists.
+The version of the Synapse module in the Draupnir repository that was inherited from Mjolnir has been removed.
+The module was unmaintained and untouched for its whole lifetime in Draupnir, and we always directed
+users to the Mjolnir version, which still exists and is still compatible with Draupnir's policy lists.
 
 :::
 
