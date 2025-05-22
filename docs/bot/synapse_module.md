@@ -5,7 +5,7 @@ sidebar_label: Synapse module
 
 # Synapse module
 
-:::warning
+:::info
 
 The version of the Synapse module in the Draupnir repository that was inherited from Mjolnir has been removed.
 The module was unmaintained and untouched for its whole lifetime in Draupnir, and we always directed
