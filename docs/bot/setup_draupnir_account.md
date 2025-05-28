@@ -7,9 +7,10 @@ sidebar_label: Creating an account for Draupnir
 
 :::tip
 
-If you want Draupnir to be a Synapse admin, you might want to create
-the account using Synapse's `register_new_matrix_user` command.
-See the Synapse documentation [here](https://element-hq.github.io/synapse/latest/usage/administration/admin_api/index.html).
+If you want Draupnir to be a homeserver admin, you might want to create
+the account using Synapse's `register_new_matrix_user` or Dendrite's `create-account` command.
+See the Synapse documentation [here](https://element-hq.github.io/synapse/latest/usage/administration/admin_api/index.html)
+and Dendrite documentation [here](https://element-hq.github.io/dendrite/administration/createusers#from-the-command-line).
 
 :::
 
@@ -54,7 +55,7 @@ recommend disabling rate limiting if the option is available to you.
 
 :::
 
-By default, Draupnir will be rate limited by Synapse, which can
+By default, Draupnir will be rate limited by homeservers, which can
 inhibit Draupnir's ability to respond in some scenarios, particularly
 while redacting lots of messages.
 
@@ -62,6 +63,8 @@ It's therefore recommended to turn off ratelimiting for a draupnir
 bot, see [the synapse admin API
 documentation](https://matrix-org.github.io/synapse/latest/admin_api/user_admin_api.html#set-ratelimit)
 for more information.
+For Dendrite this is configured in [dendrite.yaml](https://github.com/element-hq/dendrite/blob/main/dendrite-sample.yaml#L211)
+by adding `exempt_user_ids:` under `rate_limiting:`.
 
 ## Making Draupnir a Synapse Admin
 
