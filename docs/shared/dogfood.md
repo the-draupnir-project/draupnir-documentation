@@ -20,4 +20,4 @@ And as for Install methods for the appservice mode the statuses are as follows
 
 ## E2EE Support
 
-E2EE support is not dogfooded by any party mentioned in this document currently and this means that we can not guarantee that [Pantalaimon](https://github.com/matrix-org/pantalaimon) or the experimental native rust crypto support is working. Especially as the CI does not use these it complicates testing for them.
+E2EE support is used by Emma currently and we know that support for [Pantalaimon](https://github.com/matrix-org/pantalaimon) is broken. Using [Pantalaimon](https://github.com/matrix-org/pantalaimon) breaks the reactions used by the command handler. The status of experimental native rust crypto support is unknown. As the CI does not use these it complicates testing for them.
