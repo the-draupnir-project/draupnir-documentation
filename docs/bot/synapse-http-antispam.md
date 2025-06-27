@@ -34,35 +34,52 @@ modules:
       # http://`<draupnir host>:<port>/api/1/spam_check`
       base_url: http://localhost:8080/api/1/spam_check
       authorization: YOUR_SECRET_TOKEN
+      do_ping: true
       enabled_callbacks:
-        - check_event_for_spam
         - user_may_invite
         - user_may_join_room
       fail_open:
-        check_event_for_spam: true
         user_may_invite: true
         user_may_join_room: true
-      async:
-        check_event_for_spam: true
 ```
 
-Currently we only support the `check_event_for_spam`, `user_may_invite`, and
-`user_may_join_room` callbacks. We strongly recommend that these endpoints are
-configured to `fail_open` so that your homeserver's service is not degraded
-should Draupnir fail or go offline.
-
-Additionally it is important that `check_event_for_spam` is configured to be
-`async`. This means that Synapse will not wait for a response from Draupnir.
-Draupnir only uses this check to source information about the matrix rooms your
-server is participating in.
-
-If your server has a very high maximum PDU rate (50PDU/s or above) you may wish
-to consider disabling the `check_event_for_spam` callback entirely. It is
-unlikely that your server will unless you are offering a service on the scale of
-matrix.org.
+Currently we only support the `user_may_invite`, and `user_may_join_room`
+callbacks. We strongly recommend that these endpoints are configured to
+`fail_open` so that your homeserver's service is not degraded should Draupnir
+fail or go offline.
 
 ### Draupnir Configuration
 
 You will also need to enable `synapseHTTPAntispam` under the `web` property in
 Draupnir's config (see
 [default.yaml](https://github.com/the-draupnir-project/Draupnir/blob/main/config/default.yaml)).
+
+## Troubleshooting or verifying connection from Synapse
+
+:::info
+
+Support for `do_ping` is available from Draupnir v2.4.0.
+
+:::
+
+In order to verify that Synapse, or any of its workers, are able to reach the
+draupnir antispam server, you can look for the following messages in Synapse
+logs.
+
+1. Verify that the Synapse module is loaded by searching for `Loaded module`.
+   You should find a line that looks like this:
+   `synapse.app._base - 584 - INFO - sentinel - Loaded module <synapse_http_antispam.HTTPAntispam object at 0x79613db08b00>`
+
+2. Verify that synapse-http-antispam is able to reach Draupnir by searching for
+   `Successfully pinged antispam server`. You should be able to see a line that
+   looks like this:
+   `synapse_http_antispam - 65 - INFO - sentinel - Successfully pinged antispam server with request ID UAhDvDkv`
+
+3. Verify that synapse-http-antispam is unable to reach Draupnir by searching
+   for `Failed to ping antispam server`. You should be able to see a line that
+   looks like this:
+   `synapse_http_antispam - 68 - ERROR - sentinel - Failed to ping antispam server (POST http://draupnir:localhost:8082/api/1/spam_check/ping)`
+
+4. Verify that Draupnir's configuration is correct by looking for the message
+   `There are unknown configuration properties` in Draupnir's log, and checking
+   if any properties are relevant.
