@@ -1,1 +1,5 @@
+# SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 *.gif filter=lfs diff=lfs merge=lfs -text
