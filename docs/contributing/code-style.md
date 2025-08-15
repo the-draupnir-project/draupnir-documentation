@@ -64,3 +64,38 @@ to check if a variable is null, undefined, or some other default value because
 the variable is always initialized. Second of all it signals that we cannot
 reassign anything half way down the function body, and that takes off some
 mental load we'd otherwise have to worry about.
+
+## Code style: parameterized dependencies
+
+Whenever a module or component is being developed, it is essential to ensure
+that its dependencies are expressed as parameters. This ensures that code is
+modular, and as a result it is also more testable and understandable.
+
+Consider the behaviour to protect replacement rooms in Draupnir upon the receipt
+of a tombstone event. This behaviour is implemented by a class named
+`ProtectReplacementRooms`.
+
+```typescript
+export class ProtectReplacementRooms {
+  public constructor(
+    private readonly managementRoomID: StringRoomID,
+    private readonly roomJoiner: RoomJoiner,
+    private readonly roomMessageSender: RoomMessageSender,
+    private readonly protectedRoomsManager: ProtectedRoomsManager
+  ) {
+    // nothing to do.
+  }
+}
+```
+
+This class needs to join the replacement room, protect it using the _protected
+rooms manager_, and then send a message to the management room using the
+`managementRoomID`, and the `RoomMessageSender`.
+
+If we wanted to unit test this class, we can already see all of the dependencies
+that we might need to provide or mock. And we don't need to setup a huge
+environment or harness.
+
+For unit testing generally we recommend using _Working Effectively with Legacy
+Code_ by Michael C. Feathers as a reference. And also a survival guide if you
+are in the industry.
