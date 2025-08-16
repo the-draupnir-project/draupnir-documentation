@@ -58,13 +58,14 @@ community management service:
 
 ## Draupnir's primary deployment method as a bot remains supported as Matrix moves to embrace community management services
 
-As of writing Draupnir is deployed primarily as a bot. This is because of the
-ease of use that this deployment option provides. As Matrix moves towards
-specifying community management services, Draupnir deployments using bots are
-likely to be forgotten or left out from receiving new capabilities. Either
-through specification or support from implementation.
+Early in Draupnir's history, the primary mode of deployment for Draupnir among
+its users was as a bot. This was because of the ease of use that this deployment
+option provides. As Matrix moved towards specifying community management
+services, Draupnir deployments using bots were not forgotten or left out from
+receiving new capabilities. Neither through specification or support from
+implementation.
 
-### Policy servers as an example
+### Policy servers as an early example of friction
 
 An example we can point to is
 [policy servers](https://matrix.org/blog/2025/04/introducing-policy-servers/).
@@ -83,12 +84,13 @@ Draupnir meant to function as a policy server within its protected rooms?
 
 ## Draupnir as a service
 
-The Draupnir project develops an appservice deployment option. It is clear that
-many communities that move to Matrix are unable to operate their own
+The Draupnir project had always developed an appservice deployment option. It is
+clear that many communities that move to Matrix are unable to operate their own
 infrastructure, even though the option is very much available to them.
 
-The roadblocks to on-boarding UX are solved either by authenticating Draupnir to
-protect a community via OIDC, or by simply signing in to a web app.
+The roadblocks to on-boarding UX were solved either by authenticating Draupnir
+to protect a community via OIDC, or by simply signing in to a web app that would
+configure Draupnir for them.
 
 Concerns about performance and optimisation were also easily dismissed, because
 we could point to the matrix-protection-suite's advanced persistent data
