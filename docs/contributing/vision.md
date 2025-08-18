@@ -177,3 +177,33 @@ forking among software projects, which amount to an inability to change the
 behaviour of software externally for a specific requirement or need. Which in
 turn are caused by in turn: lack of modularity, poor governance, and finally
 software licensing and copyright.
+
+## Draupnir's contributors are vision centric
+
+Projects aren't defined by the programming language that they use, they're
+defined by their vision and the experience they provide to end users. Outside of
+tech-centric circles, no one cares what stack was used to build a piece of
+software, they only care about whether it works well and brings them value.
+
+The biggest challenge Draupnir faces in fostering contribution is helping
+potential contributors break out of their comfort zone and loyalty to their
+programming languages of preference.
+
+Far too often developers decide to build their own toolchains out of stack
+tribalism, often to abandon them when the scope of the work becomes clear.
+
+Instead, we must encourage contributors to take a more mature view: if you
+already like Draupnir and align with its vision, then stepping outside your
+comfort zone to contribute here is far more productive than rebuilding an entire
+stack on your own.
+
+Early contributions may feel slow or limited, but their effect multiplies:
+existing contributors gain so much motivation, new pathways open for others to
+join, and the project as a whole grows stronger. Even if you can't contribute
+much code at first, don't mistake that for insignificance. Your contributions
+matter, not just for the immediate contribution, but the momentum you create for
+the project.
+
+Collaboration around a shared vision builds strong, supportive communities and
+enables more diverse, reasoned decision-making. Which is critical in the context
+of safety development in an open ecosystem.
