@@ -10,19 +10,11 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # The Draupnir project vision
 
-:::note
-
-This document contains the opinions, ideas, and dreams of the project. Not all
-of the content in this document can be considered objective and it is an
-artistic choice to present the vision in this way. Please keep this in mind as
-you read.
-
-:::
-
-This document describes the vision and goals that the Draupnir project has. Some
-of these goals have already been achieved. And some of them are ambitious. We
-believe they are all reasonable. We would already long be here if effort had
-been concentrated on Draupnir sooner.
+This document contains the opinions, ideas, and dreams of the project. This
+document describes the vision and goals that the Draupnir project has. Some of
+these goals have already been achieved. And some of them are ambitious. But they
+are all grounded and with a unified effort from the ecosystem, would already
+have been achieved.
 
 ## Draupnir as essential open community management infrastructure
 
