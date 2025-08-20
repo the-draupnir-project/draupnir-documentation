@@ -16,6 +16,10 @@ these goals have already been achieved. And some of them are ambitious. But they
 are all grounded and with a unified effort from the ecosystem, would already
 have been achieved.
 
+The draupnir project brings this vision with a plan to allow Matrix to succeed
+in being a home for open communities. And we believe that the success of this
+project is essential to the success of Matrix[^no-plan].
+
 ## Draupnir as essential open community management infrastructure
 
 Draupnir is a community management service specifically designed for communities
@@ -207,3 +211,7 @@ the project.
 Collaboration around a shared vision builds strong, supportive communities and
 enables more diverse, reasoned decision-making. Which is critical in the context
 of safety development in an open ecosystem.
+
+[^no-plan]:
+    And there is no other organisation with a vision or plan for open community
+    management that you can read in the same detail as this one.
