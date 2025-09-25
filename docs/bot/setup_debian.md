@@ -59,6 +59,12 @@ git clone https://github.com/the-draupnir-project/Draupnir.git /opt/mod-bot/Drau
 git -C /opt/mod-bot/Draupnir fetch --tags
 ```
 
+Select the latest version:
+
+```shell
+git -C /opt/mod-bot/Draupnir checkout v2.6.1
+```
+
 create the directory for draupnirs datastorage
 
 ```shell
