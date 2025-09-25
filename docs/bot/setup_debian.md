@@ -14,6 +14,13 @@ This installation method is intended for experienced sysadmins.
 
 :::
 
+:::note
+
+Based on these instructions, there's an [Ansible playbook](https://codeberg.org/Tealk/ansible_collection/src/branch/develop/playbooks/update-draupnir.yml) that install Draupnir and also applies the configuration. \
+**Secrets should be secured with Ansible Vault!**
+
+:::
+
 ## Installation
 
 install git curl and sudo
