@@ -55,7 +55,7 @@ git -C /opt/mod-bot/Draupnir fetch --tags
 create the directory for draupnirs datastorage
 
 ```shell
-mkdir /opt/mod-bot/Draupnir/datastorage
+mkdir -p /opt/mod-bot/Draupnir/storage/datastorage
 ```
 
 add corepack
@@ -95,7 +95,7 @@ cp /opt/mod-bot/Draupnir/config/default.yaml /opt/mod-bot/Draupnir/config/produc
 change the path of the datadirectory from the default to the directory we created earlier since the default dir is for the docker setup
 
 ```shell
-sed -i 's|dataPath: "/data/storage"|dataPath: "/opt/mod-bot/Draupnir/datastorage"|' /opt/mod-bot/Draupnir/config/production.yaml
+sed -i 's|dataPath: "/data/storage"|dataPath: "/opt/mod-bot/Draupnir/storage/datastorage"|' /opt/mod-bot/Draupnir/config/production.yaml
 ```
 
 edit the production config:
