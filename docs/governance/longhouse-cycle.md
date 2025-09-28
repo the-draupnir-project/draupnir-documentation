@@ -14,8 +14,7 @@ consultation for the current session ends. Consultation for the next session
 remains open until the current session is over and the selection process for the
 next session has begun to take place.
 
-TODO: Where and how does consultation take place? What about short term
-consultation?
+See [longhouse consultation](./longhouse-consultation.md).
 
 ### Selection
 
