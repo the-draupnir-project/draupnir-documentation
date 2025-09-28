@@ -18,7 +18,7 @@ This installation method is intended for experienced sysadmins.
 
 ### Install System Packages
 
-Update `apt` and install required tools **as your regular sudo user**:
+Update `apt` and install required tools **as your root user**:
 
 ```bash
 apt update
@@ -56,8 +56,6 @@ node --version
 ```
 
 ## Install Yarn
-
-Still as your sudo user:
 
 ```bash
 npm install --global yarn
@@ -158,7 +156,7 @@ exit
 
 ## Create Systemd Service
 
-As your sudo user, create `/etc/systemd/system/draupnir.service`:
+As your root user, create `/etc/systemd/system/draupnir.service`:
 
 ```ini
 [Unit]
