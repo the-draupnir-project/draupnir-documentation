@@ -5,7 +5,7 @@ sidebar_label: Installation on Debian
 
 <!-- cspell:ignore SUIDSGID, EPERM, tunables -->
 
-# Installation on Debian
+# Installation
 
 :::tip
 
@@ -207,32 +207,63 @@ systemctl enable --now draupnir
 systemctl status draupnir
 ```
 
-# Update Draupnir
+# Update
 
 When a new release is out:
 
-Stop service:
+### Stop Service
 
 ```bash
 systemctl stop draupnir
 ```
 
-Pull updates & fetch tags as `draupnir`:
+### Update Source Code
+
+Switch to the `draupnir` user:
 
 ```bash
-sudo -u draupnir bash <<'EOF'
-cd /opt/draupnir
-git pull
-git fetch --tags
-latest_tag=$(git tag --sort=version:refname | tail -n1)
-git checkout "$latest_tag"
-yarn install
-yarn build
-EOF
+sudo -u draupnir -i
 ```
 
-Restart service:
+Then within that shell:
+
+Pull latest changes:
 
 ```bash
-systemctl restart draupnir
+cd /opt/draupnir
+git pull
+```
+
+Fetch all tags:
+
+```bash
+git fetch --tags
+```
+
+Check out the latest tag:
+
+```bash
+latest_tag=$(git tag --sort=version:refname | tail -n1)
+git checkout "$latest_tag"
+```
+
+### Rebuild Application
+
+Run as `draupnir`:
+
+```bash
+yarn install
+yarn build
+```
+
+Exit the `draupnir` user shell:
+
+```bash
+exit
+```
+
+### Restart Service
+
+```bash
+systemctl start draupnir
 ```
