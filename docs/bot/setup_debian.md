@@ -14,92 +14,102 @@ This installation method is intended for experienced sysadmins.
 
 :::
 
-## 1. Prerequisites & System User
+## Prerequisites & System User
 
-1. Ensure you have a user with `sudo` privileges.
-2. Create the `draupnir` system user (no login shell):
-
-   ```bash
-   sudo useradd --system --home-dir /opt/draupnir --shell /usr/sbin/nologin draupnir
-   ```
-
-## 2. Install System Packages
+### Install System Packages
 
 Update `apt` and install required tools **as your regular sudo user**:
 
 ```bash
-sudo apt update
-sudo apt install -y git curl sudo
+apt update
+apt install -y git curl sudo
 ```
 
 - `git` : version control
 - `curl` : data transfer
 - `sudo` : execute commands as root
 
-## 3. Install Node.js (v20)
+### Create User
+
+Create the `draupnir` system user (no login shell):
+
+```bash
+useradd --system --home-dir /opt/draupnir draupnir
+```
+
+### Install Node.js (v20)
 
 Draupnir requires Node.js 20.x. Install via NodeSource:
 
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo apt update
-sudo apt install -y nodejs
+bash nodesource_setup.sh
+apt update
+apt install -y nodejs
 ```
-## 4. Install Yarn
+
+Verify Node.js version:
+
+```bash
+node --version
+# Should output v20.x.x
+```
+
+## Install Yarn
 
 Still as your sudo user:
 
 ```bash
-sudo npm install --global yarn
+npm install --global yarn
 yarn --version
 ```
 
-## 5. Prepare Directories & Permissions
+## Setup Directories & Permissions
 
-1. Clone the repository:
+Clone the repository:
 
-   ```bash
-   git clone https://github.com/the-draupnir-project/Draupnir.git /opt/draupnir
-   ```
+```bash
+git clone https://github.com/the-draupnir-project/Draupnir.git /opt/draupnir
+```
 
-2. Create the base directory and data directory:
+Create the data directory:
 
-   ```bash
-   sudo mkdir -p /opt/draupnir/datastorage
-   ```
+```bash
+mkdir -p /var/lib/draupnir
+```
 
-3. Change ownership to `draupnir`:
+Change ownership to `draupnir`:
 
-   ```bash
-   sudo chown -R draupnir:draupnir /opt/mod-bot
-   ```
+```bash
+chown draupnir:draupnir /var/lib/draupnir
+chown -R draupnir:draupnir /opt/draupnir
+```
 
-## 6. Clone Repository & Fetch Tags
+## Build Draupnir
 
 Switch to the `draupnir` user:
 
 ```bash
-sudo -u draupnir -i
+su - draupnir
 ```
 
 Then within that shell:
 
-1. Fetch all tags:
+Fetch all tags:
 
-   ```bash
-   cd /opt/draupnir
-   git fetch --tags
-   ```
+```bash
+cd /opt/draupnir
+git fetch --tags
+```
 
-2. Check out the latest tag:
+Check out the latest tag:
 
-   ```bash
-   latest_tag=$(git tag --sort=version:refname | tail -n1)
-   git checkout "$latest_tag"
-   ```
+```bash
+latest_tag=$(git tag --sort=version:refname | tail -n1)
+git checkout "$latest_tag"
+```
 
-## 7. Install Dependencies & Build
+### Install Dependencies & Build
 
 Run as `draupnir`:
 
@@ -111,36 +121,42 @@ yarn build
 - `yarn install` installs dependencies
 - `yarn build` compiles TypeScript into `lib/`
 
-## 8. Configure Draupnir
+## Configure Draupnir
 
 Still under `draupnir`:
 
-1. Copy the default config:
+Copy the default config:
 
-   ```bash
-   cp /opt/draupnir/config/default.yaml /opt/draupnir/config/production.yaml
-   ```
+```bash
+cp /opt/draupnir/config/default.yaml /opt/draupnir/config/production.yaml
+```
 
-2. Update the data path:
+Update the data path:
 
-   ```bash
-   sed -i 's|dataPath: "/data/storage"|dataPath: "/opt/draupnir/datastorage"|' /opt/draupnir/config/production.yaml
-   ```
+```bash
+sed -i 's|dataPath: "/data/storage"|dataPath: "/var/lib/draupnir"|' /opt/draupnir/config/production.yaml
+```
 
-3. Edit production settings:
+Edit production settings:
 
-   ```bash
-   nano /opt/draupnir/config/production.yaml
-   ```
+```bash
+nano /opt/draupnir/config/production.yaml
+```
 
-   Set at least:
+Set at least:
 
-   - `homeserverUrl:`
-   - `rawHomeserverUrl:`
-   - `accessToken:`
-   - `managementRoom:`
+- `homeserverUrl:` (e.g., `https://matrix.example.com`)
+- `rawHomeserverUrl:` (e.g., `https://matrix.example.com`)
+- `accessToken:` (your bot's access token)
+- `managementRoom:` (e.g., `!roomid:example.com`)
 
-## 9. Create Systemd Service
+Exit the `draupnir` user shell:
+
+```bash
+exit
+```
+
+## Create Systemd Service
 
 As your sudo user, create `/etc/systemd/system/draupnir.service`:
 
@@ -160,6 +176,7 @@ Environment=NODE_ENV=production
 SyslogIdentifier=draupnir
 
 ReadWritePaths=/opt/draupnir
+ReadWritePaths=/var/lib/draupnir
 NoNewPrivileges=yes
 PrivateDevices=yes
 PrivateTmp=yes
@@ -187,37 +204,37 @@ WantedBy=multi-user.target
 Reload systemd, enable and start:
 
 ```bash
-sudo systemctl daemon-reload
-sudo systemctl enable --now draupnir
-sudo systemctl status draupnir
+systemctl daemon-reload
+systemctl enable --now draupnir
+systemctl status draupnir
 ```
 
-## 10. Update Draupnir
+# Update Draupnir
 
 When a new release is out:
 
-1. Stop service:
+Stop service:
 
-   ```bash
-   sudo systemctl stop draupnir
-   ```
+```bash
+systemctl stop draupnir
+```
 
-2. Pull updates & fetch tags as `draupnir`:
+Pull updates & fetch tags as `draupnir`:
 
-   ```bash
-   sudo -u draupnir -i bash <<'EOF'
-   cd /opt/draupnir
-   git pull
-   git fetch --tags
-   latest_tag=$(git tag --sort=version:refname | tail -n1)
-   git checkout "$latest_tag"
-   yarn install
-   yarn build
-   EOF
-   ```
+```bash
+sudo -u draupnir bash <<'EOF'
+cd /opt/draupnir
+git pull
+git fetch --tags
+latest_tag=$(git tag --sort=version:refname | tail -n1)
+git checkout "$latest_tag"
+yarn install
+yarn build
+EOF
+```
 
-3. Restart service:
+Restart service:
 
-   ```bash
-   sudo systemctl restart draupnir
-   ```
+```bash
+systemctl restart draupnir
+```
