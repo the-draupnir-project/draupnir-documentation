@@ -8,8 +8,9 @@ sidebar_position: 2
 
 The root contributor circle are at the root of responsibility for all of the
 functions of the Draupnir project. Fundamentally they are are deeply trusted
-individuals who are faithful to the project's vision. And are here to see
-Draupnir through any continuance crisis.
+individuals who are faithful to the project's
+[vision](../contributing/vision.md). And are here to see Draupnir through any
+continuance crisis.
 
 ### Members
 
