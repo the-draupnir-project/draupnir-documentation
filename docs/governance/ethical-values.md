@@ -25,7 +25,7 @@ the continuance of any project.
 ## Empowerment
 
 We build pathways for others to follow us through as equals. We reject systems
-that allow the parties to control or extract from others.
+that allow parties to control or extract from others.
 
 ## Accountability
 
