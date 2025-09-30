@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# The Draupnir longhouse cycle
+# Longhouse cycle
 
 Draupnir's long-term decisions and regular development is conducted through a
 cyclic process.
