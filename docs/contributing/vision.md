@@ -20,6 +20,9 @@ The draupnir project brings this vision with a plan to allow Matrix to succeed
 in being a home for open communities. And we believe that the success of this
 project is essential to the success of Matrix[^no-plan].
 
+The vision is rooted in Draupnir's
+[ethical values](../governance/ethical-values.md).
+
 ## Draupnir as essential open community management infrastructure
 
 Draupnir is a community management service specifically designed for communities
