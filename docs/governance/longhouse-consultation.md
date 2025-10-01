@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Longhouse consultation
 
 The _longhouse assembly_ may consult the _contribution guild_ with a request to

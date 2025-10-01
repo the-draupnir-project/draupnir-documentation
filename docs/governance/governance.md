@@ -10,7 +10,8 @@ licenses alone to organise their projects. This is only really suitable for
 projects that exist as libraries where the consumers are primarily developers.
 Draupnir is a project that has no direct business that can sustain the project.
 Draupnir therefore needs a formal governance system. Please also see the project
-[vision](../contributing/vision.md).
+[vision](../contributing/vision.md), and the project's
+[ethical values](./ethical-values.md).
 
 ## The Draupnir Longhouse
 
