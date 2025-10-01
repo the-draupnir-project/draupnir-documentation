@@ -4,6 +4,18 @@ sidebar_position: 1.5
 
 # Ethical values
 
+:::info
+
+These values are written in grey, contributors will be fine without ever reading
+them. They do not serve as a purity test and we do not ask for contributors
+themselves to align to the values. What is important is actions within the
+context of the project and serious conflicts of interest. Our work will
+naturally align with them if the work is true to Draupnir's community focus.
+This document reinforces Draupnir's community focus and also acts as a deterrent
+and canary.
+
+:::
+
 Our society provides a great incentive for people to build systems and
 organisations that exert top down control. It takes effort to avoid them. It is
 important for these values to be expressed so that the project is protected from
@@ -39,4 +51,4 @@ present themselves.
 
 Contributions to Draupnir are made in confidence of these values. Should any
 contributor's actions clearly conflict with these values, it is expected that
-their role will end.
+their contribution will end.
