@@ -105,7 +105,7 @@ the same lightweight approach used by the
 other projects: the
 [Developer Certificate of Origin](https://developercertificate.org/) (DCO). This
 is a simple declaration that you wrote the contribution or otherwise have the
-right to contribute it to Matrix:
+right to contribute it to The Draupnir Project:
 
 ```
 Developer Certificate of Origin
