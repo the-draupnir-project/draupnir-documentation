@@ -18,9 +18,9 @@ against oppression and authoritarianism in any form, and in all appearances.
 Draupnir will not work with or legitimise any entity that enforces arbitrary
 detention, terrorizes communities, or persecutes minorities.
 
-Draupnir is blind to the law on liberation. What is legal is not what is right.
-Breaking power that is used by authoritarians will always be more important than
-the continuance of any project.
+Draupnir is blind to the law when liberation is concerned. What is legal is not
+what is right. Breaking power that is used by authoritarians will always be more
+important than the continuance of any project.
 
 ## Empowerment
 
