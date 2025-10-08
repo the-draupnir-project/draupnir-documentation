@@ -7,53 +7,47 @@ sidebar_position: 0
 ## Welcome
 
 Hi, thank you for considering to contribute to Draupnir.
-We want this process to be as welcoming as possible, no matter your
-experience level, or the kind of contribution that you want to make.
 
-If you believe that your experience is anything but that, please let
-us know!
-
-Do not worry about following the guidance in this document to the
-letter, we'd much rather you get involved than avoid doing so
-because of a technicality. Please keep this in mind throughout.
+Do not worry about following the guidance in this document to the letter, we'd
+much rather you get involved than avoid doing so because of a technicality.
+Please keep this in mind throughout.
 
 ## Getting Started
 
 What kind of contribution are you trying to make?
 
-If you are looking to document an issue, request a feature, develop
-a feature, please proceed into the [Issue](#issue) section.
+If you are looking to document an issue, request a feature, develop a feature,
+please proceed into the [Issue](#issue) section.
 
-If you are looking to develop or contribute a fix, feature,
-or documentation for an existing issue, please proceed to the
-[Fixing or implementing an existing issue](#fixing-or-implementing-an-existing-issue) section.
+If you are looking to develop or contribute a fix, feature, or documentation for
+an existing issue, please proceed to the
+[Fixing or implementing an existing issue](#fixing-or-implementing-an-existing-issue)
+section.
 
 ### Issue
 
-If you can, just open the issue on the repository and we'll see it
-and come speak to you.
+If you can, just open the issue on the repository and we'll see it and come
+speak to you.
 
-Alternatively, if you aren't comfortable doing so or can't phrase
-the problem or feature, then come speak to us in our support room.
-We'll probably end up creating the issue for you!
+Alternatively, if you aren't comfortable doing so or can't phrase the problem or
+feature, then come speak to us in our support room. We'll probably end up
+creating the issue for you!
 
-In either case, you should join our support room [#draupnir:matrix.org](https://matrix.to/#/#draupnir:matrix.org) :3
+In either case, you should join our support room
+[#draupnir:matrix.org](https://matrix.to/#/#draupnir:matrix.org) :3
 
-Do not worry about making duplicates or alignment with project
-goals, the triage process is supposed to find that for you.
+Do not worry about making duplicates or alignment with project goals, the triage
+process is supposed to find that for you.
 
 ### Fixing or implementing an existing issue
 
 If we have triaged the issue, even without writing our own context or
 clarifications, then the issue is likely ready to implement.
 
-You should write a small statement in the issue or a quick message to
-our support room about how you intend to resolve the issue before getting
-started.
+You should write a small statement in the issue or a quick message to our
+support room about how you intend to resolve the issue before getting started.
 
 If you don't know how to get started or what to change, please ask!
-We'd love nothing more than to help you, or at the least, make
-our documentation and process better.
 
 ## Where to start
 
@@ -75,46 +69,43 @@ You can read about our issue triaging process [here](./triaging.md)
 
 ### Documentation
 
-WIP, our documentation isn't great!
-
-If you know how we can improve that then let us know!
-
-Currently we just have markdown documents, but maybe we need
-something more complete? like a markdown book?
-
-Go ahead and edit anything.
+Documentation is kept on a distinct site
+https://github.com/the-draupnir-project/draupnir-documentation. Issues relating
+to documentation should be opened on the Draupnir repository itself, as we
+consider documentation to be an essential part of the software, and so will be
+triaged and documented as the same.
 
 ## Making Pull Requests
 
 The preferred and easiest way to contribute changes to Draupnir is to fork the
-relevant repo on github, and then [create a pull request](https://help.github.com/articles/using-pull-requests/) to ask us to pull
-your changes into the repo.
+relevant repo on github, and then
+[create a pull request](https://help.github.com/articles/using-pull-requests/)
+to ask us to pull your changes into the repo.
 
-We use Github Actions for continuous integration.
-If your change breaks the build, this will be shown in GitHub, so
-please keep an eye on the pull request for feedback.
+We use Github Actions for continuous integration. If your change breaks the
+build, this will be shown in GitHub, so please keep an eye on the pull request
+for feedback.
 
 ## Sign off
 
-We ask that everybody who contributes to Draupnir
-repositories signs off their contributions, as explained below.
+We ask that everybody who contributes to Draupnir repositories signs off their
+contributions, as explained below.
 
-We follow a simple 'inbound=outbound' model for contributions: the act
-of submitting an 'inbound' contribution means that the contributor
-agrees to license their contribution under the same terms as the
-project's overall 'outbound' license - in our case, this is the
-Academic Free License v. 3.0 (see [LICENSE](https://github.com/the-draupnir-project/Draupnir/blob/main/LICENSES/AFL-3.0.txt)).
+We follow a simple 'inbound=outbound' model for contributions: the act of
+submitting an 'inbound' contribution means that the contributor agrees to
+license their contribution under the same terms as the project's overall
+'outbound' license - in our case, this is the Academic Free License v. 3.0 (see
+[LICENSE](https://github.com/the-draupnir-project/Draupnir/blob/main/LICENSES/AFL-3.0.txt)).
 
-In order to have a concrete record that your contribution is
-intentional and you agree to license it under the same terms as the
-project's license, we've adopted the same lightweight approach used by
-the [Linux
-Kernel](https://www.kernel.org/doc/html/latest/process/submitting-patches.html),
-[Docker](https://github.com/docker/docker/blob/master/CONTRIBUTING.md),
-and many other projects: the [Developer Certificate of
-Origin](https://developercertificate.org/) (DCO). This is a simple
-declaration that you wrote the contribution or otherwise have the
-right to contribute it to Matrix:
+In order to have a concrete record that your contribution is intentional and you
+agree to license it under the same terms as the project's license, we've adopted
+the same lightweight approach used by the
+[Linux Kernel](https://www.kernel.org/doc/html/latest/process/submitting-patches.html),
+[Docker](https://github.com/docker/docker/blob/master/CONTRIBUTING.md), and many
+other projects: the
+[Developer Certificate of Origin](https://developercertificate.org/) (DCO). This
+is a simple declaration that you wrote the contribution or otherwise have the
+right to contribute it to The Draupnir Project:
 
 ```
 Developer Certificate of Origin
@@ -154,16 +145,16 @@ By making a contribution to this project, I certify that:
     this project or the open source license(s) involved.
 ```
 
-If you agree to this for your contribution, then all that's needed is
-to include the line in your commit or pull request comment:
+If you agree to this for your contribution, then all that's needed is to include
+the line in your commit or pull request comment:
 
 ```
 Signed-off-by: Your Name <your@email.example.org>
 ```
 
-Git allows you to add this signoff automatically when using the `-s`
-flag to `git commit`, which uses the name and email set in your
-`user.name` and `user.email` git configs.
+Git allows you to add this signoff automatically when using the `-s` flag to
+`git commit`, which uses the name and email set in your `user.name` and
+`user.email` git configs.
 
 ## Conclusion
 
@@ -176,55 +167,49 @@ do!
 
 ## Further notes on license and its relation to business in general
 
-Ultimately most open source software contributions start by gifting
-labour without any obligation or transaction.
+Ultimately most open source software contributions start by gifting labour
+without any obligation or transaction.
 
 There is no ethical way to directly sell this labour.
 
-Many so called post open source[^post-open-source] ideas fixate on
-finding a way to conduct business in an ethical way,
-and this is problematic.
+Many so called post open source[^post-open-source] ideas fixate on finding a way
+to conduct business in an ethical way, and this is problematic.
 
-Once you start working within capitalism with capitalism, and exchange
-your power and influence over a work to monetize the work itself,
-the work will gain inertia and a power of its own that you cannot control.
-You will work for the work, for external interests, and these won't
-be the interests of your powerless users who you were among to begin with.
+Once you start working within capitalism with capitalism, and exchange your
+power and influence over a work to monetize the work itself, the work will gain
+inertia and a power of its own that you cannot control. You will work for the
+work, for external interests, and these won't be the interests of your powerless
+users who you were among to begin with.
 
-It would be extreme, but I am tempted to suggest that by performing a
-business this way, you are part of an effort
-which not only reinforces capitalism but works to make it more
-efficient. Effectively working to make capitalism more powerful.
-Congratulations.
+It would be extreme, but I am tempted to suggest that by performing a business
+this way, you are part of an effort which not only reinforces capitalism but
+works to make it more efficient. Effectively working to make capitalism more
+powerful. Congratulations.
 
-Another point that is often brought up in these discussions is how
-software licensing relies on an appeal to state power, the power of
-the law.
+Another point that is often brought up in these discussions is how software
+licensing relies on an appeal to state power, the power of the law.
 
-Therefore I propose a new licensing model, one which appeals
-to the power of public pressure rather than the law.
+Therefore I propose a new licensing model, one which appeals to the power of
+public pressure rather than the law.
 
-Such a license would be liberal, allowing incorporating into
-proprietary works provided it retained a notice.
-However, any work which is used in any way to conduct business must
-report all software being used by the business with this license,
-all turnover made by the business, all profit made by the business
-and an estimation of both profit and turnover made by the business in
-relation to the collection of software reported.
+Such a license would be liberal, allowing incorporating into proprietary works
+provided it retained a notice. However, any work which is used in any way to
+conduct business must report all software being used by the business with this
+license, all turnover made by the business, all profit made by the business and
+an estimation of both profit and turnover made by the business in relation to
+the collection of software reported.
 
-It is not clear to me how often these figures should be reported
-and when, or even where they should be reported to (ideally they could
-be found centrally). It is also unclear how to create the legalise
-required.
+It is not clear to me how often these figures should be reported and when, or
+even where they should be reported to (ideally they could be found centrally).
+It is also unclear how to create the legalise required.
 
-With the information these licenses would provide, public pressure
-could then be used to demand reparations for the profits made by
-pillaging and destructive businesses.
-It is not clear yet how any reparations would be distributed,
+With the information these licenses would provide, public pressure could then be
+used to demand reparations for the profits made by pillaging and destructive
+businesses. It is not clear yet how any reparations would be distributed,
 probably through some system of
-[venture communes](https://wiki.p2pfoundation.net/Venture_Commune).
-The idea is to ensure that the developers and users of projects
-would not be distracted from providing each other mutual
-support and to give them a hope of escaping.
+[venture communes](https://wiki.p2pfoundation.net/Venture_Commune). The idea is
+to ensure that the developers and users of projects would not be distracted from
+providing each other mutual support and to give them a hope of escaping.
 
-[^post-open-source] https://applied-langua.ge/posts/the-poverty-of-post-open-source.html.
+[^post-open-source]
+https://applied-langua.ge/posts/the-poverty-of-post-open-source.html.
