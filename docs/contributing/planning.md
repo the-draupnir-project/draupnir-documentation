@@ -98,6 +98,20 @@ Tasks typically include:
 - The acceptance criteria for the task.
 - The details of any work undertaken on the task.
 
+For a concrete problem, Tasks should typically be created for:
+
+- Implementation how-to for a specific part of a deliverable.
+- Regression test for a piece of functionality.
+- End-user documentation is to be created for a deliverable.
+- Implementation how to for a library change that may be required.
+- Discovery placeholders when library changes have other dependants.
+- Development documentation for new patterns or abstractions.
+
+For a planned problem, Tasks should be created for:
+
+- Research and planning tasks for deriving or exploring a solution.
+- Refinement placeholders when solutions remain abstract.
+
 ## Review
 
 Work that is completed should first be reviewed against the solution, and then
