@@ -115,7 +115,7 @@ Problems should also record the following:
 
 ## Bets
 
-::: note
+:::note
 
 Bet's are derived from James's shore's blog post
 [_the accountability problem_](https://www.jamesshore.com/v2/blog/2025/the-accountability-problem).
@@ -201,7 +201,7 @@ increments.
 
 ## Increment
 
-::: note
+:::note
 
 Increments are derived from
 [James Shore and Shane Warden's adaptive planning](https://www.jamesshore.com/v2/books/aoad2/adaptive_planning)
