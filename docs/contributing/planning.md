@@ -40,6 +40,11 @@ This is also why it is important for work to be incremental. It allows problems
 to be explored in smaller units, while keeping other aspects of a plan abstract,
 and thus adaptive to change from exploration.
 
+The final mechanic to balance is that by concreting plans later, we are more
+likely to know more about the problem, and less likely to have to rework the
+solution. If the plans that we turn concrete are smaller, the less risky the
+plan is and we give ourself more opportunity to learn.
+
 ## Overview
 
 Draupnir's planning system is layered:
@@ -48,6 +53,28 @@ Problem -> Bet -> Solution -> Increment -> Task.
 
 Bet, Increment, and Task serve planning purposes, while Problem and Solution
 serve design purposes.
+
+- Problems give us high level context of large systemic issues or feature
+  requests.
+
+- Solutions give us an exploration and design space for solving a problem.
+
+- Bets give us high level abstract plans to explore a solution, wagered against
+  the value we gain from succeeding, and the maximum value we can commit to
+  exploration before sunk-cost.
+
+- Increments give us concrete plans defined in terms of deliverables to learn
+  about a solution to a problem and provide value. That can be delivered within
+  a longhouse cycle.
+
+- Tasks provide very focussed and details plans for units of work.
+
+So the layers really exist in two tiers:
+
+- Planning tier: Bet -> Increment -> Task.
+- Design tier: Problem -> Solution.
+
+Both interact and feed each other.
 
 ## Problems
 
