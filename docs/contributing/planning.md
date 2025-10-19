@@ -40,6 +40,15 @@ This is also why it is important for work to be incremental. It allows problems
 to be explored in smaller units, while keeping other aspects of a plan abstract,
 and thus adaptive to change from exploration.
 
+## Overview
+
+Draupnir's planning system is layered:
+
+Problem -> Bet -> Solution -> Increment -> Task.
+
+Bet, Increment, and Task serve planning purposes, while Problem and Solution
+serve design purposes.
+
 ## Problems
 
 Problems are more of a strategic mechanism than a planning mechanism. They
@@ -78,6 +87,13 @@ Problems should also record the following:
   to the problem space.
 
 ## Bets
+
+::: note
+
+Bet's are derived from James's shore's blog post
+[_the accountability problem_](https://www.jamesshore.com/v2/blog/2025/the-accountability-problem).
+
+:::
 
 Bets are provisional hypotheses about high level objectives. They are not
 designs or solutions, they encapsulate the value of pursuing an objective and
@@ -140,21 +156,54 @@ documentation, or publication of research results.
 
 ## Solution hypotheses
 
-Once a problem has been described, a solution can be designed. Solutions should
-have the following properties:
+Once a problem has been described, a solution can be designed. These are
+speculative designs about how to solve a problem, capturing and recording
+insight at any time while context is fresh on a contributor's mind. The purpose
+is to preserve ideas and thought.
+
+Solutions should have the following properties:
 
 - An approach for how the problem is going ot be solved.
-- An overview of any planning risks with the approach or any trade-offs.
+- An overview of any risks with the approach or any trade-offs.
+
+If a line of work through increments makes a discovery that compromises the
+solution, then a new solution should be created after the problem is updated.
+
+Solutions should be iterated from feedback experienced from working on tasks and
+increments.
+
+## Increment
+
+::: note
+
+Increments are derived from
+[James Shore and Shane Warden's adaptive planning](https://www.jamesshore.com/v2/books/aoad2/adaptive_planning)
+book.
+
+:::
+
+An increment represents a small end-to-end unit of delivery that advances a
+bet's commitment. The outcomes are always observable and are completable within
+one longhouse cycle. The bet commitment is advanced by either creating value or
+by providing insight into solutions.
+
+The observable value is usually:
+
+- A new feature being released in Draupnir.
+- Documentation being published.
+- New infrastructure being deployed and accessible to stakeholders.
+- New understanding of a problem or solution that is written up in the planning
+  system.
+
+Discovery tasks should be included under increments that have uncertainty or
+need refinement.
+
+Increments include details about:
+
+- The bet they are associated with and how they advance the commitment.
 - The success criteria with reference to actors.
 - A list of tasks that break down the solution into workable units.
-
-If a line of work makes a discovery that compromises the solution, then a new
-solution should be created after the problem is updated.
-
-Discovery tasks should be included under solutions that have uncertainty or need
-refinement.
-
-Solutions should be iterated from feedback experienced from working on tasks.
+- An overview of any planning risks with the approach or any trade-offs.
 
 ## Deliverable Tasks
 
