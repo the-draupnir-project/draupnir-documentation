@@ -20,7 +20,31 @@ This system helps the _root contribution circle_ in several ways:
 - Preserves a record of decisions and history of problem exploration that is
   well documented.
 
+## Planning essentials
+
+In order to understand the planning system, you need to understand some basic
+rules of planning and the trade-off between certainty and agility.
+
+The more concrete a plan is, the less agile it is. And as we know requirements
+and the world is never static, and plans need to adapt over time. The trick to
+managing this is to make sure that plans become more detailed the closer they
+are to being implemented. And that certainty about the cost of plans can only
+become more detailed as more work is done to develop them. Keeping plans
+abstract and untied to implementation keeps them agile.
+
+The same is also true for exploring a problem space, you learn much more about
+problems while working on solutions to them than you do by hypothesizing
+solutions to them. And this is another reason why plans need to be adaptive.
+
+This is also why it is important for work to be incremental. It allows problems
+to be explored in smaller units, while keeping other aspects of a plan abstract,
+and thus adaptive to change from exploration.
+
 ## Problems
+
+Problems are more of a strategic mechanism than a planning mechanism. They
+provide the context that allow plans to be made. And provide an adapting rolling
+discussion about a problem based on experience gained from exploration.
 
 After triage issues are consolidated into a "bigger picture" discussion that
 captures and describes the problem. This is done at as higher level as possible
@@ -52,6 +76,67 @@ Problems should also record the following:
 - A list of solutions that have been explored
 - Possibly an analysis of why a solution failed if exploration brought us back
   to the problem space.
+
+## Bets
+
+Bets are provisional hypotheses about high level objectives. They are not
+designs or solutions, they encapsulate the value of pursuing an objective and
+the maximum material cost we are willing to pay to achieve the objective. These
+are important to make because they allow us to be accountable to the use of
+resources with respect to value. Which is not only important for strategic
+management.
+
+Bets are also the long-term planning unit that we expose to third parties to
+discuss material support for the project. And we have to be able to do this at a
+high level, further away from the planning horizon so that we can maintain
+agility[^agility-experience].
+
+### Present value and wager
+
+Bets are crucially defined in terms of their _present value_ (which is what we
+gain if the bet succeeds) and the _wager_ (what we are willing to commit to the
+bet, and lose, before it is recognised as a failure).
+
+- Opportunity cost: What is lost or gained by pursuing an objective relative to
+  other objectives, and within the environment. For example, if there is an
+  ongoing attack vector being used in the wild that there is a designed solution
+  for, there is lost opportunity by not working on it.
+
+- Value, what is valuable to the draupnir project is contributor time, user pain
+  (see [triaging](./triaging.md)), and opportunity cost.
+
+- Present value: The user pain erased, the opportunistic value, the learning
+  value in terms of problem exploration, the compound value in terms of
+  advancing us to other goals.
+
+- Wager, the amount of contributor time that we're willing to wager against the
+  bet before it's time to move on or create a new bet. This is not, and cannot
+  be how much the bet _costs_ or an estimate of cost because we don't know
+  enough about the problem at this high level. It's a commitment of the maximum
+  value we are prepared to lose in order to pursue the objective. Because we
+  might get no value at all from pursuing the bet. This stops us from getting
+  stuck in sunk cost.
+
+### Commitment
+
+This is an explanation of what the objective is, which problems we are solving
+or making progress on, and any other context.
+
+### Other risks that can fail the bet
+
+These are other factors that can fail the bet other than exhausting the wager.
+E.g. if an MSC doesn't pass, or if another third party solution arises.
+
+### Deliverable meaningful results
+
+These are used to know how we know if bet has produced its intended value. They
+are not a specification, success or acceptance criteria, because we need
+agility. The outcomes should not prescribe implementation detail. They are very
+abstract and refer to solving associated problems, and abstract deliverables.
+
+These are here so that we can demonstrate that the bet has succeeded to
+stakeholders through public artefacts, such as releases of features,
+documentation, or publication of research results.
 
 ## Solution hypotheses
 
@@ -147,7 +232,7 @@ level, rather than someone who necessarily uses it.
 
 ## Why we do not use story pointing
 
-<!-- cspell:ignore Goodhart's -->
+<!-- cspell:ignore Goodhart's nlnet -->
 
 Story pointing may work in some environments. We used to use it for this project
 but we have identified some weaknesses:
@@ -166,3 +251,8 @@ this bias and everyone involved has an interest to score lower or higher.
 Using Tasks as the fundamental unit of work means that they are always grounded
 in the implementation. And there is no estimation of task size required, they're
 all the same size.
+
+[^agility-experience]:
+    We did this in the past for our first nlnet grant, all planning was concrete
+    and in terms of increments. And this cost us all agility. And and also made
+    it harder to adapt for our stakeholders.
