@@ -1,35 +1,30 @@
 # 2025-10-A: Longhouse Cycle Review
 
-_The purpose of this review is to formally close off the prior cycle of work and
-communicate progress or changes in direction to the wider community._
-
-TODO: Surely the selection presentation needs to be a part of this to affirm the
-direction change? idk.
-
 ## Overview
 
-TODO: Link new planning system This was a short cycle to trial the new planning
-system and prepare for Draupnir's first official longhouse cycle.
+_written by @Gnuxie_
+
+It's become clear to me that I need to feel closer to draupnir users in order to
+continue effective development of the project. And to achieve this, I've worked
+to create new governance and planning changes for the project. With the primary
+aim of giving draupnir users control over the project direction.
+
+As a part of this, development will now take place over cycles that aren't
+bounded by time. Cycles are used to work on iterations of work and report back
+to the community on the results. Adding accountability between core contribution
+and users. However, the association remains voluntary in both directions.
 
 ## Completed work
 
-_A link to or a list of tasks that were completed._
+- Entirely new [governance documentation](../governance.md) for the project.
 
-## Uncompleted work
+- A news reader in Draupnir to inform end users about development progress and
+  updates.
 
-_Any work still in progress or placed back into the backlog and why._
+- A new [planning](../../contributing/planning.md) system has been designed to
+  support open decision making. It's not entirely new, but more documenting and
+  formalising the system that was already in use, then revising it a couple of
+  times.
 
-## Direction
-
-_A statement on the project priorities, sometimes it is valid to close a cycle
-early to change direction entirely, this may happen naturally and unannounced at
-first, and the formal change comes later and announced here_
-
-## Findings and challenges
-
-_Anything that has been learnt during the cycle in any aspect, planning,
-governance, programming, triaging, issues_
-
-## Recommendations
-
-_Any recommendations or ideas for change that could be acted upon_.
+- A new Matrix space to facilitate feedback and governance participation, called
+  [the Draupnir longhouse](https://matrix.to/#/%23the-draupnir-longhouse:matrix.org).
