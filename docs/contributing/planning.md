@@ -45,6 +45,10 @@ likely to know more about the problem, and less likely to have to rework the
 solution. If the plans that we turn concrete are smaller, the less risky the
 plan is and we give ourself more opportunity to learn.
 
+This implies that there is also a planning decay to existing plans. The older
+the plan, the more outdated the knowledge. And plans that are more detailed and
+concrete decay faster than more abstract plans.
+
 ## Overview
 
 Draupnir's planning system is layered:
@@ -65,7 +69,9 @@ serve design purposes.
 
 - Increments give us concrete plans defined in terms of deliverables to learn
   about a solution to a problem and provide value. That can be delivered within
-  a longhouse cycle.
+  a longhouse cycle. Increments are usually only materialized directly before
+  the longhouse cycle they will be used in, specifically to prevent planning
+  decay.
 
 - Tasks provide very focussed and details plans for units of work.
 
@@ -212,7 +218,8 @@ book.
 An increment represents a small end-to-end unit of delivery that advances a
 bet's commitment. The outcomes are always observable and are completable within
 one longhouse cycle. The bet commitment is advanced by either creating value or
-by providing insight into solutions.
+by providing insight into solutions. Increments are usually always materialized
+immediately before the cycle they are used in to prevent planning-decay.
 
 The observable value is usually:
 
