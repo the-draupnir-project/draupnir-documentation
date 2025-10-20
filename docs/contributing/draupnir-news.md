@@ -2,7 +2,7 @@
 
 :::info
 
-This guide explains how to:
+This guide explains:
 
 1. Editing and viewing news items locally.
 2. What the style guidelines are for news items.
@@ -24,7 +24,8 @@ The process for editing news items goes as follows:
 
 1. Use a Matrix client of your choice to format a Matrix message announcing the
    news. This is just the same as writing a message, use markdown to structure
-   the message however you like, within the style guidelines.
+   the message however you like, within the style guidelines. You are probably
+   better off just copying the markdown from a similar event if that is easier.
 
 2. Once you are happy you can send the event to a test room.
 
@@ -42,10 +43,12 @@ Your Draupnir news should look something like this:
 {
   "news": [
     {
-      "news_id": "59e0dd6e-87da-4459-98ae-627c0f2a7d8b",
+      "news_id": "cd1881d2-60d0-49ad-9951-321205efa64b",
       "matrix_event_content": {
-        "body": "Announcing the Draupnir Longhouse Assembly! https://matrix.to/#/!DtwZFWORUIApKsOVWi:matrix.org/%24GdBN1XqoOnAfc5tJgxhoXNoAdW2YUbS1Mtsb8LbzIJ4?via=matrix.org&via=feline.support&via=asgard.chat",
-        "msgtype": "m.notice"
+        "msgtype": "m.notice",
+        "body": "#### 📰 Draupnir Assembly: Call for Participation\n\nThe Longhouse Assembly is determining the next direction for the project.\n\nReview the current cycle and cast your vote:\n\n➡️ [Join the Assembly Discussion](https://matrix.to/#/!DtwZFWORUIApKsOVWi:matrix.org?via=matrix.org&via=feline.support&via=asgard.chat)",
+        "format": "org.matrix.custom.html",
+        "formatted_body": "<h4>📰 Draupnir Assembly: Call for Participation</h4>\n<p>The Longhouse Assembly is determining the next direction for the project.</p>\n<p>Review the current cycle and cast your vote:</p>\n<p>➡️ <a href=\"https://matrix.to/#/!DtwZFWORUIApKsOVWi:matrix.org?via=matrix.org&amp;via=feline.support&amp;via=asgard.chat\">Join the Assembly Discussion</a></p>\n"
       }
     }
   ]
@@ -54,7 +57,12 @@ Your Draupnir news should look something like this:
 
 ## Style Guidelines
 
-TODO: We haven't really decided yet or if we need any.
+1. Use a small header (<h4>) with boldface and an emoji to make it look
+   professional e.g. `#### 📰 Draupnir Assembly: Call for Participation`.
+
+2. Keep the message 1-2 sentences long and link directly to the subject matter.
+
+3. Try to base your message off of previous events.
 
 ## Creating a pull request for a news item
 
@@ -63,6 +71,10 @@ The pull request should contain the following:
 - `DraupnirNews` in the title.
 - A screenshot of the news content in the description.
 - Any context of the news.
+- The client used to design the message.
+
+The pull request should remain a draft until you are sure that it is ready to
+merge. This prevents accidents.
 
 TODO: Link to an example.
 
