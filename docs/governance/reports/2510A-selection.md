@@ -32,7 +32,8 @@ entirety. See
 
 ### None of the above
 
-This is an expression of no confidence in the direction.
+This is an expression of no confidence in the direction. If you have further
+comments, please see [consultation](../longhouse-consultation.md).
 
 ## Feedback and discussion
 
