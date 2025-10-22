@@ -16,24 +16,16 @@ right of self determination as contribution is a voluntary process.
 You SHOULD read the context of the selection before voting. See the
 [cycle review](./2510A-cycle-review.md).
 
-### Option A: Policy room subscription preview (root contributor circle endorsed)
+### Option A: Policy room subscription preview
+
+<!-- Cspell:ignore NLnet -->
 
 This would mean changing the policy room watch command to preview the effects of
 all protections when subscribing to the room.
 [Milestone for the cycle](https://github.com/the-draupnir-project/planning/milestone/2).
 
-Material support:
+Material support: NLnet goal
 https://marewolf.me/posts/draupnir/24-nlnet-goals.html#goal-preview-policy-list.
-
-### Option B: Continue with room upgrade support for Hydra
-
-This would mean incrementing towards full room upgrade management by
-implementing
-[MSC4321](https://github.com/matrix-org/matrix-spec-proposals/pull/4321) in its
-entirety. See
-[project hydra mitigation](https://github.com/the-draupnir-project/planning/issues/44).
-
-Material support: None.
 
 ### Option Z: None of the above
 
@@ -43,6 +35,21 @@ comments, please see [consultation](../longhouse-consultation.md).
 ## Discounted options
 
 These are options that haven't been included but would be good candidates.
+
+### Continue with room upgrade support for Hydra
+
+This would mean incrementing towards full room upgrade management by
+implementing
+[MSC4321](https://github.com/matrix-org/matrix-spec-proposals/pull/4321) in its
+entirety. See
+[project hydra mitigation](https://github.com/the-draupnir-project/planning/issues/44).
+
+This is still important and will likely become the primary focus of the project
+once the NLnet grant expires. Synapse does not yet create rooms at V12 by
+default, and we take this as a signal from the proponents of hydra that the risk
+to V11 rooms is very low. Which matches our own assessment.
+
+Material support: None.
 
 ### Increment user familiarity metric
 
@@ -59,6 +66,8 @@ of the roadmap that we do eventually want to deliver.
 However, this is a large piece of work that will take a long time for end users
 to receive value from. And we need more certainty about the support of the
 project before we can sustain focus on a large piece of work like this.
+
+Material support: NLnet goal, but unlikely to be attainable.
 
 ### Increment explicit agreement & approval / disapproval
 
@@ -78,6 +87,8 @@ terms of the policy curators themselves, the people writing the policies. And
 scoping trust for direct propagation to specific policy rooms and
 recommendations. And I just haven't had time to do that work.
 
+Material support: NLnet goal.
+
 ### Policy server support
 
 [MSC4248: Policy Servers](https://github.com/matrix-org/matrix-spec-proposals/pull/4284)
@@ -93,6 +104,8 @@ implementations that attempted to do this.
 Still, the pre-emptive moderation capability provided by policy servers is
 incredibly powerful and we need it.
 
+Material support: None.
+
 ### Service architecture
 
 We're exploring the design space around _Draupnir for all_, and we do have an
@@ -101,6 +114,8 @@ ever need (the homeserver would fall over first). And we do think that it will
 be necessary in the future to do this to provide the capabilities of draupnir to
 any Matrix community. And allow Draupnir to become the backend for a community
 management platform.
+
+Material support: None.
 
 ### We need your support to implement these options
 
