@@ -8,6 +8,11 @@ communicate progress or changes in direction to the wider community._
 _Short summary of what the cycle's focus was on. Short statement on how the
 cycle felt and success._
 
+## Direction
+
+_Commentary about the direction of the project that may be relevant to any
+future selection or proposals_.
+
 ## Completed work
 
 _A link to or a list of tasks that were completed._

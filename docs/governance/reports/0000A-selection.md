@@ -14,6 +14,12 @@ selection) if one cannot be made._
 _A list of options should be presented here. Options should always include a
 "none of the above" to signal no or low confidence in the options._
 
+## Discounted options
+
+_Options that didn't make the selection, but are relevant to current context or
+development. And explanation should be provided about why the options are not
+going to be incremented at this time_.
+
 ## Feedback and discussion
 
 _Any important points that were raised during the discussion of the options that
