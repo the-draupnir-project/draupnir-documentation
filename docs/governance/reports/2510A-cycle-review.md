@@ -10,10 +10,11 @@ to create new governance and planning changes for the project. With the primary
 aim of giving draupnir users control over the project direction. And a way to
 affirm contributors for the work being done.
 
-As a part of this, development will now take place over cycles that aren't
-bounded by time. Cycles are used to work on iterations of work and report back
-to the community on the results. Adding accountability between core contribution
-and users. However, the association remains voluntary in both directions.
+As a part of this, development conducted by the _root contribution circle_ will
+now take place over cycles that aren't bounded by time. Cycles are used to work
+on iterations of work and report back to the community on the results. Adding
+accountability between core contributors and users. This is done in a way that
+explicitly preserves voluntary association in both directions.
 
 ## Direction
 
@@ -21,15 +22,16 @@ and users. However, the association remains voluntary in both directions.
 
 The longer context of this is that the goals of the
 [NLnet grant](https://marewolf.me/posts/draupnir/24-nlnet-goals.html) were
-designed when I was worse at project management, and this meant that the roadmap
-was effectively rigid. This meant that we were opportunistically at a major
-disadvantage. To adapt the roadmap to changes in circumstance, such as the need
-for homeserver admin tools earlier in the year, and project hydra itself, meant
-putting NLnet work on hold. Additionally, we didn't have a mechanism to receive
-affirmation or support for the decisions that we made to suspend that work. And
-I think that such a mechanism is needed because I crashed out a number of times.
-Draupnir is not just some personal project, it is an obligation and this work is
-responsible for the continuance of _a lot_ of communities.
+designed when I was less experienced at project management, and this meant that
+the roadmap was effectively rigid. This meant that we were opportunistically at
+a major disadvantage. To adapt the roadmap to changes in circumstance, such as
+the need for homeserver admin tools earlier in the year, and project hydra
+itself, meant putting NLnet work on hold. Additionally, we didn't have a
+mechanism to receive affirmation or support for the decisions that we made to
+suspend that work. And I think that such a mechanism is needed because I crashed
+out a number of times. Draupnir is not just some personal project, it is an
+obligation and this work is responsible for the continuance of _a lot_ of
+communities.
 
 The [NLnet grant](https://marewolf.me/posts/draupnir/24-nlnet-goals.html) itself
 will be expiring in December. And for full transparency I have received around
@@ -45,6 +47,9 @@ student, at great sacrifice to myself.
 Therefore it's desirable to close off some milestones before the grant expires
 so that development can continue into 2026. And this will mean putting project
 hydra mitigation (room upgrade support) on hold.
+
+The aim of the governance rework that has taken place is simply to confirm that
+the work being done on this project is valuable to its users.
 
 ## Completed work this cycle
 
