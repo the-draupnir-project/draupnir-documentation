@@ -3,7 +3,8 @@
 ## Context
 
 In the [current cycle](./2510A-cycle-review.md) we have been making changes to
-give draupnir users more control in the project's direction.
+give draupnir users more control in the project's direction. And to reaffirm
+contributors work on the project.
 
 ## Options
 
