@@ -20,7 +20,73 @@ This system helps the _root contribution circle_ in several ways:
 - Preserves a record of decisions and history of problem exploration that is
   well documented.
 
+## Planning essentials
+
+In order to understand the planning system, you need to understand some basic
+rules of planning and the trade-off between certainty and agility.
+
+The more concrete a plan is, the less agile it is. And as we know requirements
+and the world is never static, and plans need to adapt over time. The trick to
+managing this is to make sure that plans become more detailed the closer they
+are to being implemented. And that certainty about the cost of plans can only
+become more detailed as more work is done to develop them. Keeping plans
+abstract and untied to implementation keeps them agile.
+
+The same is also true for exploring a problem space, you learn much more about
+problems while working on solutions to them than you do by hypothesizing
+solutions to them. And this is another reason why plans need to be adaptive.
+
+This is also why it is important for work to be incremental. It allows problems
+to be explored in smaller units, while keeping other aspects of a plan abstract,
+and thus adaptive to change from exploration.
+
+The final mechanic to balance is that by concreting plans later, we are more
+likely to know more about the problem, and less likely to have to rework the
+solution. If the plans that we turn concrete are smaller, the less risky the
+plan is and we give ourself more opportunity to learn.
+
+This implies that there is also a planning decay to existing plans. The older
+the plan, the more outdated the knowledge. And plans that are more detailed and
+concrete decay faster than more abstract plans.
+
+## Overview
+
+Draupnir's planning system is layered:
+
+Problem -> Bet -> Solution -> Increment -> Task.
+
+Bet, Increment, and Task serve planning purposes, while Problem and Solution
+serve design purposes.
+
+- Problems give us high level context of large systemic issues or feature
+  requests.
+
+- Solutions give us an exploration and design space for solving a problem.
+
+- Bets give us high level abstract plans to explore a solution, wagered against
+  the value we gain from succeeding, and the maximum value we can commit to
+  exploration before sunk-cost.
+
+- Increments give us concrete plans defined in terms of deliverables to learn
+  about a solution to a problem and provide value. That can be delivered within
+  a longhouse cycle. Increments are usually only materialized directly before
+  the longhouse cycle they will be used in, specifically to prevent planning
+  decay.
+
+- Tasks provide very focussed and details plans for units of work.
+
+So the layers really exist in two tiers:
+
+- Planning tier: Bet -> Increment -> Task.
+- Design tier: Problem -> Solution.
+
+Both interact and feed each other.
+
 ## Problems
+
+Problems are more of a strategic mechanism than a planning mechanism. They
+provide the context that allow plans to be made. And provide an adapting rolling
+discussion about a problem based on experience gained from exploration.
 
 After triage issues are consolidated into a "bigger picture" discussion that
 captures and describes the problem. This is done at as higher level as possible
@@ -53,23 +119,125 @@ Problems should also record the following:
 - Possibly an analysis of why a solution failed if exploration brought us back
   to the problem space.
 
+## Bets
+
+:::note
+
+Bet's are derived from James's shore's blog post
+[_the accountability problem_](https://www.jamesshore.com/v2/blog/2025/the-accountability-problem).
+
+:::
+
+Bets are provisional hypotheses about high level objectives. They are not
+designs or solutions, they encapsulate the value of pursuing an objective and
+the maximum material cost we are willing to pay to achieve the objective. These
+are important to make because they allow us to be accountable to the use of
+resources with respect to value. Which is not only important for strategic
+management.
+
+Bets are also the long-term planning unit that we expose to third parties to
+discuss material support for the project. And we have to be able to do this at a
+high level, further away from the planning horizon so that we can maintain
+agility[^agility-experience].
+
+### Present value and wager
+
+Bets are crucially defined in terms of their _present value_ (which is what we
+gain if the bet succeeds) and the _wager_ (what we are willing to commit to the
+bet, and lose, before it is recognised as a failure).
+
+- Opportunity cost: What is lost or gained by pursuing an objective relative to
+  other objectives, and within the environment. For example, if there is an
+  ongoing attack vector being used in the wild that there is a designed solution
+  for, there is lost opportunity by not working on it.
+
+- Value, what is valuable to the draupnir project is contributor time, user pain
+  (see [triaging](./triaging.md)), and opportunity cost.
+
+- Present value: The user pain erased, the opportunistic value, the learning
+  value in terms of problem exploration, the compound value in terms of
+  advancing us to other goals.
+
+- Wager, the amount of contributor time that we're willing to wager against the
+  bet before it's time to move on or create a new bet. This is not, and cannot
+  be how much the bet _costs_ or an estimate of cost because we don't know
+  enough about the problem at this high level. It's a commitment of the maximum
+  value we are prepared to lose in order to pursue the objective. Because we
+  might get no value at all from pursuing the bet. This stops us from getting
+  stuck in sunk cost.
+
+### Commitment
+
+This is an explanation of what the objective is, which problems we are solving
+or making progress on, and any other context.
+
+### Other risks that can fail the bet
+
+These are other factors that can fail the bet other than exhausting the wager.
+E.g. if an MSC doesn't pass, or if another third party solution arises.
+
+### Deliverable meaningful results
+
+These are used to know how we know if bet has produced its intended value. They
+are not a specification, success or acceptance criteria, because we need
+agility. The outcomes should not prescribe implementation detail. They are very
+abstract and refer to solving associated problems, and abstract deliverables.
+
+These are here so that we can demonstrate that the bet has succeeded to
+stakeholders through public artefacts, such as releases of features,
+documentation, or publication of research results.
+
 ## Solution hypotheses
 
-Once a problem has been described, a solution can be designed. Solutions should
-have the following properties:
+Once a problem has been described, a solution can be designed. These are
+speculative designs about how to solve a problem, capturing and recording
+insight at any time while context is fresh on a contributor's mind. The purpose
+is to preserve ideas and thought.
+
+Solutions should have the following properties:
 
 - An approach for how the problem is going ot be solved.
-- An overview of any planning risks with the approach or any trade-offs.
+- An overview of any risks with the approach or any trade-offs.
+
+If a line of work through increments makes a discovery that compromises the
+solution, then a new solution should be created after the problem is updated.
+
+Solutions should be iterated from feedback experienced from working on tasks and
+increments.
+
+## Increment
+
+:::note
+
+Increments are derived from
+[James Shore and Shane Warden's adaptive planning](https://www.jamesshore.com/v2/books/aoad2/adaptive_planning)
+book.
+
+:::
+
+An increment represents a small end-to-end unit of delivery that advances a
+bet's commitment. The outcomes are always observable and are completable within
+one longhouse cycle. The bet commitment is advanced by either creating value or
+by providing insight into solutions. Increments are usually always materialized
+immediately before the cycle they are used in to prevent planning-decay.
+
+The observable value is usually:
+
+- A new feature being released in Draupnir.
+- Documentation being published.
+- New infrastructure being deployed and accessible to stakeholders.
+- New understanding of a problem or solution that is written up in the planning
+  system.
+
+Discovery tasks should be included under increments that have uncertainty or
+need refinement.
+
+Increments include details about:
+
+- The bet they are associated with and how they advance the commitment.
 - The success criteria with reference to actors.
 - A list of tasks that break down the solution into workable units.
-
-If a line of work makes a discovery that compromises the solution, then a new
-solution should be created after the problem is updated.
-
-Discovery tasks should be included under solutions that have uncertainty or need
-refinement.
-
-Solutions should be iterated from feedback experienced from working on tasks.
+- An overview of any planning risks with the approach or any trade-offs.
 
 ## Deliverable Tasks
 
@@ -147,7 +315,7 @@ level, rather than someone who necessarily uses it.
 
 ## Why we do not use story pointing
 
-<!-- cspell:ignore Goodhart's -->
+<!-- cspell:ignore Goodhart's nlnet -->
 
 Story pointing may work in some environments. We used to use it for this project
 but we have identified some weaknesses:
@@ -166,3 +334,8 @@ this bias and everyone involved has an interest to score lower or higher.
 Using Tasks as the fundamental unit of work means that they are always grounded
 in the implementation. And there is no estimation of task size required, they're
 all the same size.
+
+[^agility-experience]:
+    We did this in the past for our first nlnet grant, all planning was concrete
+    and in terms of increments. And this cost us all agility. And and also made
+    it harder to adapt for our stakeholders.
