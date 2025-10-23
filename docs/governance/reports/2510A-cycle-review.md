@@ -4,6 +4,8 @@
 
 _written by @Gnuxie_
 
+Milestone: https://github.com/the-draupnir-project/planning/milestone/1
+
 It's become clear to me that I need to feel closer to draupnir users in order to
 continue effective development of the project. And to achieve this, I've worked
 to create new governance and planning changes for the project. With the primary

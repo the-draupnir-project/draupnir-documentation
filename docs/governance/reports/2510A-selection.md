@@ -1,5 +1,7 @@
 # 2025-10-A-Selection: Selection
 
+Milestone: https://github.com/the-draupnir-project/planning/milestone/2
+
 ## Context
 
 In the [current cycle](./2510A-cycle-review.md) we have been making changes to
