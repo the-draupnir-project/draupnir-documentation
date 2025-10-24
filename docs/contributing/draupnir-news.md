@@ -57,7 +57,7 @@ Your Draupnir news should look something like this:
 
 ## Style Guidelines
 
-1. Use a small header (<h4>) with boldface and an emoji to make it look
+1. Use a small header (`<h4>`) with boldface and an emoji to make it look
    professional e.g. `#### 📰 Draupnir Assembly: Call for Participation`.
 
 2. Keep the message 1-2 sentences long and link directly to the subject matter.
