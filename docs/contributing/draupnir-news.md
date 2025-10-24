@@ -76,7 +76,8 @@ The pull request should contain the following:
 The pull request should remain a draft until you are sure that it is ready to
 merge. This prevents accidents.
 
-TODO: Link to an example.
+Here is an example pull request:
+https://github.com/the-draupnir-project/Draupnir/pull/984
 
 ## Reviewing a pull request for a news item
 
