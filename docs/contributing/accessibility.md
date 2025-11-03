@@ -10,6 +10,10 @@ facilitates this is called `DeadDocument`).
 The general rule to keeping message content accessible is use semantic HTML
 elements over arbitrary ways of maintaining structure.
 
+The following describes what we should be doing to improve the accessibility of
+message content. Pull request reviewers should check rendered messages match the
+recommendations in this document.
+
 ### Headings
 
 Headings should be used at the beginning of each section within a message. This
