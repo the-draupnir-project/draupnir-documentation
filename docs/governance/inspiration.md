@@ -10,7 +10,14 @@ takes time and you need to think about it for awhile.
 - Dawn Foster's introductory governance blog series:
   https://fastwonderblog.com/2025/07/29/governance-part-1-why-is-it-important/
 
+- The Open Source Collective's Guides are invaluable and pragmatic
+  https://docs.oscollective.org/resources.
+
+- This blogpost by [Sumana Harihareswara](https://www.harihareswara.net/) has a
+  wealth of resources
+  https://www.harihareswara.net/posts/2023/maintainer-burnout-pycon-us-2023-followup/#succession-new-folks.
+
 - Stealing ideas from https://www.cncf.io/ (note: this is corporatist
   governance).
 
-<!-- cspell:ignore Neugebauer -->
+<!-- cspell:ignore Neugebauer Sumana Harihareswara -->
