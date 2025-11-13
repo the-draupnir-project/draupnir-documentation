@@ -58,7 +58,7 @@ node --version
 ## Install Yarn
 
 ```bash
-npm install --global yarn
+npm install --global yarn@1.x
 yarn --version
 ```
 
