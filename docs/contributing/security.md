@@ -24,8 +24,16 @@ best can cause a `TypeError` to be thrown, but at worst can lead to an RCE
 vulnerability.
 
 To prevent this, it is recommended to use the `Object.hasOwn` method to guard
-user supplied property access. The `matrix-protection-suite` offers its own
-generic `hasOwn` function that support type inference.
+user supplied property access. The `@gnuxie/typescript-result` package offers
+its own generic `hasOwn` / `getOwn` functions that support type inference.
+
+```typescript
+const config = readConfigFromFile();
+const propertyName = readUserInput();
+if (hasOwn(config, propertyName) !== undefined) {
+  doSomething(getOwn(config, propertyName));
+}
+```
 
 #### Resources
 
