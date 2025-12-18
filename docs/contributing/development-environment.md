@@ -3,13 +3,62 @@ sidebar_position: 4
 sidebar_label: Tests, tools, and environment
 ---
 
-# Developing Draupnir - tests, tools, and environment
+# Developing Draupnir
+
+:::info
 
 This document is a part of our [contributing documentation](./CONTRIBUTING.md)
 and describes how to setup a development environment that we to develop
 Draupnir. If you already have your own workflow for typescript projects, you
 should still read this document to spot any caveats that might require you to
 adapt for our recommendations.
+
+:::
+
+## Quick start
+
+### Basic environment with no integration or manual testing
+
+:::tip
+
+Use [corepack](https://github.com/nodejs/corepack) to provide the correct `yarn`
+version. Then use `$ corepack yarn` for all all `$ yarn` commands. Node versions
+20-24 bundle and include `corepack` ready to use.
+
+:::
+
+Requirements: git, node.js, yarn classic (v1.x).
+
+1. Clone the repository
+   `$ git clone https://the-draupnir-project/Draupnir && cd ./Draupnir`
+
+2. Install dependencies with `$ yarn install`
+
+3. Build the project with `$ yarn build`
+
+4. Run unit tests with `$ yarn test:unit` or individual tests with
+   `$ yarn test:unit:single`.
+
+### Full environment
+
+requirements: basic environment (see above), cargo, docker
+
+1. Install `mx-tester` with `$ cargo install mx-tester`
+
+2. Build Synapse docker image with `$ mx-tester build` while in the `Draupnir`
+   project directory
+
+3. Start the test harness (synapse, postgres, nginx docker images) with
+   `$ mx-tester up`.
+
+4. Run `$ yarn test:manual` to start Draupnir
+
+5. Go to `app.element.io`, change homeserver to `localhost:8081`, register an
+   account with a password, go to `#moderators:localhost:9999`. Play with
+   Draupnir.
+
+6. Run integration tests with `$ yarn test:integration` or
+   `$ yarn test:integration:single`.
 
 ## matrix-protection-suite
 
