@@ -5,7 +5,7 @@ ci:
   autoupdate_schedule: weekly
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: trailing-whitespace
         args: ["--markdown-linebreak-ext", "md"]
@@ -14,12 +14,12 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: "3.2.1"
+    rev: "3.6.0"
     hooks:
       - id: editorconfig-checker
         alias: ec
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v9.0.1
+    rev: v9.6.0
     hooks:
       - id: cspell # Spell check changed files
         types: ["markdown"]
