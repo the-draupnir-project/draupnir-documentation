@@ -150,7 +150,7 @@ To create the access token replace DRAUPNIR_LOCALPART, DRAUPNIR_USER_PASSWORD,
 and CLIENT_BASE_URL with the information gathered prior.
 
 ```
-curl -XPOST -H "Content-Type: application/json" -d '{
+curl -XPOST --json '{
     "identifier": { "type": "m.id.user", "user": "DRAUPNIR_LOCALPART" },
     "password": "DRAUPNIR_USER_PASSWORD",
     "type": "m.login.password",
