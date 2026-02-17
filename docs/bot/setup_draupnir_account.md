@@ -160,7 +160,7 @@ curl -XPOST --json '{
 So that it should look like this:
 
 ```
-curl -XPOST -H "Content-Type: application/json" -d '{
+curl -XPOST --json '{
     "identifier": { "type": "m.id.user", "user": "draupnir" },
     "password": "********",
     "type": "m.login.password",
