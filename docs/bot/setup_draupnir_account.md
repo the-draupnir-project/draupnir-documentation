@@ -164,7 +164,7 @@ curl -XPOST --json '{
     "identifier": { "type": "m.id.user", "user": "draupnir" },
     "password": "********",
     "type": "m.login.password",
-}' 'https://matrix-client.example.com/_matrix/client/r0/login'
+}' 'https://matrix-client.example.com/_matrix/client/v3/login'
 ```
 
 You should get a response containing your access token.
