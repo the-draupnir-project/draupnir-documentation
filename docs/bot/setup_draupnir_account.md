@@ -154,7 +154,7 @@ curl -XPOST --json '{
     "identifier": { "type": "m.id.user", "user": "DRAUPNIR_LOCALPART" },
     "password": "DRAUPNIR_USER_PASSWORD",
     "type": "m.login.password",
-}' 'CLIENT_BASE_URL/_matrix/client/r0/login'
+}' 'CLIENT_BASE_URL/_matrix/client/v3/login'
 ```
 
 So that it should look like this:
