@@ -19,7 +19,7 @@ repos:
       - id: editorconfig-checker
         alias: ec
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v9.0.1
+    rev: v9.7.0
     hooks:
       - id: cspell # Spell check changed files
         types: ["markdown"]
