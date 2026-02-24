@@ -153,7 +153,7 @@ and CLIENT_BASE_URL with the information gathered prior.
 curl -XPOST --json '{
     "identifier": { "type": "m.id.user", "user": "DRAUPNIR_LOCALPART" },
     "password": "DRAUPNIR_USER_PASSWORD",
-    "type": "m.login.password",
+    "type": "m.login.password"
 }' 'CLIENT_BASE_URL/_matrix/client/v3/login'
 ```
 
@@ -163,7 +163,7 @@ So that it should look like this:
 curl -XPOST --json '{
     "identifier": { "type": "m.id.user", "user": "draupnir" },
     "password": "********",
-    "type": "m.login.password",
+    "type": "m.login.password"
 }' 'https://matrix-client.example.com/_matrix/client/v3/login'
 ```
 
