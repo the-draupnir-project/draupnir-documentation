@@ -22,7 +22,11 @@ const config: Config = {
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -161,6 +165,22 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   plugins: [
+    function nodePolyfillPlugin() {
+      return {
+        name: 'node-polyfill-plugin',
+        configureWebpack() {
+          return {
+            resolve: {
+              fallback: {
+                path: false,
+                fs: false,
+                os: false,
+              },
+            },
+          };
+        },
+      };
+    },
     [
       'docusaurus-plugin-openapi-docs',
       {
