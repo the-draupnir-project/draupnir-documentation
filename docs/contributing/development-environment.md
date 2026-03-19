@@ -11,64 +11,40 @@ Draupnir. If you already have your own workflow for typescript projects, you
 should still read this document to spot any caveats that might require you to
 adapt for our recommendations.
 
-## matrix-protection-suite
+## Cloning the monorepo
 
-While not necessary, some changes will require you to make changes to the
-[matrix-protection-suite](https://github.com/Gnuxie/matrix-protection-suite) and
-the associated backend for the matrix-bot-sdk:
-[matrix-protection-suite-for-matrix-bot-sdk](https://github.com/Gnuxie/matrix-protection-suite-for-matrix-bot-sdk).
+Draupnir uses a monorepo architecture for its packages, currently using npm
+workspaces without orchestration. The bot and appservice can be found in
+`apps/draupnir`, and dependencies such as the `matrix-protection-suite` or
+`interface` manager can be found in `packages`.
 
-You should clone these locally and then link them by using `yarn link` in each
-directory followed by
-`yarn link matrix-protection-suite matrix-protection-suite-for-matrix-bot-sdk`
-within Draupnir.
-
-You will probably also want to download
-[interface-manager](https://the-draupnir-project/interface-manager) if you need
-to make fundamental changes to the command framework.
-
-You may also need to
-`yarn add --dev "matrix-bot-sdk@npm:@vector-im/matrix-bot-sdk@^0.7.1-element.6"`
-within the `matrix-protection-suite-for-matrix-bot-sdk` directory to ensure that
-that the local copy is using the same version as Draupnir. I don't understand
-why `yarn` will not respect overrides for linked dependencies.
-
-For convenience there is also a
-[script](https://gist.github.com/Gnuxie/f27a6efc8a0d55918e25167add19fe8f) to
-link and unlink our maintained dependencies that you can add to your path
+The project can be installed with `npm install` and built using
+`npm run build:all`.
 
 ### VSCode
 
-You will also want to edit your `settings.json` to match something like this, so
-that you can debug into MPS while debugging Draupnir.
+Correct source level debugging might require you to edit your `settings.json`.
 
 ```json
     "debug.javascript.terminalOptions": {
         "runtimeArgs": ["--preserve-symlinks"],
         "sourceMaps": true,
         "outFiles": [
-            "${userHome}/experiments/draupnir/lib/**/*.js",
-            "${userHome}/experiments/draupnir/src/**/*.ts",
-            "${userHome}/experiments/draupnir/test/**/*.ts",
-            "${userHome}/experiments/matrix-protection-suite/dist/**/*.js",
-            "${userHome}/experiments/matrix-protection-suite/src/**/*.ts",
-            "${userHome}/experiments/matrix-protection-suite-for-matrix-bot-sdk/dist/**/*.js",
-            "${userHome}/experiments/matrix-protection-suite-for-matrix-bot-sdk/src/**/*.ts",
-            "${userHome}/experiments/interface-manager/src/**/*.ts",
-            "${userHome}/experiments/interface-manager/dist/**/*.js"
+            "${userHome}/experiments/Draupnir/apps/**/*.ts",
+            "${userHome}/experiments/Draupnir/apps/**/*.js",
+            "${userHome}/experiments/Draupnir/packages/**/*.ts",
+            "${userHome}/experiments/Draupnir/packages/**/*.js"
           ]
     }
 ```
 
 ## mx-tester
 
-WARNING: mx-tester is currently work in progress, but it can still save you some
-time and is better than struggling with nothing.
-
 For integration testing, and spinning up a local synapse we use
-[mx-tester](https://github.com/matrix-org/mx-tester). While not required for
-basic changes, it is strongly recommended to use mx-tester or have the ability
-to spin up your own development Synapse to develop draupnir interactively.
+[mx-tester](https://github.com/matrix-org/mx-tester) and Docker. While not
+required for basic changes, it is strongly recommended to use mx-tester or have
+the ability to spin up your own development Synapse to develop draupnir
+interactively.
 
 To install `mx-tester` you will need the [rust toolchain](https://rustup.rs/)
 and Docker. You should refer to your linux distribution's documentation for
@@ -119,7 +95,7 @@ mx-tester up
 Once you have called `mx-tester up` you can run the integration tests.
 
 ```bash
-yarn test:integration
+npm run -w apps/draupnir test:integration
 ```
 
 After calling `mx-tester up`, if we want to play with Draupnir locally we can
@@ -127,7 +103,7 @@ run the following and then point a matrix client to http://localhost:9999. You
 should then be able to join the management room at `#moderators:localhost:9999`.
 
 ```bash
-yarn test:manual
+npm run -w apps/draupnir test:manual
 ```
 
 Once we are finished developing we can stop the synapse container.
@@ -153,11 +129,11 @@ The following sections assume that a Synapse is running and
 
 If you need to debug an issue that is occurring through use in matrix, say the
 unban command has stopped working, you can launch draupnir from the JavaScript
-Debug Terminal using `yarn test:manual`. This will launch draupnir using the
-config found in `config/harness.yaml`. You can now open https://app.element.io,
-change the server to `localhost:8081`, and then create an account. From here you
-can join the room `#moderators:localhost:9999` (you will also be able to find it
-in the rooms directory) and interact with draupnir.
+Debug Terminal using `npm run -w apps/draupnir test:manual`. This will launch
+draupnir using the config found in `config/harness.yaml`. You can now open
+https://app.element.io, change the server to `localhost:8081`, and then create
+an account. From here you can join the room `#moderators:localhost:9999` (you
+will also be able to find it in the rooms directory) and interact with draupnir.
 
 It is recommended to set breakpoints in the editor while interacting and switch
 the tab to "DEBUG CONSOLE" (within Visual Studio Code) to evaluate arbitrary
@@ -165,18 +141,19 @@ expressions in the currently paused context (when a breakpoint has been hit).
 
 ### Running integration tests
 
-The integration tests can be run with `yarn test:integration`. The config that
-the tests use is in `config/harness.yaml` and by default this is configured to
-work with the server specified in `mx-tester.yml`, but you can configure it
-however you like to run against your own setup.
+The integration tests can be run with
+`npm run -w apps/draupnir test:integration`. The config that the tests use is in
+`config/harness.yaml` and by default this is configured to work with the server
+specified in `mx-tester.yml`, but you can configure it however you like to run
+against your own setup.
 
 ### Debugging an integration test
 
 To debug the integration test suite from the JavaScript Debug Terminal, you can
-start them using `yarn test:integration`. However, more often than not there is
-a specific section of code you will be working on that has specific tests.
-Running the entire suite is therefore unnecessary. To run a specific test from
-the JavaScript Debug Terminal, you can use the script
-`yarn test:integration:single test/integration/banListTest.ts`, where
-`test/integration/banListTest.ts` is the name of the integration test you want
-to run.
+start them using `npm run -w apps/draupnir test:integration`. However, more
+often than not there is a specific section of code you will be working on that
+has specific tests. Running the entire suite is therefore unnecessary. To run a
+specific test from the JavaScript Debug Terminal, you can use the script
+`npm run -w apps/draupnir test:integration:single test/integration/banListTest.ts`,
+where `test/integration/banListTest.ts` is the name of the integration test you
+want to run.
