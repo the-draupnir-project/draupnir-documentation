@@ -4,13 +4,16 @@ sidebar_position: 0
 
 # Contributing to Draupnir
 
-## Welcome
-
-Hi, thank you for considering to contribute to Draupnir.
+:::tip
 
 Do not worry about following the guidance in this document to the letter, we'd
 much rather you get involved than avoid doing so because of a technicality.
 Please keep this in mind throughout.
+
+If you just want to hack see
+[development environment](./development-environment.md).
+
+:::
 
 ## Getting Started
 
