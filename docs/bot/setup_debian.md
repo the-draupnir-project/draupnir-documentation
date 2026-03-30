@@ -9,100 +9,95 @@ sidebar_label: Installation on Debian
 
 :::tip
 
-These are instructions for the installation of draupnir from source on Debian.
-This installation method is intended for experienced sysadmins.
+These are instructions for installing Draupnir from source on Debian. This
+installation method is intended for experienced system administrators.
 
 :::
 
 ## Installation
 
-install git curl and sudo
+Install the packages needed to build and run Draupnir:
 
 ```shell
-apt update && apt install -y git curl sudo
+apt update && apt install -y ca-certificates curl git sudo
 ```
 
-install node 20 from the node source repo, the full instructions can be found at
-https://nodesource.com/products/distributions
+Install Node.js 24 and `npm`.
+
+The most convenient way to do that on Debian is NodeSource:
 
 ```shell
-curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
+curl -fsSL https://deb.nodesource.com/setup_24.x -o nodesource_setup.sh
 bash nodesource_setup.sh
 apt update && apt install nodejs -y
 ```
 
-install yarn via npm
+:::info
+
+If you prefer not to use NodeSource, install any supported Node.js 24 plus `npm`
+yourself and continue with the rest of this guide. For example, you might use
+the official Node.js binaries or your own version manager. We do not document or
+support those installation methods here.
+
+:::
+
+Create the directory to clone the repository into:
 
 ```shell
-npm install --global yarn
+mkdir -p /opt/mod-bot
 ```
 
-create the directory to clone the repo
+Clone the repository and fetch the tags:
 
 ```shell
-mkdir /opt/mod-bot
-```
-
-clone the repo and fetch the tags
-
-```shell
-git clone --branch v2.9.0 --depth 1 https://github.com/the-draupnir-project/Draupnir.git /opt/mod-bot/Draupnir
-```
-
-```shell
+git clone --branch v3.0.0 --depth 1 https://github.com/the-draupnir-project/Draupnir.git /opt/mod-bot/Draupnir
 git -C /opt/mod-bot/Draupnir fetch --tags
 ```
 
-create the directory for draupnirs datastorage
+Create the directory for Draupnir's persistent data:
 
 ```shell
-mkdir /opt/mod-bot/Draupnir/datastorage
+mkdir -p /opt/mod-bot/Draupnir/datastorage
 ```
 
-add corepack
-
-```shell
-yarn global add corepack
-```
-
-add a user to run the bot this user will be used by systemd to run the bot since
-there is no need to run it with root permissions
+Add a dedicated user to run the bot. systemd will use this user, so there is no
+need to run Draupnir with root permissions.
 
 ```shell
 useradd -m draupnir
 ```
 
-give ownership of the draupnir directory to the bot user
+Give ownership of the Draupnir directory to the bot user:
 
 ```shell
 chown -R draupnir:draupnir /opt/mod-bot/Draupnir
 ```
 
-build the bot with yarn
+Install dependencies and build Draupnir:
 
 ```shell
-sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && yarn install"
-sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && yarn build"
+sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && npm ci"
+sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && npm run build"
 ```
 
 ## Edit the config
 
-copy the default config to production.yaml
+Copy the default config to `production.yaml`:
 
 ```shell
 cp /opt/mod-bot/Draupnir/config/default.yaml /opt/mod-bot/Draupnir/config/production.yaml
 ```
 
-change the path of the datadirectory from the default to the directory we
-created earlier since the default dir is for the docker setup
+Change the path of the data directory from the default to the directory we
+created earlier, since the default path is for the Docker setup:
 
 ```shell
 sed -i 's|dataPath: "/data/storage"|dataPath: "/opt/mod-bot/Draupnir/datastorage"|' /opt/mod-bot/Draupnir/config/production.yaml
 ```
 
-edit the production config: the most important things to configure are the
-`homeserverUrl:`, the `rawHomeserverUrl:`, the `accessToken:` and the
-`managementRoom:`
+Edit the production config. The most important things to configure are the
+`homeserverUrl:`, the `rawHomeserverUrl:`, the `accessToken:`, and the
+`managementRoom:`.
 
 ```shell
 nano /opt/mod-bot/Draupnir/config/production.yaml
@@ -110,29 +105,29 @@ nano /opt/mod-bot/Draupnir/config/production.yaml
 
 ## Example systemd service
 
-copy this to `/etc/systemd/system/draupnir.service` and enable with
-`systemctl enable draupnir`, then simply start with `systemctl start draupnir`
+Copy this to `/etc/systemd/system/draupnir.service` and enable it with
+`systemctl enable draupnir`, then start it with `systemctl start draupnir`.
 
 :::tip
 
-before you attempt to start the service, make sure that the management room for
-draupnir exists on your homeserver and is joinable by draupnir (either public
-room or invite the bot account in advance)
+Before you attempt to start the service, make sure that the management room for
+Draupnir exists on your homeserver and is joinable by Draupnir. Either make it
+public or invite the bot account in advance.
 
 :::
 
 ```ini
 [Unit]
 Description=Draupnir
-#After=matrix-synapse.service       # You can enable this if your matrix server is synapse, otherwise you might want to change it to the service that starts your homeserver
-#After=matrix-synapse.target        # You can enable this if your matrix server is synapse and you have installed workers via the official instructions
+#After=matrix-synapse.service       # You can enable this if your Matrix server is Synapse, otherwise you might want to change it to the service that starts your homeserver.
+#After=matrix-synapse.target        # You can enable this if your Matrix server is Synapse and you have installed workers via the official instructions.
 
 [Service]
-ExecStart=/usr/bin/node /opt/mod-bot/Draupnir/lib/index.js --draupnir-config /opt/mod-bot/Draupnir/config/production.yaml
+ExecStart=/opt/mod-bot/Draupnir/draupnir-entrypoint.sh bot --draupnir-config /opt/mod-bot/Draupnir/config/production.yaml
 WorkingDirectory=/opt/mod-bot/Draupnir
 Restart=always
 User=draupnir
-Environment=PATH=/usr/bin:/usr/local/bin
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
 Environment=NODE_ENV=production
 SyslogIdentifier=draupnir
 
@@ -155,7 +150,7 @@ ProtectClock=true
 SystemCallArchitectures=native
 SystemCallErrorNumber=EPERM
 SystemCallFilter=@system-service
-# EnvironmentFile=-/path/to/env/file  # Optional: if you want to load environment variables from a file
+# EnvironmentFile=-/path/to/env/file  # Optional: if you want to load environment variables from a file.
 
 [Install]
 WantedBy=multi-user.target
@@ -163,34 +158,29 @@ WantedBy=multi-user.target
 
 ## Updating the bot
 
-if you want to update && upgrade everything, use the draupnir useraccount in
-order to not create conflicts with filepermissions/ownerships
+If you want to update Draupnir, use the `draupnir` user account to avoid
+ownership and permission conflicts.
 
-stop the bot
+Stop the bot:
 
 ```shell
 systemctl stop draupnir
 ```
 
-pull updates from github with
+Fetch updates from GitHub and check out the version you want:
 
 ```shell
-sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && git fetch --tags && git checkout v2.9.0"
+sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && git fetch --tags && git checkout v3.0.0"
 ```
 
-install/update yarn
+Install updated dependencies and rebuild:
 
 ```shell
-sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && yarn install"
+sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && npm ci"
+sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && npm run build"
 ```
 
-build the bot
-
-```shell
-sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && yarn build"
-```
-
-then simply start the bot again with
+Start the bot again:
 
 ```shell
 systemctl restart draupnir

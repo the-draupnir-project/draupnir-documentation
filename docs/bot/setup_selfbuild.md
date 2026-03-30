@@ -19,21 +19,32 @@ This guide is meant to be read in conjunction with
 
 :::
 
-These instructions are to build and run draupnir without using
-[Docker](./setup_docker.md). You need to have installed `yarn` 1.x and Node 20.
+These instructions are to build and run Draupnir without using
+[Docker](./setup_docker.md). You need to have installed Node.js 24 and `npm`.
 
 ```bash
-git clone --branch v2.9.0 --depth 1 https://github.com/the-draupnir-project/Draupnir.git
+git clone --branch v3.0.0 --depth 1 https://github.com/the-draupnir-project/Draupnir.git
 cd Draupnir
 git fetch --tags
 
-yarn install
-yarn build
+npm ci
+npm run build
 
 # Copy and edit the config. It *is* recommended to change the data path,
 # as this is set to `/data` by default for dockerised draupnir.
 cp config/default.yaml config/production.yaml
 nano config/production.yaml
 
-node lib/index.js --draupnir-config ./config/production.yaml
+./draupnir-entrypoint.sh bot --draupnir-config ./config/production.yaml
+```
+
+## Legacy versions
+
+For Draupnir versions `v2.9.0` and below, Draupnir requires yarn classic and
+Node 20. Instructions are otherwise the same, except instead of using npm to
+install dependencies and build, you instead use
+
+```bash
+yarn install
+yarn build
 ```
