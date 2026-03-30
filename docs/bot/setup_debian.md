@@ -10,7 +10,8 @@ sidebar_label: Installation on Debian
 :::tip
 
 These are instructions for installing Draupnir from source on Debian. This
-installation method is intended for experienced system administrators.
+installation method is intended for **experienced** system administrators. The
+recommended installation method is [using Docker with systemd](./systemd).
 
 :::
 
@@ -111,8 +112,9 @@ Copy this to `/etc/systemd/system/draupnir.service` and enable it with
 :::tip
 
 Before you attempt to start the service, make sure that the management room for
-Draupnir exists on your homeserver and is joinable by Draupnir. Either make it
-public or invite the bot account in advance.
+Draupnir exists on your homeserver and is joinable by Draupnir. Invite the bot
+account in advance, and makes sure that you give it admin or enough power level
+to send state events.
 
 :::
 
@@ -123,7 +125,7 @@ Description=Draupnir
 #After=matrix-synapse.target        # You can enable this if your Matrix server is Synapse and you have installed workers via the official instructions.
 
 [Service]
-ExecStart=/opt/mod-bot/Draupnir/draupnir-entrypoint.sh bot --draupnir-config /opt/mod-bot/Draupnir/config/production.yaml
+ExecStart=node /opt/mod-bot/Draupnir/apps/draupnir/dist/index.js --draupnir-config /opt/mod-bot/Draupnir/config/production.yaml
 WorkingDirectory=/opt/mod-bot/Draupnir
 Restart=always
 User=draupnir
