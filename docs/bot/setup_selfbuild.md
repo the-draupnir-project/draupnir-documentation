@@ -35,7 +35,7 @@ npm run build
 cp config/default.yaml config/production.yaml
 nano config/production.yaml
 
-node apps/draupnir/dist/index.js --draupnir-config ./config/production.yaml
+./draupnir-entrypoint.sh bot --draupnir-config ./config/production.yaml
 ```
 
 ## Legacy versions

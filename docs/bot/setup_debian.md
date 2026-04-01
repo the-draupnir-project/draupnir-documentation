@@ -125,7 +125,7 @@ Description=Draupnir
 #After=matrix-synapse.target        # You can enable this if your Matrix server is Synapse and you have installed workers via the official instructions.
 
 [Service]
-ExecStart=node /opt/mod-bot/Draupnir/apps/draupnir/dist/index.js --draupnir-config /opt/mod-bot/Draupnir/config/production.yaml
+ExecStart=/opt/mod-bot/Draupnir/draupnir-entrypoint.sh bot --draupnir-config /opt/mod-bot/Draupnir/config/production.yaml
 WorkingDirectory=/opt/mod-bot/Draupnir
 Restart=always
 User=draupnir
