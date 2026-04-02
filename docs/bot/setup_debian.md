@@ -11,7 +11,10 @@ sidebar_label: Installation on Debian
 
 These are instructions for installing Draupnir from source on Debian. This
 installation method is intended for **experienced** system administrators. The
-recommended installation method is [using Docker with systemd](./systemd).
+recommended installation method is with [using Docker with systemd](./systemd).
+Though please consider using
+[matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bot-draupnir.md)
+if you are provisioning a new homeserver.
 
 :::
 
