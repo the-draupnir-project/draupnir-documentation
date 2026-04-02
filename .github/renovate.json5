@@ -9,10 +9,9 @@
       depNameTemplate: "the-draupnir-project/Draupnir",
       versioningTemplate: "semver-coerced",
       matchStrings: [
-        "git clone --branch v(?<currentValue>\\d+\\.\\d+\\.\\d+) --depth 1 https://github\\.com/the-draupnir-project/Draupnir\\.git(?:\\s+\\S+)?",
-        "cd\\s+[^\\n]*Draupnir[^\\n]*&&\\s+git\\s+fetch\\s+--tags\\s+&&\\s+git\\s+checkout\\s+v(?<currentValue>\\d+\\.\\d+\\.\\d+)"
-      ]
-    }
+        "^(?=[^\\n]*Draupnir)(?=[^\\n]*git[^\\n]*(?:checkout|branch|clone[^\\n]*--branch)[^\\n]*v(?<currentValue>\\d+\\.\\d+\\.\\d+)).*$",
+      ],
+    },
   ],
   packageRules: [
     {
@@ -21,7 +20,7 @@
       matchDatasources: ["github-tags"],
       matchPackageNames: ["the-draupnir-project/Draupnir"],
       matchFileNames: ["docs/**/*.md"],
-      automerge: true
-    }
-  ]
+      automerge: false,
+    },
+  ],
 }
