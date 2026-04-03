@@ -3,12 +3,6 @@ sidebar_position: 0
 sidebar_label: Configuring your Draupnir
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Quick start
 
 When you first get your Draupnir there are a few steps you should take

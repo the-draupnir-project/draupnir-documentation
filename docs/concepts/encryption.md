@@ -2,11 +2,7 @@
 sidebar_position: 1
 sidebar_label: Encryption
 ---
-<!--
-SPDX-FileCopyrightText: 2025 FSG-Cat <catalanlover@protonmail.com>
 
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
 # Encryption and Draupnir
 
 :::info

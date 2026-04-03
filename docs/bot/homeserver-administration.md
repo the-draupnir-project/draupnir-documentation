@@ -1,7 +1,5 @@
 # Homeserver administration
 
-<!-- cSpell:words shadowbanned CSAM unshadowban -->
-
 :::danger
 
 The Matrix protocol is unsafe by default. Your homeserver will be abused by
@@ -23,6 +21,9 @@ relevant when registration on a homeserver is open or public
 These features may require either a
 [synapse admin account](./setup_draupnir_account#making-draupnir-a-synapse-admin)
 or [synapse-http-antispam](./synapse-http-antispam) to be available to Draupnir.
+
+<!-- This is moved here as its early enough to make the spellchecker happy but late enough as to not mess up previews. -->
+<!-- cSpell:words shadowbanned CSAM unshadowban -->
 
 ### Room takedown protection
 

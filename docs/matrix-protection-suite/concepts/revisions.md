@@ -3,12 +3,6 @@ sidebar_position: 1
 sidebar_label: Revisions
 ---
 
-<!--
-SPDX-FileCopyrightText: 2025 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Revisions
 
 :::tip

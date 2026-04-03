@@ -2,18 +2,6 @@
 sidebar_label: Trusted reporters
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-SPDX-FileCopyrightText: 2022 The Matrix.org Foundation C.I.C.
-
-SPDX-License-Identifier: Apache-2.0
-
-SPDX-FileAttributionText: <text>
-This modified file contains work from Mjolnir
-https://github.com/matrix-org/mjolnir
-</text>
--->
-
 # Trusted reporters
 
 The trusted reporters protection can be used if you have abuse

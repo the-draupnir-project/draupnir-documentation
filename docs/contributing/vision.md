@@ -2,12 +2,6 @@
 sidebar_label: Project vision
 ---
 
-<!--
-SPDX-FileCopyrightText: 2025 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # The Draupnir project vision
 
 This document contains the opinions, ideas, and dreams of the project. This

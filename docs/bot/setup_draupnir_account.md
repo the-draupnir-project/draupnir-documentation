@@ -3,8 +3,6 @@ sidebar_position: 2
 sidebar_label: Creating an account and access token for Draupnir
 ---
 
-<!-- cspell:ignore XPOST -->
-
 # Creating an account and access token for Draupnir
 
 :::note
@@ -148,6 +146,8 @@ will be `draupnir`.
 
 To create the access token replace DRAUPNIR_LOCALPART, DRAUPNIR_USER_PASSWORD,
 and CLIENT_BASE_URL with the information gathered prior.
+
+<!-- cspell:ignore XPOST -->
 
 ```
 curl -XPOST --json '{

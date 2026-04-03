@@ -2,12 +2,6 @@
 sidebar_label: Mention Limit Protection
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 - 2025 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Mention Limit Protection
 
 :::info

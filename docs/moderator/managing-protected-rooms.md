@@ -3,12 +3,6 @@ sidebar_position: 1
 sidebar_label: Managing protected rooms
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Protecting rooms
 
 Draupnir functions by protecting a set of rooms, called the protected
