@@ -1,3 +1,7 @@
+---
+unlisted: true
+---
+
 # 2025-10-A-Selection: Selection
 
 Milestone: https://github.com/the-draupnir-project/planning/milestone/2
