@@ -1,3 +1,7 @@
+---
+unlisted: true
+---
+
 # 202X-XX-A-Selection: Selection
 
 _The purpose of selection is to affirm contributors for the work they have done
