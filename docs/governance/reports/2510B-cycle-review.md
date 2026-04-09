@@ -41,6 +41,11 @@ and Gnuxie also gave a
   the matrix-protection-suite, are now much easier to make in conjunction with
   Draupnir itself. And all our tooling across the packages is now consistent.
 
+- Draupnir images are now available via GHCR, and matrix-docker-ansible-deploy
+  pulls those by default. We also now build images for development branches
+  which can help deploy and test feature branches. All of this was contributed
+  by Cat.
+
 - Introduced a lifetime primitive to the matrix-protection-suite for structured
   resource management
   https://github.com/the-draupnir-project/planning/issues/80. This makes it
