@@ -3,18 +3,6 @@ sidebar_position: 1
 sidebar_label: Matrix power levels
 ---
 
-<!--
-SPDX-FileCopyrightText: 2022 The Matrix.org Foundation C.I.C.
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
-
-SPDX-FileAttributionText: <text>
-This modified file contains work from the matrix.org website
-https://github.com/matrix-org/matrix.org
-</text>
--->
-
 # Matrix power levels
 
 Instead of a system like roles that you may be familiar with, Matrix has a

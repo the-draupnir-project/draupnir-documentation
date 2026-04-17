@@ -3,12 +3,6 @@ sidebar_position: 1
 sidebar_label: Management room
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Management room
 
 The management room is where you will interact with Draupnir. This is

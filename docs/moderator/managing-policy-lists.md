@@ -3,12 +3,6 @@ sidebar_position: 2
 sidebar_label: Managing policy lists
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Managing policy lists
 
 If you are struggling to understand what a policy list or a policy

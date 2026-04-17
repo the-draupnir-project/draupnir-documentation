@@ -1,0 +1,109 @@
+# SPDX-License-Identifier: 0BSD
+# SPDX-FileCopyrightText: 2026 Catalan Lover <catalanlover@protonmail.com>
+#
+# This file is part of the REUSE.software compliance configuration.
+# It lists the copyright and license information for all files in this directory.
+version = 1
+
+[[annotations]]
+path = "_category_.json"
+SPDX-FileCopyrightText = [
+	"2024 Catalan Lover <catalanlover@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "accessibility.md"
+SPDX-FileCopyrightText = [
+	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "code-style.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Contributors",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "context.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Contributors",
+    "2024 Gnuxie <Gnuxie@protonmail.com>"
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "CONTRIBUTING.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Contributors",
+    "2024 Catalan Lover <catalanlover@protonmail.com>",
+    "2024 - 2026 Gnuxie <Gnuxie@protonmail.com>"
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "development.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Contributors",
+    "2024 Gnuxie <Gnuxie@protonmail.com>"
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "development-environment.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Contributors",
+    "2024 - 2025 Catalan Lover <catalanlover@protonmail.com>",
+    "2024 - 2025 Gnuxie <Gnuxie@protonmail.com>"
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "draupnir-news.md"
+SPDX-FileCopyrightText = [
+	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "long-term-workflow.md"
+SPDX-FileCopyrightText = [
+	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "planning.md"
+SPDX-FileCopyrightText = [
+	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "releasing-draupnir.md"
+SPDX-FileCopyrightText = [
+	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "security.md"
+SPDX-FileCopyrightText = [
+	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "triaging.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Contributors",
+    "2024 Gnuxie <Gnuxie@protonmail.com>"
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "vision.md"
+SPDX-FileCopyrightText = "2025 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"

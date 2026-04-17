@@ -3,12 +3,6 @@ sidebar_position: 2
 sidebar_label: Policy lists
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Policy lists
 
 ## Policies

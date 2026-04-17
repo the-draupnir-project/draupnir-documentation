@@ -3,12 +3,6 @@ sidebar_position: 0
 sidebar_label: Room essentials
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Room essentials
 
 In Matrix, the place where you talk and see other users is called a

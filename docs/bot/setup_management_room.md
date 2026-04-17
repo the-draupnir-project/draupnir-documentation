@@ -3,12 +3,6 @@ sidebar_position: 3
 sidebar_label: Creating the management room
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Creating the management room
 
 ## Introduction

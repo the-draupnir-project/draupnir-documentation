@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: 0BSD
+# SPDX-FileCopyrightText: 2026 Catalan Lover <catalanlover@protonmail.com>
+#
+# This file is part of the REUSE.software compliance configuration.
+# It lists the copyright and license information for all files in this directory.
+version = 1
+
+[[annotations]]
+path = "deploy.yml"
+SPDX-FileCopyrightText = "2024 Facebook Inc"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = "sign-off.yml"
+SPDX-FileCopyrightText = [
+	"2024 Catalan Lover <catalanlover@protonmail.com>",
+	"2022 - 2024 The Matrix.org Foundation C.I.C."
+]
+SPDX-License-Identifier = "Apache-2.0"
+# This modified file incorporates work from matrix-org/backend-meta.
+# https://github.com/matrix-org/backend-meta
+
+[[annotations]]
+path = "test-deploy.yml"
+SPDX-FileCopyrightText = "2024 Facebook Inc"
+SPDX-License-Identifier = "CC-BY-4.0"

@@ -3,12 +3,6 @@ sidebar_position: 0
 sidebar_label: Protections overview
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 :::tip
 
 This is an overview of Draupnir protections, for a more in-depth (but

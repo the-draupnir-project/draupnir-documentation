@@ -1,0 +1,64 @@
+# SPDX-License-Identifier: 0BSD
+# SPDX-FileCopyrightText: 2026 Catalan Lover <catalanlover@protonmail.com>
+#
+# This file is part of the REUSE.software compliance configuration.
+# It lists the copyright and license information for all files in this directory.
+version = 1
+
+[[annotations]]
+path = "_category_.json"
+SPDX-FileCopyrightText = [
+	"2024 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "block-invitations-on-server-protection.md"
+SPDX-FileCopyrightText = [
+	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "configuring-protections.md"
+SPDX-FileCopyrightText = "2025 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "homeserver-user-policy-protection.md"
+SPDX-FileCopyrightText = [
+	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "mention-limit-protection.md"
+SPDX-FileCopyrightText = "2024 - 2025 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "new-joiner-protection.md"
+SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "protections.md"
+SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "room-takedown-protection.md"
+SPDX-FileCopyrightText = [
+	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "trusted-reporters.md"
+SPDX-FileCopyrightText = [
+    "2024 Gnuxie <Gnuxie@protonmail.com>",
+    "2022 The Matrix.org Foundation C.I.C."
+]
+SPDX-License-Identifier = "Apache-2.0"
+# This modified file incorporates work from matrix-org/mjolnir.
+# https://github.com/matrix-org/mjolnir

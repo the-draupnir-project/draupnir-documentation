@@ -2,11 +2,6 @@
 sidebar_position: 0
 sidebar_label: Protections & Capabilities
 ---
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
 
 # Protections & Capabilities
 

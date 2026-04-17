@@ -2,12 +2,6 @@
 sidebar_label: New Joiner Protection
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # New Joiner Protection
 
 :::danger

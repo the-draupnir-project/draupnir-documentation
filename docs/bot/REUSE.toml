@@ -1,0 +1,108 @@
+# SPDX-License-Identifier: 0BSD
+# SPDX-FileCopyrightText: 2026 Catalan Lover <catalanlover@protonmail.com>
+#
+# This file is part of the REUSE.software compliance configuration.
+# It lists the copyright and license information for all files in this directory.
+version = 1
+
+[[annotations]]
+path = "_category_.json"
+SPDX-FileCopyrightText = [
+	"2024 Catalan Lover <catalanlover@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "encryption.md"
+SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "homeserver-administration.md"
+SPDX-FileCopyrightText = "2025 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "setup.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Project Contributors",
+    "2024, 2026 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "setup_debian.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Project Contributors",
+    "2024 MTRNord <support@midnightthoughts.space>",
+    "2024 - 2025 Catalan Lover <catalanlover@protonmail.com>",
+    "2024 Sky <sky@codestorm.net>",
+    "2024, 2026 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "setup_docker.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Project Contributors",
+    "2024 MTRNord <support@midnightthoughts.space>",
+    "2024 - 2025 Catalan Lover <catalanlover@protonmail.com>",
+    "2024 Gnuxie <Gnuxie@protonmail.com>"
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "setup_draupnir_account.md"
+SPDX-FileCopyrightText = [
+	"2025 MTRNord <support@midnightthoughts.space>",
+    "2024 - 2026 Gnuxie <Gnuxie@protonmail.com>",
+    "2025 bones_was_here <bones_was_here@xonotic.au>",
+    "2026 Alexey Sokolov <alexey@asokolov.org>",
+    "2026 Tulir Asokan <tulir@maunium.net>"
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "setup_management_room.md"
+SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "setup_selfbuild.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Project Contributors",
+    "2024 MTRNord <support@midnightthoughts.space>",
+    "2024 Catalan Lover <catalanlover@protonmail.com>",
+    "2024, 2026 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "starting_draupnir.md"
+SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "synapse_module.md"
+SPDX-FileCopyrightText = [
+	"2024 The Draupnir Project Contributors",
+    "2025 Catalan Lover <catalanlover@protonmail.com>",
+    "2024 - 2025 Gnuxie <Gnuxie@protonmail.com>",
+    "2024 thomcat <me@thomcat.rocks>"
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "synapse-http-antispam.md"
+SPDX-FileCopyrightText = [
+    "2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "systemd.md"
+SPDX-FileCopyrightText = [
+    "2024 Gnuxie <Gnuxie@protonmail.com>",
+    "2025 Catalan Lover <catalanlover@protonmail.com>"
+]
+SPDX-License-Identifier = "AFL-3.0"

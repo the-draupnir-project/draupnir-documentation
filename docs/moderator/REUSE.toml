@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: 0BSD
+# SPDX-FileCopyrightText: 2026 Catalan Lover <catalanlover@protonmail.com>
+#
+# This file is part of the REUSE.software compliance configuration.
+# It lists the copyright and license information for all files in this directory.
+version = 1
+
+[[annotations]]
+path = "_category_.json"
+SPDX-FileCopyrightText = [
+	"2024 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "managing-policy-lists.md"
+SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "managing-protected-rooms.md"
+SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "managing-users.md"
+SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "room-upgrades.md"
+SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "setting-up-and-configuring.md"
+SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-License-Identifier = "CC-BY-SA-4.0"

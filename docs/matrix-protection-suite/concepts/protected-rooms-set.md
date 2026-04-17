@@ -3,12 +3,6 @@ sidebar_position: 2
 sidebar_label: Protected Rooms Set
 ---
 
-<!--
-SPDX-FileCopyrightText: 2025 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Protected Rooms Set
 
 :::tip
