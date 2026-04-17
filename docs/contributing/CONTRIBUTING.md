@@ -96,19 +96,17 @@ contributions, as explained below.
 
 We follow a simple 'inbound=outbound' model for contributions: the act of
 submitting an 'inbound' contribution means that the contributor agrees to
-license their contribution under the same terms as the project's overall
-'outbound' license - in our case, this is the Academic Free License v. 3.0 (see
-[LICENSE](https://github.com/the-draupnir-project/Draupnir/blob/main/LICENSES/AFL-3.0.txt)).
+license and distribute their contribution under the license or licenses
+applicable to the files or packages the contributor modified, as indicated in
+the header of those files (by `SPDX-License-Identifier:`), the package metadata
+(`license` property in the relevant `package.json`), REUSE.toml (in the same
+filesystem directory), and the `LICENSES/` directory (at the root of the
+project, where you will find the full license text matching the relevant
+`SPDX-License-Identifier`).
 
 In order to have a concrete record that your contribution is intentional and you
-agree to license it under the same terms as the project's license, we've adopted
-the same lightweight approach used by the
-[Linux Kernel](https://www.kernel.org/doc/html/latest/process/submitting-patches.html),
-[Docker](https://github.com/docker/docker/blob/master/CONTRIBUTING.md), and many
-other projects: the
-[Developer Certificate of Origin](https://developercertificate.org/) (DCO). This
-is a simple declaration that you wrote the contribution or otherwise have the
-right to contribute it to The Draupnir Project:
+agree to license it accordingly, we use the
+[Developer Certificate of Origin](https://developercertificate.org/) (DCO):
 
 ```
 Developer Certificate of Origin
