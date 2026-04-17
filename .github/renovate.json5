@@ -1,6 +1,30 @@
 // SPDX-FileCopyrightText: 2024 Aminda Suomalainen <suomalainen@aminda.eu>
+// SPDX-FileCopyrightText: 2026 Catalan Lover <catalanlover@protonmail.com>
 //
 // SPDX-License-Identifier: CC0-1.0
 {
   extends: ["github>the-draupnir-project/.github:renovate-shared"],
+  customManagers: [
+    {
+      customType: "regex",
+      description: "Update Draupnir release tags used in docs command examples",
+      managerFilePatterns: ["/(^|/)docs/.*\\.md$/"],
+      datasourceTemplate: "github-tags",
+      depNameTemplate: "the-draupnir-project/Draupnir",
+      versioningTemplate: "semver-coerced",
+      matchStrings: [
+        "^(?=[^\\n]*Draupnir)(?=[^\\n]*git[^\\n]*(?:checkout|branch|clone[^\\n]*--branch)[^\\n]*v(?<currentValue>\\d+\\.\\d+\\.\\d+)).*$"
+      ]
+    }
+  ],
+  packageRules: [
+    {
+      description: "Automerge Draupnir docs tag updates",
+      matchManagers: ["custom.regex"],
+      matchDatasources: ["github-tags"],
+      matchPackageNames: ["the-draupnir-project/Draupnir"],
+      matchFileNames: ["docs/**/*.md"],
+      automerge: false
+    }
+  ]
 }
