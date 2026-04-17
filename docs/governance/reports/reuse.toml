@@ -13,6 +13,13 @@ SPDX-FileCopyrightText = [
 SPDX-License-Identifier = "AFL-3.0"
 
 [[annotations]]
+path = "index.md"
+SPDX-FileCopyrightText = [
+	"2026 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
 path = "0000A-cycle-review-template.md"
 SPDX-FileCopyrightText = [
 	"2025 Gnuxie <Gnuxie@protonmail.com>",
@@ -37,5 +44,19 @@ SPDX-License-Identifier = "AFL-3.0"
 path = "2510A-selection.md"
 SPDX-FileCopyrightText = [
 	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "2510B-cycle-review.md"
+SPDX-FileCopyrightText = [
+	"2025 Gnuxie <Gnuxie@protonmail.com>",
+]
+SPDX-License-Identifier = "AFL-3.0"
+
+[[annotations]]
+path = "2604A-selection.md"
+SPDX-FileCopyrightText = [
+	"2026 Gnuxie <Gnuxie@protonmail.com>",
 ]
 SPDX-License-Identifier = "AFL-3.0"
