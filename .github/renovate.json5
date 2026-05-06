@@ -3,13 +3,14 @@
   customManagers: [
     {
       customType: "regex",
-      description: "Update Draupnir release tags used in docs command examples",
+      description: "Update explicitly annotated Draupnir release tags in docs",
       managerFilePatterns: ["/(^|/)docs/.*\\.md$/"],
       datasourceTemplate: "github-tags",
       depNameTemplate: "the-draupnir-project/Draupnir",
       versioningTemplate: "semver-coerced",
       matchStrings: [
-        "^(?=[^\\n]*Draupnir)(?=[^\\n]*git[^\\n]*(?:checkout|branch|clone[^\\n]*--branch)[^\\n]*v(?<currentValue>\\d+\\.\\d+\\.\\d+)).*$",
+        "<!-- renovate: draupnir-install-tag -->[\\s\\S]*?git clone --branch v(?<currentValue>\\d+\\.\\d+\\.\\d+)\\b",
+        "<!-- renovate: draupnir-install-tag -->[\\s\\S]*?git checkout v(?<currentValue>\\d+\\.\\d+\\.\\d+)\\b",
       ],
     },
   ],
