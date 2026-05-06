@@ -22,6 +22,7 @@ This guide is meant to be read in conjunction with
 These instructions are to build and run Draupnir without using
 [Docker](./setup_docker.md). You need to have installed Node.js 24 and `npm`.
 
+<!-- renovate: draupnir-install-tag -->
 ```bash
 git clone --branch v3.0.0 --depth 1 https://github.com/the-draupnir-project/Draupnir.git
 cd Draupnir

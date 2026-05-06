@@ -1,3 +1,27 @@
 {
   extends: ["github>the-draupnir-project/.github:renovate-shared"],
+  customManagers: [
+    {
+      customType: "regex",
+      description: "Update explicitly annotated Draupnir release tags in docs",
+      managerFilePatterns: ["/(^|/)docs/.*\\.md$/"],
+      datasourceTemplate: "github-tags",
+      depNameTemplate: "the-draupnir-project/Draupnir",
+      versioningTemplate: "semver-coerced",
+      matchStrings: [
+        "<!-- renovate: draupnir-install-tag -->[\\s\\S]*?git clone --branch v(?<currentValue>\\d+\\.\\d+\\.\\d+)\\b",
+        "<!-- renovate: draupnir-install-tag -->[\\s\\S]*?git checkout v(?<currentValue>\\d+\\.\\d+\\.\\d+)\\b",
+      ],
+    },
+  ],
+  packageRules: [
+    {
+      description: "Automerge Draupnir docs tag updates",
+      matchManagers: ["custom.regex"],
+      matchDatasources: ["github-tags"],
+      matchPackageNames: ["the-draupnir-project/Draupnir"],
+      matchFileNames: ["docs/**/*.md"],
+      automerge: false,
+    },
+  ],
 }
