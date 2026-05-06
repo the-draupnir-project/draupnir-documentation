@@ -64,7 +64,10 @@ SPDX-License-Identifier = "AFL-3.0"
 
 [[annotations]]
 path = "setup_management_room.md"
-SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-FileCopyrightText = [
+    "2024 Gnuxie <Gnuxie@protonmail.com>",
+    "2026 Catalan Lover <catalanlover@protonmail.com>",
+]
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
 [[annotations]]
@@ -79,7 +82,10 @@ SPDX-License-Identifier = "AFL-3.0"
 
 [[annotations]]
 path = "starting_draupnir.md"
-SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
+SPDX-FileCopyrightText = [
+    "2024 Gnuxie <Gnuxie@protonmail.com>",
+    "2026 Catalan Lover <catalanlover@protonmail.com>",
+]
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
 [[annotations]]
