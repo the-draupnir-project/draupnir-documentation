@@ -91,6 +91,8 @@ for feedback.
 
 ## Sign off
 
+<!-- REUSE-IgnoreStart -->
+
 We ask that everybody who contributes to Draupnir repositories signs off their
 contributions, as explained below.
 
@@ -103,6 +105,8 @@ the header of those files (by `SPDX-License-Identifier:`), the package metadata
 filesystem directory), and the `LICENSES/` directory (at the root of the
 project, where you will find the full license text matching the relevant
 `SPDX-License-Identifier`).
+
+<!-- REUSE-IgnoreEnd -->
 
 In order to have a concrete record that your contribution is intentional and you
 agree to license it accordingly, we use the
