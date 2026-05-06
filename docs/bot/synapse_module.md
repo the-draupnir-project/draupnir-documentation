@@ -1,7 +1,6 @@
 ---
 sidebar_label: Synapse module
 ---
-<!-- cspell:ignore Hsggkm -->
 
 # Synapse module
 
@@ -45,6 +44,7 @@ _Note_: Where your python environment is depends on your installation method. Vi
 
 Then add the following to your `homeserver.yaml`:
 
+<!-- cspell:ignore Hsggkm -->
 ```yaml
 modules:
   - module: mjolnir.Module

@@ -3,12 +3,6 @@ sidebar_position: 4
 sidebar_label: Draupnir parameters and options
 ---
 
-<!--
-SPDX-FileCopyrightText: 2024 Gnuxie <Gnuxie@protonmail.com>
-
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
 # Draupnir parameters and options
 
 :::info
@@ -42,6 +36,17 @@ relative to [the data directory](#the-data-directory) (explained
 below). Where your data directory is will depend on the
 installation method you are using, so please refer to the respective
 guide that you are following.
+
+## Zero Touch Deployment
+
+As of Draupnir 3.1.0 we no longer need to configure the management room.
+
+This is a clear deviation from the past and is noted here just so that readers
+know this is intentional behaviour and is the recommended path forward for
+all new deployments.
+
+More information on Zero Touch Deployment can be found in the concepts section
+and [this document](../concepts/zero-touch-deployment).
 
 ## The data directory
 

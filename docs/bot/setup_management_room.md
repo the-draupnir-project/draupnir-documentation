@@ -5,6 +5,14 @@ sidebar_label: Creating the management room
 
 # Creating the management room
 
+:::note
+
+If your following the recommended install flows you wont need these instructions
+as Zero Touch Deployment introduced in Draupnir 3.1.0 will create a management
+room for you that complies with recommended settings.
+
+:::
+
 ## Introduction
 
 The management room is where you will interact with Draupnir. This is

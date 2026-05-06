@@ -16,11 +16,10 @@ There are a number of steps to complete to get Draupnir running:
 1. [Create an account](./setup_draupnir_account) for Draupnir to use.
     - Optionally disabling rate limits for this account.
 2. Review our notes on [encryption](./encryption).
-3. [Create a management room](./setup_management_room) for Draupnir to use.
-4. [Install Draupnir](#installation) on your system.
-5. [Fill out Draupnir's config file](./starting_draupnir) to complete
+3. [Install Draupnir](#installation) on your system.
+4. [Fill out Draupnir's config file](./starting_draupnir) to complete
    the installation.
-6. Start using Draupnir by referring to the [moderator's guide](../moderator/setting-up-and-configuring).
+5. Start using Draupnir by referring to the [moderator's guide](../moderator/setting-up-and-configuring).
 
 ## Installation
 
