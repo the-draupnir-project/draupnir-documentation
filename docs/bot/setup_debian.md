@@ -56,7 +56,7 @@ Clone the repository and fetch the tags:
 <!-- renovate: draupnir-install-tag -->
 
 ```shell
-git clone --branch v3.0.0 --depth 1 https://github.com/the-draupnir-project/Draupnir.git /opt/mod-bot/Draupnir
+git clone --branch v3.1.0 --depth 1 https://github.com/the-draupnir-project/Draupnir.git /opt/mod-bot/Draupnir
 git -C /opt/mod-bot/Draupnir fetch --tags
 ```
 
@@ -179,7 +179,7 @@ Fetch updates from GitHub and check out the version you want:
 <!-- renovate: draupnir-install-tag -->
 
 ```shell
-sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && git fetch --tags && git checkout v3.0.0"
+sudo -u draupnir bash -c "cd /opt/mod-bot/Draupnir && git fetch --tags && git checkout v3.1.0"
 ```
 
 Install updated dependencies and rebuild:
