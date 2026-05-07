@@ -24,7 +24,7 @@ These instructions are to build and run Draupnir without using
 
 <!-- renovate: draupnir-install-tag -->
 ```bash
-git clone --branch v3.0.0 --depth 1 https://github.com/the-draupnir-project/Draupnir.git
+git clone --branch v3.1.0 --depth 1 https://github.com/the-draupnir-project/Draupnir.git
 cd Draupnir
 git fetch --tags
 
