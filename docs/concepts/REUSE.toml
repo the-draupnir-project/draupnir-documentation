@@ -41,3 +41,8 @@ SPDX-License-Identifier = "CC-BY-SA-4.0"
 path = "room-essentials.md"
 SPDX-FileCopyrightText = "2024 Gnuxie <Gnuxie@protonmail.com>"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = "zero-touch-deployment.md"
+SPDX-FileCopyrightText = "2026 Catalan Lover <catalanlover@protonmail.com>"
+SPDX-License-Identifier = "Apache-2.0"
