@@ -5,53 +5,52 @@ sidebar_label: Creating the management room
 
 # Creating the management room
 
-:::note
+:::warning
 
-If your following the recommended install flows you wont need these instructions
-as Zero Touch Deployment introduced in Draupnir 3.1.0 will create a management
-room for you that complies with recommended settings.
+You should not create a management room, on Draupnir versions v3.1.0 and above,
+simply configure yourself as an `initialManager` and Draupnir will create the
+room for you with our recommended settings.
 
 :::
 
 ## Introduction
 
-The management room is where you will interact with Draupnir. This is
-the room where Draupnir will respond to commands, allowing you to
-coordinate with Draupnir and other moderators without disrupting your
-public Matrix rooms. You can find further information about the
-management room [here](../concepts/management-room).
+The management room is where you will interact with Draupnir. This is the room
+where Draupnir will respond to commands, allowing you to coordinate with
+Draupnir and other moderators without disrupting your public Matrix rooms. You
+can find further information about the management room
+[here](../concepts/management-room).
 
-You should create this room after you have created a user for your
-Draupnir bot.
+You should create this room after you have created a user for your Draupnir bot.
 
 ## Creating the room
 
 :::warning
 
-We strongly recommend against encrypting the management room, and we
-cannot provide support if you do. Please see the section on encrypting
-the management room [here](#encrypting-the-management-room).
+We strongly recommend against encrypting the management room, and we cannot
+provide support if you do. Please see the section on encrypting the management
+room [here](#encrypting-the-management-room).
 
 :::
 
-The management room should be created using your client from any
-Matrix user account. The room should not be public as any user that
-joins this room will be able to control Draupnir.
+The management room should be created using your client from any Matrix user
+account. The room should not be public as any user that joins this room will be
+able to control Draupnir.
 
-Once you have created the room, you should invite the bot user that
-you created for Draupnir to the room.
+Once you have created the room, you should invite the bot user that you created
+for Draupnir to the room.
 
-You will also need to acquire the room ID of this room, in Element Web
-you can find this by going to the room, going to: Settings -> Advanced
--> "Internal Room ID".
+You will also need to acquire the room ID of this room, in Element Web you can
+find this by going to the room, going to: Settings -> Advanced -> "Internal Room
+ID".
 
-In your configuration, set `managementRoom` to this Room ID, and now
-Draupnir will only respond to commands originating from that room. If
-you want to upgrade your room in the future, you will have to update
-the configuration with it. Alternatively, you can create a room alias.
+In your configuration, set `managementRoom` to this Room ID, and now Draupnir
+will only respond to commands originating from that room. If you want to upgrade
+your room in the future, you will have to update the configuration with it.
+Alternatively, you can create a room alias.
 
 ## Encrypting the management room
 
-We do not recommend setting up an encrypted management room, and we
-cannot provide support for setting one up. Please see our notes on
-encryption [here](./encryption).
+We do not recommend setting up an encrypted management room, and we cannot
+provide support for setting one up. Please see our notes on encryption
+[here](./encryption).
