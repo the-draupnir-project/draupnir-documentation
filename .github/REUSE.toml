@@ -7,6 +7,8 @@ version = 1
 
 [[annotations]]
 path = "renovate.json5"
-SPDX-FileCopyrightText = "2024 Aminda Suomalainen <suomalainen@aminda.eu>"
-SPDX-FileCopyrightText = "2026 Catalan Lover <catalanlover@protonmail.com>"
-SPDX-License-Identifier = "Apache-2.0"
+SPDX-FileCopyrightText = [
+    "2024 Aminda Suomalainen <suomalainen@aminda.eu>",
+    "2026 Catalan Lover <catalanlover@protonmail.com>",
+]
+SPDX-License-Identifier = "0BSD"
