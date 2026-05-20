@@ -99,5 +99,5 @@ the first argument that gets passed to the container is `bot`.
 So for example: o start Draupnir, you could use the following command:
 <!-- renovate: docker-tag -->
 ```bash
-docker run --rm -it --name=draupnir -v ./var/lib/draupnir:/data the-draupnir-project/draupnir:3.1.0 bot --draupnir-config /data/config/production.yaml
+docker run --rm -it --name=draupnir -v ./var/lib/draupnir:/data ghcr.io/the-draupnir-project/draupnir:3.1.0 bot --draupnir-config /data/config/production.yaml
 ```
