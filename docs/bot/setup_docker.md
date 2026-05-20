@@ -16,9 +16,12 @@ of [using Docker with systemd](./systemd).
 
 ## Images
 
-Draupnir is available as an image from Docker Hub as
-[`gnuxie/draupnir`](https://hub.docker.com/r/gnuxie/draupnir/tags).
-Draupnir is available under the following release tags:
+Draupnir is available via Github Container Repository and Docker Hub.
+GHCR is the recommended distribution pathway for Draupnir images and is found under
+[`the-draupnir-project/draupnir`](https://github.com/the-draupnir-project/Draupnir/pkgs/container/draupnir)
+
+We also have our legacy Docker Hub distribution in parallel with GHCR under
+[`gnuxie/draupnir`](https://hub.docker.com/r/gnuxie/draupnir/tags)
 
 ### `latest`
 
@@ -47,12 +50,27 @@ GitHub](https://github.com/the-draupnir-project/Draupnir/releases).
 If there are pre-releases, you should scroll down until you find the
 latest release.
 
-### `develop`
+### `main`
 
-The `develop` tag will always refer to an image built from the `main`
+The `main` tag will always refer to an image built from the `main`
 branch of Draupnir's git repository. You will not experience any
 severe breakages by using this tag, but you will want to be present
 within the Draupnir support room.
+
+This tag is GHCR Exclusive. Its functionally equivalent to `develop`
+tag from Docker Hub.
+
+### Branch Tags
+
+Draupnir GHCR images are released for development branches. This
+is especially useful when wanting to do dev testing against feature
+branches. All the work for Zero Touch Deployment Stage 1 for example
+was using this feature to be tested before it was merged into main.
+That testing as done using [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy)
+together with a branch docker image.
+
+These branch docker images are only rebuilt when that branch is pushed
+to and only intended for development usage.
 
 ## Running with Docker
 
@@ -79,7 +97,7 @@ for when providing options with `docker run`. This is done by ensuring
 the first argument that gets passed to the container is `bot`.
 
 So for example: o start Draupnir, you could use the following command:
-
+<!-- renovate: docker-tag -->
 ```bash
-docker run --rm -it --name=draupnir -v ./var/lib/draupnir:/data gnuxie/draupnir:latest bot --draupnir-config /data/config/production.yaml
+docker run --rm -it --name=draupnir -v ./var/lib/draupnir:/data the-draupnir-project/draupnir:3.1.0 bot --draupnir-config /data/config/production.yaml
 ```

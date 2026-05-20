@@ -11,6 +11,8 @@
       matchStrings: [
         "<!-- renovate: draupnir-install-tag -->[\\s\\S]*?git clone --branch v(?<currentValue>\\d+\\.\\d+\\.\\d+)\\b",
         "<!-- renovate: draupnir-install-tag -->[\\s\\S]*?git checkout v(?<currentValue>\\d+\\.\\d+\\.\\d+)\\b",
+        "<!-- renovate: docker-tag -->[\\s\\S]*?the-draupnir-project/draupnir:(?<currentValue>\\d+\\.\\d+\\.\\d+)\\b",
+        "<!-- renovate: systemd-tag -->[\\s\\S]*?Environment=DRAUPNIR_TAG=(?<currentValue>\\d+\\.\\d+\\.\\d+)\\b"
       ],
     },
   ],
@@ -21,7 +23,7 @@
       matchDatasources: ["github-tags"],
       matchPackageNames: ["the-draupnir-project/Draupnir"],
       matchFileNames: ["docs/**/*.md"],
-      automerge: true,
+      automerge: false,
     },
   ],
 }
