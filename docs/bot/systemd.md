@@ -26,6 +26,7 @@ You will then want to copy your configuration file for Draupnir to
 Then you will want to copy the following systemd unit file to
 `/etc/systemd/system/draupnir.service`.
 
+<!-- renovate: systemd-tag -->
 ```ini
 [Unit]
 Description=Draupnir Docker Container
@@ -37,12 +38,14 @@ Wants=network-online.target
 
 [Service]
 Type=exec
+# This controls the docker tag your bot is pinned to. Update it to Switch draupnir version.
+Environment=DRAUPNIR_TAG=3.1.0
 # Update Draupnir
-ExecStartPre=docker image pull gnuxie/draupnir:latest
+ExecStartPre=docker image pull ghcr.io/the-draupnir-project/draupnir:${DRAUPNIR_TAG}
 # Clean up any accidentally existing containers
 ExecStartPre=docker container rm --force draupnir
 
-ExecStart=docker container run --rm --pull=never --name=draupnir -v /var/lib/draupnir:/data gnuxie/draupnir:latest bot --draupnir-config /data/config/production.yaml
+ExecStart=docker container run --rm --pull=never --name=draupnir -v /var/lib/draupnir:/data ghcr.io/the-draupnir-project/draupnir:${DRAUPNIR_TAG} bot --draupnir-config /data/config/production.yaml
 
 ExecStop=-docker container stop --time=10 draupnir
 

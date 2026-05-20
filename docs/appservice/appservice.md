@@ -28,7 +28,7 @@ Please note that Draupnir in appservice mode does not support E2EE nor support u
 5. Generate the appservice registration file. This will be used by both the appservice and your homeserver.
    Here, you must specify the direct link the Matrix Homeserver can use to access the appservice, including the Matrix port it will send messages through (if this bridge runs on the same machine you can use `localhost` as the `$HOST` name):
 
-   `docker run --rm -v /your/path/to/draupnir-data:/data gnuxie/draupnir appservice -r -u "http://$HOST:$MATRIX_PORT" -f /data/config/draupnir-registration.yaml`
+   `docker run --rm -v /your/path/to/draupnir-data:/data ghcr.io/the-draupnir-project/draupnir appservice -r -u "http://$HOST:$MATRIX_PORT" -f /data/config/draupnir-registration.yaml`
 
 6. Create a `config/config.production.yaml` file that can be copied from the example in `config/default.yaml` just like in step 4. The file also needs to be accessible to the container so whatever path is used for `config/config.appservice.yaml` can be reused to also house this file.
 
@@ -45,7 +45,7 @@ commands:
 protections:
 ```
 
-7. Start the application service `docker run -v /your/path/to/draupnir-data/:/data/ gnuxie/draupnir appservice -c /data/config/config.appservice.yaml -f /data/config/draupnir-registration.yaml -p $MATRIX_PORT --draupnir-config /data/config/production.yaml`
+7. Start the application service `docker run -v /your/path/to/draupnir-data/:/data/ ghcr.io/the-draupnir-project/draupnir appservice -c /data/config/config.appservice.yaml -f /data/config/draupnir-registration.yaml -p $MATRIX_PORT --draupnir-config /data/config/production.yaml`
 
 8. Copy the `draupnir-registration.yaml` to your matrix homeserver and refer to it in `homeserver.yaml` like so:
 
