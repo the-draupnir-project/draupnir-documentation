@@ -39,7 +39,7 @@ Wants=network-online.target
 [Service]
 Type=exec
 # This controls the docker tag your bot is pinned to. Update it to Switch draupnir version.
-Environment=DRAUPNIR_TAG=3.1.0
+Environment=DRAUPNIR_TAG=3.2.0
 # Update Draupnir
 ExecStartPre=docker image pull ghcr.io/the-draupnir-project/draupnir:${DRAUPNIR_TAG}
 # Clean up any accidentally existing containers
